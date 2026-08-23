@@ -112,7 +112,6 @@ function linkifySlugs(text: string) {
         key={`${part.slug}-${index}`}
         href={`/skills/${part.slug}`}
         className="font-mono text-[12.5px] text-foreground underline decoration-foreground/25 underline-offset-3 hover:decoration-foreground/60"
-        onClick={(event) => event.stopPropagation()}
       >
         {part.slug}
       </Link>
