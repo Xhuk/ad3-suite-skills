@@ -3,6 +3,7 @@ export const skillKinds = [
   "philosophy",
   "build",
   "review",
+  "polish",
   "audit",
   "language",
   "design",
@@ -13,7 +14,7 @@ export const skillKinds = [
 
 export type SkillKind = (typeof skillKinds)[number];
 
-export type SkillOrigin = "ad3" | "emilkowalski";
+export type SkillOrigin = "ad3" | "emilkowalski" | "flywheel";
 
 export type CatalogSkill = {
   slug: string;
@@ -218,6 +219,20 @@ export const catalog: CatalogSkill[] = [
       "Las skills de arquitectura o de producto del suite. Es lenguaje, no el resto del stack.",
     invocation: "auto",
   },
+  {
+    slug: "ui-ux-polish",
+    name: "ui-ux-polish",
+    kind: "polish",
+    origin: "flywheel",
+    summary:
+      "Flujo iterativo de pulido UI/UX: el prompt exacto (desktop vs mobile, varias pasadas) para reviews y propuestas cuando la app ya funciona.",
+    improves:
+      "El review o la propuesta de AD3: pases incrementales, desktop y mobile por separado, no un “déjalo más bonito” genérico.",
+    when: "La UI ya funciona y se ve decente, y AD3 va a revisar o proponer pulido. No usarla si está rota o pide un rediseño.",
+    doesNotReplace:
+      "Review de bugs, producto, motion de Emil ni el resto del suite. Es el protocolo de pulido, no el dueño de la tarea.",
+    invocation: "auto",
+  },
 ];
 
 export const playbook: PlaybookEntry[] = [
@@ -234,6 +249,21 @@ export const playbook: PlaybookEntry[] = [
     keepDoing: "Review de lógica, tests, seguridad y producto",
     reachFor: ["ad3-craft-layer", "review-animations"],
     why: "El comentario de motion se vuelve un fallo concreto, no un “se siente off”.",
+  },
+  {
+    id: "ui-review",
+    situation: "AD3 revisa una UI que ya funciona y se ve decente",
+    keepDoing:
+      "Review de lógica, bugs, producto y, si hay motion, review-animations",
+    reachFor: ["ad3-craft-layer", "ui-ux-polish", "emil-design-eng"],
+    why: "El review gana un protocolo de pasadas (desktop vs mobile) sin dejar de ser un review de AD3.",
+  },
+  {
+    id: "ui-proposal",
+    situation: "AD3 propone mejoras de look & feel sobre una app que ya corre",
+    keepDoing: "El alcance, el stack y las skills de oficio de motion",
+    reachFor: ["ad3-craft-layer", "ui-ux-polish"],
+    why: "La propuesta se vuelve un pase iterativo con desktop y mobile por separado, no un “más premium” vago.",
   },
   {
     id: "feel-alive",
@@ -288,6 +318,7 @@ export const kindLabel: Record<SkillKind, string> = {
   philosophy: "Oficio",
   build: "Construir",
   review: "Revisar",
+  polish: "Pulir",
   audit: "Auditar",
   language: "Vocabulario",
   design: "Diseño",
@@ -295,6 +326,34 @@ export const kindLabel: Record<SkillKind, string> = {
   explore: "Explorar",
   native: "Nativo",
 };
+
+export function originLabel(origin: SkillOrigin): string {
+  switch (origin) {
+    case "ad3":
+      return "AD3";
+    case "emilkowalski":
+      return "Emil Kowalski";
+    case "flywheel":
+      return "Agent Flywheel";
+    default: {
+      return assertNever(origin);
+    }
+  }
+}
+
+export function originNote(origin: SkillOrigin): string {
+  switch (origin) {
+    case "ad3":
+      return " · capa del suite";
+    case "emilkowalski":
+      return "";
+    case "flywheel":
+      return " · reviews y propuestas";
+    default: {
+      return assertNever(origin);
+    }
+  }
+}
 
 export function skillBySlug(slug: string): CatalogSkill | undefined {
   return catalog.find((skill) => skill.slug === slug);
@@ -310,6 +369,7 @@ export function kindTone(kind: SkillKind): "default" | "secondary" | "outline" {
       return "default";
     case "philosophy":
     case "design":
+    case "polish":
       return "secondary";
     case "build":
     case "review":

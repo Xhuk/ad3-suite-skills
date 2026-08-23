@@ -1,6 +1,6 @@
 ---
 name: ad3-craft-layer
-description: Complementary craft layer for the AD3 suite. Does not replace any AD3, domain, product, or platform skill. Use whenever an AD3 agent is about to write, review, or polish a user-facing response that involves UI, motion, component choice, visual taste, or interaction design — so Emil Kowalski's skills can improve that response without taking over the task.
+description: Complementary craft layer for the AD3 suite. Does not replace any AD3, domain, product, or platform skill. Use whenever an AD3 agent is about to write, review, propose, or polish a user-facing response that involves UI, motion, component choice, visual taste, or interaction design — so craft skills (Emil Kowalski, ui-ux-polish) can improve that response without taking over the task.
 ---
 
 # AD3 Craft Layer
@@ -15,7 +15,7 @@ Do not drop, skip, or rewrite another skill because this one is present. If Stri
 
 1. **Complement, never substitute.** A craft skill can change easing, duration, component choice, or copy about motion. It cannot become the only skill on the job.
 2. **Improve the response AD3 was already going to give.** Do not start a parallel design-only answer. Fold the craft into the existing reply.
-3. **Load the smallest relevant skill.** Read this file first. Then read one (sometimes two) Emil skills. Do not dump the whole pack into context.
+3. **Load the smallest relevant skill.** Read this file first. Then read one (sometimes two) craft skills. Do not dump the whole pack into context.
 4. **Refuse cheap motion.** If the craft skill says "do not animate," that is the improvement. Say so in the AD3 response.
 5. **Keep suite voice.** AD3 still answers. These skills supply judgment, tables, and vetoes — not a new persona that takes over the chat.
 
@@ -26,6 +26,7 @@ Pick from this table. If nothing matches, do not force a skill. Continue with AD
 | AD3 is about to… | Load | What it improves in the response |
 | --- | --- | --- |
 | Write or restyle UI, components, polish, "make it feel right" | `emil-design-eng` | Taste, shadows vs borders, animation philosophy, component details |
+| Review a working UI, or propose look-and-feel passes | `ui-ux-polish` | Iterative Stripe-level polish prompt; desktop vs mobile separately; when *not* to use it |
 | Implement a specific animation or transition | `animate` | Curve, duration, properties, interruption, reduced motion |
 | Do the same in React Native / Expo | `animate-expo` | UI-thread motion, gestures, sheets, haptics |
 | Critique motion in a diff or a component | `review-animations` | Strict pass/fail against Emil's bar |
@@ -59,6 +60,11 @@ Stay in this order:
 
 If a suite skill and a craft skill disagree on *domain* facts (APIs, auth, schema, billing), the suite skill wins. If they disagree on *motion or visual craft*, the craft skill wins.
 
+`ui-ux-polish` is for reviews and proposals on an app that **already works and looks decent**. Do not open it to fix bugs or to rebuild a broken visual system. Pair it with `emil-design-eng` or `review-animations` when the same response also needs motion judgment.
+
 ## Source
 
-Upstream skills live in `vendor/emilkowalski/` and `.cursor/skills/`. They are Emil Kowalski's [skills](https://github.com/emilkowalski/skills), MIT License, included so AD3 has them at hand. Prefer the local copies. Upstream install remains `npx skills@latest add emilkowalski/skills`.
+Upstream copies live in `vendor/` and `.cursor/skills/`. Prefer the local files.
+
+- Emil Kowalski's [skills](https://github.com/emilkowalski/skills), MIT — `npx skills@latest add emilkowalski/skills`
+- [ui-ux-polish](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ui-ux-polish/SKILL.md) (Jeffrey Emanuel / Agent Flywheel), MIT with rider — see `vendor/agent-flywheel/LICENSE`

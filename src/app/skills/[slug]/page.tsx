@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SkillMarkdown } from "@/lib/markdown";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { kindLabel, kindTone } from "@/lib/catalog";
+import { kindLabel, kindTone, originLabel } from "@/lib/catalog";
 import { listSkillSlugs, loadSkill } from "@/lib/skills";
 import { cn } from "@/lib/utils";
 
@@ -44,7 +44,7 @@ export default async function SkillPage({ params }: SkillPageProps) {
   const extras = files.filter((file) => file.name !== "SKILL.md");
   const brief = [
     `Skill: ${meta.name}`,
-    `Origen: ${meta.origin === "ad3" ? "AD3" : "Emil Kowalski"}`,
+    `Origen: ${originLabel(meta.origin)}`,
     `Cuándo: ${meta.when}`,
     `Qué mejora en la respuesta: ${meta.improves}`,
     `No sustituye: ${meta.doesNotReplace}`,
@@ -65,9 +65,7 @@ export default async function SkillPage({ params }: SkillPageProps) {
           </Link>
           <div className="flex flex-wrap items-center gap-1.5">
             <Badge variant={kindTone(meta.kind)}>{kindLabel[meta.kind]}</Badge>
-            <Badge variant="outline">
-              {meta.origin === "ad3" ? "AD3" : "Emil Kowalski"}
-            </Badge>
+            <Badge variant="outline">{originLabel(meta.origin)}</Badge>
             {meta.invocation === "explicit" ? (
               <Badge variant="ghost">Invocación explícita</Badge>
             ) : null}

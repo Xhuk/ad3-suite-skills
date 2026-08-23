@@ -26,7 +26,7 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "AD3 · Capa de oficio",
   description:
-    "Skills de Emil Kowalski a la mano del suite AD3. No sustituyen a ninguna. Mejoran la respuesta que AD3 ya iba a dar.",
+    "Skills de oficio a la mano del suite AD3 — Emil Kowalski y ui-ux-polish. No sustituyen a ninguna. Mejoran reviews, propuestas y la respuesta que AD3 ya iba a dar.",
 };
 
 export default function RootLayout({

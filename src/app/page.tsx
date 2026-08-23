@@ -3,12 +3,9 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SkillCatalog } from "@/components/skill-catalog";
 import { buttonVariants } from "@/components/ui/button";
-import { catalog } from "@/lib/catalog";
 import { cn } from "@/lib/utils";
 
 export default function HomePage() {
-  const emilCount = catalog.filter((skill) => skill.origin === "emilkowalski").length;
-
   return (
     <>
       <SiteHeader active="/" />
@@ -21,7 +18,7 @@ export default function HomePage() {
             Oficio a la mano, para que AD3 mejore su propia respuesta.
           </h1>
           <p className="max-w-2xl text-base leading-7 text-muted-foreground text-pretty">
-            Estas {emilCount} skills de{" "}
+            Las skills de{" "}
             <a
               href="https://github.com/emilkowalski/skills"
               className="text-foreground underline decoration-foreground/25 underline-offset-4"
@@ -30,10 +27,19 @@ export default function HomePage() {
             >
               Emil Kowalski
             </a>{" "}
+            y{" "}
+            <a
+              href="https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ui-ux-polish/SKILL.md"
+              className="text-foreground underline decoration-foreground/25 underline-offset-4"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ui-ux-polish
+            </a>{" "}
             no reemplazan Stripe, datos, infra, React Doctor ni ninguna otra
             pieza del suite. Viven al lado. Cuando AD3 ya sabe qué responder,
-            abre la skill de craft justa y sube el listón de esa misma
-            respuesta.
+            revisar o proponer, abre la skill de craft justa y sube el listón
+            de esa misma respuesta.
           </p>
           <div className="flex flex-wrap gap-2">
             <Link

@@ -1,33 +1,35 @@
 import { CopyButton } from "@/components/copy-button";
 import { SiteHeader } from "@/components/site-header";
-import { catalog } from "@/lib/catalog";
+import { catalog, originNote } from "@/lib/catalog";
 
 const agentBrief = `Eres un agente del suite AD3.
 
-Tienes a la mano un pack de craft (Emil Kowalski + ad3-craft-layer). Ese pack NO sustituye ninguna skill del suite. No reemplaza Stripe, Firebase, Azure, React Doctor, ni las skills de producto, datos o infra.
+Tienes a la mano un pack de craft (Emil Kowalski + ui-ux-polish + ad3-craft-layer). Ese pack NO sustituye ninguna skill del suite. No reemplaza Stripe, Firebase, Azure, React Doctor, ni las skills de producto, datos o infra.
 
 Úsalo así:
 1. Resuelve la tarea con las skills de AD3 que ya corresponden.
-2. Si la respuesta que verá el usuario incluye UI, motion, elección de componente o gusto visual, lee .cursor/skills/ad3-craft-layer/SKILL.md.
+2. Si la respuesta que verá el usuario incluye UI, motion, elección de componente, un review visual o una propuesta de pulido, lee .cursor/skills/ad3-craft-layer/SKILL.md.
 3. Abre solo la skill de craft que indique esa tabla.
 4. Pliega el criterio en la misma respuesta. No escribas un segundo informe de diseño.
-5. Si el craft dice que no hay que animar, esa es la mejora.
+5. Si el craft dice que no hay que animar, o que no hay que pulir porque la UI está rota, esa es la mejora.
+
+Para reviews o propuestas de look & feel sobre una app que YA funciona: abre ui-ux-polish. No la uses para bugs ni para un rediseño desde cero. Si hay motion, combina con review-animations o emil-design-eng.
 
 Catálogo local: GET /api/skills
 Skill completa: GET /api/skills/:slug
 Playbook: GET /api/playbook
 
-Fuente upstream (MIT): https://github.com/emilkowalski/skills`;
+Fuentes:
+- https://github.com/emilkowalski/skills
+- https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ui-ux-polish/SKILL.md`;
 
 export const metadata = {
   title: "Para agentes · AD3 capa de oficio",
   description:
-    "Cómo un agente de AD3 usa las skills de Emil sin sustituir el resto del suite.",
+    "Cómo un agente de AD3 usa las skills de craft en reviews y propuestas, sin sustituir el resto del suite.",
 };
 
 export default function AgentsPage() {
-  const emil = catalog.filter((skill) => skill.origin === "emilkowalski");
-
   return (
     <>
       <SiteHeader active="/agents" />
@@ -81,14 +83,12 @@ export default function AgentsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-sm font-medium">
-            Pack de Emil ({emil.length}), más la capa AD3
-          </h2>
+          <h2 className="text-sm font-medium">Pack a la mano ({catalog.length})</h2>
           <ul className="grid gap-1.5 font-mono text-[13px] text-foreground/80">
             {catalog.map((skill) => (
               <li key={skill.slug}>
                 {skill.slug}
-                {skill.origin === "ad3" ? " · capa del suite" : ""}
+                {originNote(skill.origin)}
               </li>
             ))}
           </ul>

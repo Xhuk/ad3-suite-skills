@@ -7,23 +7,23 @@ export function SiteFooter() {
           mejorar la respuesta.
         </p>
         <p>
-          Craft upstream:{" "}
+          Craft:{" "}
           <a
             href="https://github.com/emilkowalski/skills"
             className="text-foreground underline decoration-foreground/25 underline-offset-4"
             target="_blank"
             rel="noreferrer"
           >
-            emilkowalski/skills
-          </a>{" "}
-          · MIT ·{" "}
+            Emil Kowalski
+          </a>
+          {" · "}
           <a
-            href="https://emilkowal.ski/ui/agents-with-taste"
+            href="https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ui-ux-polish/SKILL.md"
             className="text-foreground underline decoration-foreground/25 underline-offset-4"
             target="_blank"
             rel="noreferrer"
           >
-            Agents with Taste
+            ui-ux-polish
           </a>
         </p>
       </div>

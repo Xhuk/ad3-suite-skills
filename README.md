@@ -1,13 +1,14 @@
 # AD3 · Capa de oficio
 
-Pack complementario para el suite AD3. Incluye las [skills de Emil Kowalski](https://github.com/emilkowalski/skills) (MIT) y una skill propia, `ad3-craft-layer`, que enseña a los agentes **cuándo abrirlas** y **cómo plegarlas en la respuesta que AD3 ya iba a dar**.
+Pack complementario para el suite AD3. Incluye las [skills de Emil Kowalski](https://github.com/emilkowalski/skills), [ui-ux-polish](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ui-ux-polish/SKILL.md) para reviews y propuestas, y una skill propia, `ad3-craft-layer`, que enseña a los agentes **cuándo abrirlas** y **cómo plegarlas en la respuesta que AD3 ya iba a dar**.
 
-No sustituyen Stripe, datos, infra, React Doctor ni ninguna otra skill del suite. Viven al lado, a la mano, para subir el oficio de UI y motion.
+No sustituyen Stripe, datos, infra, React Doctor ni ninguna otra skill del suite. Viven al lado, a la mano.
 
 ## Qué hay aquí
 
 - `.cursor/skills/` — skills descubribles por Cursor, incluida `ad3-craft-layer`
-- `vendor/emilkowalski/` — copia upstream con su `LICENSE`
+- `vendor/emilkowalski/` — pack de Emil, con su `LICENSE`
+- `vendor/agent-flywheel/` — `ui-ux-polish`, con su `LICENSE`
 - App Next.js — catálogo, playbook y API para que un agente las consulte
 
 ## Cómo correrla
@@ -29,17 +30,12 @@ La app queda en [http://127.0.0.1:43187](http://127.0.0.1:43187).
 ## Cómo debe usarlas un agente de AD3
 
 1. Resuelve la tarea con las skills del suite que ya correspondan.
-2. Si la respuesta incluye UI, motion o elección de componente, lee `.cursor/skills/ad3-craft-layer/SKILL.md`.
+2. Si la respuesta incluye UI, motion, un review visual o una propuesta de pulido, lee `.cursor/skills/ad3-craft-layer/SKILL.md`.
 3. Abre solo la skill de craft que indique esa tabla.
 4. Mejora *esa* respuesta. No escribas un segundo informe de diseño.
-5. Si el craft dice que no hay que animar, esa es la mejora.
-
-Instalación upstream, si quieres el pack también en otro repo:
-
-```bash
-npx skills@latest add emilkowalski/skills
-```
+5. `ui-ux-polish` es para reviews y propuestas cuando la app **ya funciona**. Si está rota, no la abras.
 
 ## Créditos
 
-Skills de oficio: [Emil Kowalski](https://github.com/emilkowalski/skills), MIT. Ver `vendor/emilkowalski/LICENSE`.
+- Oficio de motion y UI: [Emil Kowalski](https://github.com/emilkowalski/skills), MIT. Ver `vendor/emilkowalski/LICENSE`.
+- Pulido iterativo para reviews/propuestas: [ui-ux-polish](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ui-ux-polish/SKILL.md) (Jeffrey Emanuel), MIT con rider. Ver `vendor/agent-flywheel/LICENSE`.

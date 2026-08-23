@@ -1,19 +1,19 @@
 # AD3 suite — craft layer
 
-This repo gives AD3 agents Emil Kowalski's design-engineering skills **at hand**. They do not replace any other suite skill.
+This repo gives AD3 agents craft skills **at hand** (Emil Kowalski plus `ui-ux-polish` for reviews and proposals). They do not replace any other suite skill.
 
 ## Before you answer
 
 1. Keep using the AD3 / domain / platform skill that owns the task.
-2. If the user-facing response involves UI, motion, component choice, or visual taste, read `.cursor/skills/ad3-craft-layer/SKILL.md`.
+2. If the user-facing response involves UI, motion, a visual review, or a polish proposal, read `.cursor/skills/ad3-craft-layer/SKILL.md`.
 3. Open only the matching craft skill under `.cursor/skills/`.
 4. Fold that judgment into the same response. Do not start a parallel design write-up.
-5. If the craft skill says do not animate, say so and stop.
+5. If the craft skill says do not animate, or not to polish a broken UI, say so and stop.
 
 ## Local sources
 
 - Index skill: `.cursor/skills/ad3-craft-layer/SKILL.md`
-- Upstream copies: `.cursor/skills/<name>/` and `vendor/emilkowalski/skills/`
+- Upstream copies: `.cursor/skills/<name>/`, `vendor/emilkowalski/skills/`, `vendor/agent-flywheel/skills/`
 - HTTP: `GET /api/skills`, `GET /api/skills/:slug`, `GET /api/playbook`
 
 ## What never happens

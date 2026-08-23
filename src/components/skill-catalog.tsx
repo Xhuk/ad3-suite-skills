@@ -10,6 +10,7 @@ import {
   catalog,
   kindLabel,
   kindTone,
+  originLabel,
   skillKinds,
   type CatalogSkill,
   type SkillKind,
@@ -149,9 +150,7 @@ function SkillCard({ skill }: { skill: CatalogSkill }) {
         <CardHeader>
           <div className="flex flex-wrap items-center gap-1.5">
             <Badge variant={tone}>{kindLabel[skill.kind]}</Badge>
-            <Badge variant="outline">
-              {skill.origin === "ad3" ? "AD3" : "Emil Kowalski"}
-            </Badge>
+            <Badge variant="outline">{originLabel(skill.origin)}</Badge>
             {skill.invocation === "explicit" ? (
               <Badge variant="ghost">Invocación explícita</Badge>
             ) : null}
