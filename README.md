@@ -12,9 +12,27 @@ Repo público: https://github.com/Xhuk/ad3-suite-skills
 
 ## Qué es
 
-- `ad3-craft-layer` — capa del suite: analiza el host, verifica qué hay instalado y decide qué abrir
-- Skills de oficio de [Emil Kowalski](https://github.com/emilkowalski/skills) (MIT)
-- `ui-ux-polish` para reviews y propuestas cuando la app ya funciona ([Agent Flywheel](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations), MIT con rider)
+El suite son **7 skills maestras linkeadas**. El oficio (Emil, `ui-ux-polish`) es satélite: se abre desde build o review si está instalado.
+
+```
+ad3-using → ad3-recon → ad3-spec → ad3-plan → ad3-build → ad3-review → ad3-ship
+```
+
+| # | Maestra | Hace |
+| --- | --- | --- |
+| 1 | `ad3-using` | Puerta. Enlaza las otras seis. |
+| 2 | `ad3-recon` | Analiza host y verifica skills propuestas. |
+| 3 | `ad3-spec` | Spec o propuesta. |
+| 4 | `ad3-plan` | Plan ejecutable solo con skills `ready`. |
+| 5 | `ad3-build` | Implementa. Puede abrir una skill de oficio. |
+| 6 | `ad3-review` | Review. Puede abrir `ui-ux-polish` o `review-animations`. |
+| 7 | `ad3-ship` | Verifica y cierra. |
+
+Satélites (no sustituyen la cadena):
+
+- `ad3-craft-layer` — índice de oficio
+- Skills de [Emil Kowalski](https://github.com/emilkowalski/skills) (MIT)
+- `ui-ux-polish` ([Agent Flywheel](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations), MIT con rider)
 
 AD3 funciona en **cualquier sistema**: web, Expo / React Native, Apple / Swift, o un host desconocido. Si una skill propuesta no está en disco, lo dice y sigue.
 
@@ -39,7 +57,7 @@ No hace falta API key. No hace falta base de datos. No hace falta que el host se
 En el repo destino:
 
 ```bash
-npx skills@latest add TU_USUARIO/ad3-suite-skills
+npx skills@latest add Xhuk/ad3-suite-skills
 ```
 
 O a mano:
@@ -63,7 +81,8 @@ Rutas que AD3 busca: `.cursor/skills`, `.agents/skills`, `.claude/skills`, `.cod
 
 | Skill | Host | Para qué |
 | --- | --- | --- |
-| `ad3-craft-layer` | cualquiera | Índice. Obligatoria. |
+| `ad3-using` … `ad3-ship` | cualquiera | Las 7 maestras. Obligatorias. |
+| `ad3-craft-layer` | cualquiera | Índice de oficio (satélite). |
 | `emil-design-eng` | web, expo | Oficio de UI y motion |
 | `animate` | web | Construir una animación |
 | `animate-expo` | expo | Lo mismo en React Native |

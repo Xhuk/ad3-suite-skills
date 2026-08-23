@@ -15,7 +15,7 @@ export default function HomePage() {
             Suite AD3 · no sustituye, acompaña
           </p>
           <h1 className="font-heading text-4xl leading-[1.1] text-balance sm:text-5xl">
-            Oficio a la mano, para que AD3 mejore su propia respuesta.
+            Siete maestras linkeadas. El oficio solo entra si está instalado.
           </h1>
           <p className="max-w-2xl text-base leading-7 text-muted-foreground text-pretty">
             Las skills de{" "}

@@ -65,7 +65,7 @@ AD3 **detecta** el sistema. No tienes que instalar todo el pack.
 | Swift / Xcode | `write-swift`, `apple-design` | `animate`, `ask-sonner` |
 | Desconocido | Solo skills `any` + las que estén instaladas | Nada: AD3 no asume stack |
 
-`ad3-craft-layer` es la única requerida en todos los hosts.
+Las 7 maestras (`ad3-using` … `ad3-ship`) son requeridas en todos los hosts. El pack de oficio es opcional.
 
 ## Red y licencias
 

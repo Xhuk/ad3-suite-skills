@@ -1,7 +1,7 @@
 {
   "suite": "AD3",
-  "version": "0.1.0",
-  "role": "complementary-craft-layer",
+  "version": "0.2.0",
+  "role": "linked-master-suite",
   "replaces": [],
   "searchPaths": [
     ".cursor/skills",
@@ -10,8 +10,25 @@
     ".codex/skills",
     "skills"
   ],
+  "masters": [
+    "ad3-using",
+    "ad3-recon",
+    "ad3-spec",
+    "ad3-plan",
+    "ad3-build",
+    "ad3-review",
+    "ad3-ship"
+  ],
+  "chain": "ad3-using → ad3-recon → ad3-spec → ad3-plan → ad3-build → ad3-review → ad3-ship",
   "skills": [
-    { "slug": "ad3-craft-layer", "hosts": ["any"], "required": true },
+    { "slug": "ad3-using", "hosts": ["any"], "required": true, "master": true, "next": ["ad3-recon"] },
+    { "slug": "ad3-recon", "hosts": ["any"], "required": true, "master": true, "next": ["ad3-spec", "ad3-plan", "ad3-review", "ad3-ship"] },
+    { "slug": "ad3-spec", "hosts": ["any"], "required": true, "master": true, "next": ["ad3-plan", "ad3-ship"] },
+    { "slug": "ad3-plan", "hosts": ["any"], "required": true, "master": true, "next": ["ad3-build", "ad3-ship"] },
+    { "slug": "ad3-build", "hosts": ["any"], "required": true, "master": true, "next": ["ad3-review"] },
+    { "slug": "ad3-review", "hosts": ["any"], "required": true, "master": true, "next": ["ad3-ship", "ad3-build"] },
+    { "slug": "ad3-ship", "hosts": ["any"], "required": true, "master": true, "next": [] },
+    { "slug": "ad3-craft-layer", "hosts": ["any"] },
     { "slug": "emil-design-eng", "hosts": ["web", "expo"] },
     { "slug": "animate", "hosts": ["web"] },
     { "slug": "animate-expo", "hosts": ["expo"] },

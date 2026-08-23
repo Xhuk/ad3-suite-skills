@@ -1,4 +1,5 @@
 export const skillKinds = [
+  "master",
   "layer",
   "philosophy",
   "build",
@@ -37,6 +38,97 @@ export type PlaybookEntry = {
 };
 
 export const catalog: CatalogSkill[] = [
+  {
+    slug: "ad3-using",
+    name: "ad3-using",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 1/7. Puerta del suite: abre la cadena linkeada y no sustituye skills de host ni de oficio.",
+    improves:
+      "El arranque. AD3 no improvisa el proceso: entra por using y sigue el eslabón que toca.",
+    when: "Al empezar cualquier tarea AD3.",
+    doesNotReplace: "Ninguna skill de host ni el pack de oficio. Es la puerta, no el trabajo.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-recon",
+    name: "ad3-recon",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 2/7. Analiza host, tarea y verifica si las skills propuestas están instaladas.",
+    improves:
+      "La decisión. AD3 no finge archivos: ready, missing, not-applicable o unknown.",
+    when: "Justo después de ad3-using, antes de spec, plan, review o ship.",
+    doesNotReplace: "El resto de la cadena. Recon analiza; no especifica ni construye.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-spec",
+    name: "ad3-spec",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 3/7. Escribe la spec o la propuesta. Puede plegar ui-ux-polish si está ready.",
+    improves:
+      "El objetivo escrito, con desktop/mobile separados cuando el trabajo es visual.",
+    when: "Tras recon, si hace falta un target antes de planear o construir.",
+    doesNotReplace: "Plan ni build. Tampoco el review de producto del host.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-plan",
+    name: "ad3-plan",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 4/7. Convierte la spec en un plan ejecutable solo con skills ready.",
+    improves:
+      "La secuencia. Cada paso tiene done-when y no agenda skills ausentes.",
+    when: "Hay spec (o ya existía) y hay que ordenar el trabajo.",
+    doesNotReplace: "La implementación. Planear no es construir.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-build",
+    name: "ad3-build",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 5/7. Implementa el plan en el host. Puede abrir una skill de oficio.",
+    improves:
+      "El cambio real, con craft plegado si animate o emil-design-eng están ready.",
+    when: "El plan está listo y hay que escribir código o UI.",
+    doesNotReplace: "Review ni ship. Tampoco las skills de dominio del host.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-review",
+    name: "ad3-review",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 6/7. Review de diff, UI o propuesta. Puede abrir ui-ux-polish o review-animations.",
+    improves:
+      "El veredicto. Aprueba o devuelve a build/spec sin sustituir review de lógica.",
+    when: "Después de build, o tras recon si solo pidieron review.",
+    doesNotReplace: "Review de seguridad, tests o producto del host.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-ship",
+    name: "ad3-ship",
+    kind: "master",
+    origin: "ad3",
+    summary:
+      "Maestra 7/7. Verifica instalación, host y que la tarea está hecha de verdad.",
+    improves:
+      "El cierre. No se declara done si una skill usada no estaba ready.",
+    when: "Al final de la cadena, o tras recon si solo pidieron verificar.",
+    doesNotReplace: "El trabajo de las otras seis. Ship cierra; no reabre el diseño.",
+    invocation: "auto",
+  },
   {
     slug: "ad3-craft-layer",
     name: "ad3-craft-layer",
@@ -237,6 +329,21 @@ export const catalog: CatalogSkill[] = [
 
 export const playbook: PlaybookEntry[] = [
   {
+    id: "ad3-full-chain",
+    situation: "Trabajo nuevo de AD3 de punta a punta",
+    keepDoing: "Las skills de dominio del host",
+    reachFor: [
+      "ad3-using",
+      "ad3-recon",
+      "ad3-spec",
+      "ad3-plan",
+      "ad3-build",
+      "ad3-review",
+      "ad3-ship",
+    ],
+    why: "Las siete maestras van linkeadas. El oficio (Emil, polish) solo entra en build o review si está ready.",
+  },
+  {
     id: "ui-from-scratch",
     situation: "AD3 va a generar o restylear una interfaz",
     keepDoing: "Las skills de producto, datos y stack que ya tiene el suite",
@@ -314,7 +421,8 @@ export const playbook: PlaybookEntry[] = [
 ];
 
 export const kindLabel: Record<SkillKind, string> = {
-  layer: "Capa AD3",
+  master: "Maestra",
+  layer: "Oficio AD3",
   philosophy: "Oficio",
   build: "Construir",
   review: "Revisar",
@@ -344,7 +452,7 @@ export function originLabel(origin: SkillOrigin): string {
 export function originNote(origin: SkillOrigin): string {
   switch (origin) {
     case "ad3":
-      return " · capa del suite";
+      return " · suite";
     case "emilkowalski":
       return "";
     case "flywheel":
@@ -365,6 +473,8 @@ export function assertNever(value: never): never {
 
 export function kindTone(kind: SkillKind): "default" | "secondary" | "outline" {
   switch (kind) {
+    case "master":
+      return "default";
     case "layer":
       return "default";
     case "philosophy":
