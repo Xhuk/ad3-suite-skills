@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "description": "AD3 suite skills — complementary craft layer for any host. Analyze, verify, decide. Does not replace other skills.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xhuk/ad3-suite-skills.git"
+  },
+  "homepage": "https://github.com/Xhuk/ad3-suite-skills",
   "license": "MIT",
   "keywords": [
     "ad3",

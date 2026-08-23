@@ -5,10 +5,10 @@ Pack público de skills para agentes. **No sustituye** Stripe, datos, infra ni n
 Instalación en cualquier repo:
 
 ```bash
-npx skills@latest add TU_USUARIO/ad3-suite-skills
+npx skills@latest add Xhuk/ad3-suite-skills
 ```
 
-Sustituye `TU_USUARIO` por tu usuario de GitHub cuando el repo esté publicado.
+Repo público: https://github.com/Xhuk/ad3-suite-skills
 
 ## Qué es
 
@@ -45,7 +45,7 @@ npx skills@latest add TU_USUARIO/ad3-suite-skills
 O a mano:
 
 ```bash
-git clone https://github.com/TU_USUARIO/ad3-suite-skills.git
+git clone https://github.com/Xhuk/ad3-suite-skills.git
 cp -R ad3-suite-skills/skills/* TU_PROYECTO/.cursor/skills/
 cp ad3-suite-skills/skills/manifest.json TU_PROYECTO/skills/manifest.json
 cp ad3-suite-skills/scripts/ad3-verify.mjs TU_PROYECTO/scripts/
@@ -102,22 +102,13 @@ npm run dev
 
 ## Publicar en GitHub (repo público)
 
-Este entorno no tiene sesión de GitHub. En tu máquina, con `gh` autenticado:
+Repo: https://github.com/Xhuk/ad3-suite-skills
 
 ```bash
-gh auth login
-./scripts/publish-github.sh TU_USUARIO
+./scripts/publish-github.sh Xhuk
 ```
 
-Eso crea `https://github.com/TU_USUARIO/ad3-suite-skills` como **público** y hace push de `main`.
-
-A mano:
-
-```bash
-gh repo create ad3-suite-skills --public --source=. --remote=github --push --description "AD3 suite skills — complementary craft layer for any host"
-```
-
-Después, otros instalan con `npx skills@latest add TU_USUARIO/ad3-suite-skills`.
+Otros instalan con `npx skills@latest add Xhuk/ad3-suite-skills`.
 
 ## Licencias
 

@@ -24,7 +24,7 @@ No se necesita:
 
 ```bash
 node -v   # v20+
-npx skills@latest add TU_USUARIO/ad3-suite-skills
+npx skills@latest add Xhuk/ad3-suite-skills
 ```
 
 Si `npx skills` no está disponible, copia a mano la carpeta `skills/` a `.cursor/skills/` del proyecto destino.
@@ -80,5 +80,5 @@ AD3 **detecta** el sistema. No tienes que instalar todo el pack.
 
 ```bash
 gh auth login
-./scripts/publish-github.sh TU_USUARIO
+./scripts/publish-github.sh Xhuk
 ```
