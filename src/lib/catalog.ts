@@ -304,10 +304,10 @@ export function assertNever(value: never): never {
   throw new Error(`Unhandled skill kind: ${String(value)}`);
 }
 
-export function kindTone(kind: SkillKind): "primary" | "secondary" | "outline" {
+export function kindTone(kind: SkillKind): "default" | "secondary" | "outline" {
   switch (kind) {
     case "layer":
-      return "primary";
+      return "default";
     case "philosophy":
     case "design":
       return "secondary";

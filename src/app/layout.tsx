@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site-footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -28,7 +29,11 @@ export const metadata: Metadata = {
     "Skills de Emil Kowalski a la mano del suite AD3. No sustituyen a ninguna. Mejoran la respuesta que AD3 ya iba a dar.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: ReactNode;
+}>) {
   return (
     <html
       lang="es"
