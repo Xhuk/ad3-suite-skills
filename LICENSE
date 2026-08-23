@@ -21,11 +21,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 The files under vendor/emilkowalski/ and the matching copies in
-.cursor/skills/ (except ad3-craft-layer and ui-ux-polish) are
-Copyright (c) 2026 Emil Kowalski and remain under the MIT License
+skills/ and .cursor/skills/ (except ad3-craft-layer and ui-ux-polish)
+are Copyright (c) 2026 Emil Kowalski and remain under the MIT License
 shipped in vendor/emilkowalski/LICENSE.
 
-The files under vendor/agent-flywheel/ and .cursor/skills/ui-ux-polish
-are Copyright (c) 2026 Jeffrey Emanuel and remain under the license
-shipped in vendor/agent-flywheel/LICENSE (MIT with an OpenAI/Anthropic
-rider). Include that notice unmodified when redistributing those files.
+The files under vendor/agent-flywheel/ and skills/ui-ux-polish
+(.cursor/skills/ui-ux-polish) are Copyright (c) 2026 Jeffrey Emanuel
+and remain under the license shipped in vendor/agent-flywheel/LICENSE
+(MIT with an OpenAI/Anthropic rider). Include that notice unmodified
+when redistributing those files.

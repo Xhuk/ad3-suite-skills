@@ -2,6 +2,16 @@
   "name": "ad3-suite-skills",
   "version": "0.1.0",
   "private": true,
+  "description": "AD3 suite skills — complementary craft layer for any host. Analyze, verify, decide. Does not replace other skills.",
+  "license": "MIT",
+  "keywords": [
+    "ad3",
+    "skills",
+    "cursor",
+    "agents",
+    "ui",
+    "ux"
+  ],
   "bin": {
     "ad3-verify": "./scripts/ad3-verify.mjs"
   },

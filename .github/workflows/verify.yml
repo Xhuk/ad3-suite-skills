@@ -1,0 +1,23 @@
+name: verify-ad3-skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify installed skills
+        run: node scripts/ad3-verify.mjs .
+      - name: Reject unknown proposed skill
+        run: |
+          if node scripts/ad3-verify.mjs . --propose skill-inventada; then
+            echo "Expected a missing proposed skill to fail"
+            exit 1
+          fi
