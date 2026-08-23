@@ -8,9 +8,14 @@ npm install
 npm run dev
 ```
 
-Abre http://127.0.0.1:43187 — eliges propuesta, contrato o nota, editas y descargas.
+Abre http://127.0.0.1:43187 — ves la propuesta comercial y pulsas **Descargar PDF**.
 
-API: `POST /api/pdf` con el JSON del formulario. `GET /api/pdf?kind=propuesta` devuelve el ejemplo.
+```bash
+# La plantilla editorial, sin el formulario
+curl -OJ "http://127.0.0.1:43187/api/pdf?template=propuesta"
+```
+
+API: `GET /api/pdf?template=propuesta` (PDF) · `GET /api/pdf?template=propuesta&format=png&page=1` (vista previa) · `POST /api/pdf` (JSON del formulario).
 
 ---
 

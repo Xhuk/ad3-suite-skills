@@ -13,73 +13,150 @@ import {
 } from "@/lib/pdf-document";
 import { cn } from "@/lib/utils";
 
-type StudioStatus = "idle" | "loading" | "ready" | "error";
+type StudioStatus = "ready" | "loading" | "error";
+
+function templateQuery(kind: DocumentKind): string {
+  if (kind === "nota") {
+    return `kind=${kind}`;
+  }
+  return `template=${kind}`;
+}
+
+async function fetchPngPages(query: string, payload?: PdfDocument) {
+  const url = `/api/pdf?${query}&format=png&page=1`;
+  const first = await fetch(url, requestInit(payload));
+  if (!first.ok) {
+    const body = (await first.json().catch(() => null)) as { error?: string } | null;
+    throw new Error(body?.error ?? "No se pudo armar la vista previa.");
+  }
+  const count = Number(first.headers.get("X-Pdf-Pages") ?? "1");
+  const blobs = [await first.blob()];
+  for (let page = 2; page <= Math.min(count, 8); page += 1) {
+    const next = await fetch(`/api/pdf?${query}&format=png&page=${page}`, requestInit(payload));
+    if (!next.ok) {
+      break;
+    }
+    blobs.push(await next.blob());
+  }
+  return blobs.map((blob) => URL.createObjectURL(blob));
+}
+
+function requestInit(payload?: PdfDocument): RequestInit {
+  if (!payload) {
+    return {};
+  }
+  return {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  };
+}
+
+function revokeAll(urls: string[]) {
+  for (const url of urls) {
+    URL.revokeObjectURL(url);
+  }
+}
 
 export function PdfStudio() {
   const [doc, setDoc] = useState<PdfDocument>(() => sampleDocument("propuesta"));
-  const [status, setStatus] = useState<StudioStatus>("idle");
+  const [status, setStatus] = useState<StudioStatus>("ready");
   const [error, setError] = useState<string | null>(null);
-  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (pdfUrl) {
-        URL.revokeObjectURL(pdfUrl);
-      }
-    };
-  }, [pdfUrl]);
+  const [customPages, setCustomPages] = useState<string[] | null>(null);
+  const [usingForm, setUsingForm] = useState(false);
 
   const canSubmit = useMemo(
     () => doc.title.trim().length > 0 && doc.issuerName.trim().length > 0,
     [doc.issuerName, doc.title]
   );
 
+  const templatePages = useMemo(() => {
+    const count = doc.kind === "nota" ? 2 : 3;
+    return Array.from({ length: count }, (_, index) => {
+      return `/api/pdf?${templateQuery(doc.kind)}&format=png&page=${index + 1}`;
+    });
+  }, [doc.kind]);
+
+  const pages = customPages ?? templatePages;
+
+  useEffect(() => {
+    return () => {
+      if (customPages) {
+        revokeAll(customPages);
+      }
+    };
+  }, [customPages]);
+
   function patch(partial: Partial<PdfDocument>) {
     setDoc((current) => ({ ...current, ...partial }));
   }
 
-  const previewUrl = pdfUrl ?? `/api/pdf?kind=${doc.kind}`;
+  function showTemplate() {
+    setUsingForm(false);
+    setError(null);
+    setStatus("ready");
+    setCustomPages((previous) => {
+      if (previous) {
+        revokeAll(previous);
+      }
+      return null;
+    });
+  }
 
-  async function generate(payload: PdfDocument) {
+  async function applyForm() {
     setStatus("loading");
     setError(null);
+    setUsingForm(true);
     try {
-      const response = await fetch("/api/pdf", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) {
-        const body = (await response.json().catch(() => null)) as {
-          error?: string;
-        } | null;
-        throw new Error(body?.error ?? "No se pudo generar el PDF.");
-      }
-      const blob = await response.blob();
-      const nextUrl = URL.createObjectURL(blob);
-      setPdfUrl((previous) => {
+      const next = await fetchPngPages("source=form", doc);
+      setCustomPages((previous) => {
         if (previous) {
-          URL.revokeObjectURL(previous);
+          revokeAll(previous);
         }
-        return nextUrl;
+        return next;
       });
       setStatus("ready");
     } catch (cause) {
       setStatus("error");
-      setError(cause instanceof Error ? cause.message : "Error al generar.");
+      setError(cause instanceof Error ? cause.message : "No se pudo generar.");
+    }
+  }
+
+  async function downloadPdf() {
+    setStatus("loading");
+    setError(null);
+    try {
+      const response = usingForm
+        ? await fetch("/api/pdf", requestInit(doc))
+        : await fetch(`/api/pdf?${templateQuery(doc.kind)}`);
+      if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        throw new Error(body?.error ?? "No se pudo descargar el PDF.");
+      }
+      const blob = await response.blob();
+      if (blob.type.includes("json")) {
+        throw new Error("El servidor no devolvió un PDF.");
+      }
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${doc.folio || "propuesta"}.pdf`;
+      document.body.append(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      setStatus("ready");
+    } catch (cause) {
+      setStatus("error");
+      setError(cause instanceof Error ? cause.message : "No se pudo descargar.");
     }
   }
 
   function switchKind(kind: DocumentKind) {
     setDoc(sampleDocument(kind));
-    setPdfUrl((previous) => {
-      if (previous) {
-        URL.revokeObjectURL(previous);
-      }
-      return null;
-    });
-    setStatus("ready");
-    setError(null);
+    showTemplate();
   }
 
   return (
@@ -88,7 +165,7 @@ export function PdfStudio() {
         className="space-y-5"
         onSubmit={(event) => {
           event.preventDefault();
-          void generate(doc);
+          void applyForm();
         }}
       >
         <div className="flex flex-wrap gap-1.5">
@@ -108,6 +185,28 @@ export function PdfStudio() {
             </button>
           ))}
         </div>
+
+        <p className="text-sm leading-6 text-muted-foreground">
+          La propuesta comercial ya está compilada con la plantilla Typst
+          editorial. Puedes descargarla tal cual o editar los campos y pulsar
+          Aplicar.
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            onClick={() => void downloadPdf()}
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Preparando…" : "Descargar PDF"}
+          </Button>
+          <Button type="submit" variant="outline" disabled={!canSubmit || status === "loading"}>
+            Aplicar cambios
+          </Button>
+        </div>
+        {status === "error" ? (
+          <p className="text-sm text-destructive">{error}</p>
+        ) : null}
 
         <Field label="Título">
           <Input
@@ -196,53 +295,35 @@ export function PdfStudio() {
               Añadir
             </Button>
           </div>
-          {doc.sections.length === 0 ? (
-            <p className="text-sm text-muted-foreground">
-              Sin secciones. El PDF llevará título, apertura y, si hay, la
-              tabla.
-            </p>
-          ) : (
-            doc.sections.map((section, index) => (
-              <div
-                key={`section-${index}`}
-                className="space-y-2 rounded-xl bg-foreground/4 p-3"
-              >
-                <Input
-                  value={section.heading}
-                  placeholder="Encabezado"
-                  onChange={(event) => {
-                    const sections = doc.sections.slice();
-                    sections[index] = {
-                      ...section,
-                      heading: event.target.value,
-                    };
-                    patch({ sections });
-                  }}
-                />
-                <TextArea
-                  value={section.body}
-                  rows={3}
-                  placeholder="Texto. Usa - al inicio de línea para viñetas."
-                  onChange={(value) => {
-                    const sections = doc.sections.slice();
-                    sections[index] = { ...section, body: value };
-                    patch({ sections });
-                  }}
-                />
-                <button
-                  type="button"
-                  className="text-xs text-muted-foreground hover:text-foreground"
-                  onClick={() =>
-                    patch({
-                      sections: doc.sections.filter((_, item) => item !== index),
-                    })
-                  }
-                >
-                  Quitar
-                </button>
-              </div>
-            ))
-          )}
+          {doc.sections.map((section, index) => (
+            <div
+              key={`section-${index}`}
+              className="space-y-2 rounded-xl bg-foreground/4 p-3"
+            >
+              <Input
+                value={section.heading}
+                placeholder="Encabezado"
+                onChange={(event) => {
+                  const sections = doc.sections.slice();
+                  sections[index] = {
+                    ...section,
+                    heading: event.target.value,
+                  };
+                  patch({ sections });
+                }}
+              />
+              <TextArea
+                value={section.body}
+                rows={3}
+                placeholder="Texto. Usa - al inicio de línea para viñetas."
+                onChange={(value) => {
+                  const sections = doc.sections.slice();
+                  sections[index] = { ...section, body: value };
+                  patch({ sections });
+                }}
+              />
+            </div>
+          ))}
         </div>
 
         <div className="space-y-3">
@@ -264,7 +345,7 @@ export function PdfStudio() {
             </Button>
           </div>
           {doc.items.map((item, index) => (
-            <div key={`item-${index}`} className="grid grid-cols-[1fr_7rem_auto] gap-2">
+            <div key={`item-${index}`} className="grid grid-cols-[1fr_7rem] gap-2">
               <Input
                 value={item.concept}
                 placeholder="Concepto"
@@ -288,17 +369,6 @@ export function PdfStudio() {
                   patch({ items });
                 }}
               />
-              <button
-                type="button"
-                className="text-xs text-muted-foreground hover:text-foreground"
-                onClick={() =>
-                  patch({
-                    items: doc.items.filter((_, itemIndex) => itemIndex !== index),
-                  })
-                }
-              >
-                Quitar
-              </button>
             </div>
           ))}
           <label className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -310,74 +380,32 @@ export function PdfStudio() {
             Sumar IVA federal 16 %
           </label>
         </div>
-
-        <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Firma izquierda">
-            <Input
-              value={doc.leftSignName}
-              onChange={(event) => patch({ leftSignName: event.target.value })}
-              placeholder="Nombre"
-            />
-            <Input
-              className="mt-2"
-              value={doc.leftSignRole}
-              onChange={(event) => patch({ leftSignRole: event.target.value })}
-              placeholder="Cargo"
-            />
-          </Field>
-          <Field label="Firma derecha">
-            <Input
-              value={doc.rightSignName}
-              onChange={(event) => patch({ rightSignName: event.target.value })}
-              placeholder="Nombre"
-            />
-            <Input
-              className="mt-2"
-              value={doc.rightSignRole}
-              onChange={(event) => patch({ rightSignRole: event.target.value })}
-              placeholder="Cargo"
-            />
-          </Field>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          <Button type="submit" disabled={!canSubmit || status === "loading"}>
-            {status === "loading" ? "Generando…" : "Generar PDF"}
-          </Button>
-          <a href={previewUrl} download={`${doc.folio || "documento"}.pdf`}>
-            <Button type="button" variant="outline">
-              Descargar
-            </Button>
-          </a>
-        </div>
-        {!canSubmit ? (
-          <p className="text-sm text-muted-foreground">
-            Faltan el título o quién emite.
-          </p>
-        ) : null}
-        {status === "error" ? (
-          <p className="text-sm text-destructive">{error}</p>
-        ) : null}
       </form>
 
-      <section className="min-h-[32rem] overflow-hidden rounded-2xl bg-card/80 shadow-[0_1px_0_rgba(255,255,255,0.04),0_18px_40px_rgba(0,0,0,0.22)] ring-foreground/6">
+      <section className="space-y-3">
         {status === "error" ? (
-          <div className="flex h-[32rem] flex-col items-center justify-center gap-2 px-6 text-center">
+          <div className="flex h-[28rem] flex-col items-center justify-center gap-2 rounded-2xl bg-card/80 px-6 text-center">
             <p className="font-heading text-2xl">No se pudo generar</p>
             <p className="max-w-sm text-sm leading-6 text-muted-foreground">
               {error}
             </p>
           </div>
         ) : status === "loading" ? (
-          <div className="flex h-[32rem] items-center justify-center px-6 text-sm text-muted-foreground">
-            Compilando con Typst…
+          <div className="flex h-[28rem] items-center justify-center rounded-2xl bg-card/80 text-sm text-muted-foreground">
+            Compilando la propuesta con Typst…
           </div>
         ) : (
-          <iframe
-            title="Vista previa del PDF"
-            src={previewUrl}
-            className="h-[min(80vh,52rem)] w-full bg-white"
-          />
+          pages.map((page, index) => (
+            <img
+              key={page}
+              src={page}
+              alt={`Página ${index + 1} de ${kindLabel[doc.kind]}`}
+              className="w-full rounded-2xl bg-white shadow-[0_1px_0_rgba(255,255,255,0.04),0_18px_40px_rgba(0,0,0,0.22)]"
+              onError={(event) => {
+                event.currentTarget.style.display = "none";
+              }}
+            />
+          ))
         )}
       </section>
     </div>

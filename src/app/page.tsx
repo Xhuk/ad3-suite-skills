@@ -14,8 +14,8 @@ export default function HomePage() {
             Escribes el contenido. Sale un PDF con diseño.
           </h1>
           <p className="text-base leading-7 text-muted-foreground">
-            Propuesta, contrato o nota. Tipografía Inter, tablas con IVA y
-            firmas alineadas. Compila Typst; no hay ReportLab ni LaTeX.
+            La propuesta comercial ya está lista: ves las páginas y la
+            descargas. Typst, no ReportLab.
           </p>
         </section>
         <PdfStudio />
