@@ -2,11 +2,15 @@
   "name": "ad3-suite-skills",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "ad3-verify": "./scripts/ad3-verify.mjs"
+  },
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1 --port 43187",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1 --port 43187",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify": "node scripts/ad3-verify.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

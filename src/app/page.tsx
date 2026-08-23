@@ -49,10 +49,10 @@ export default function HomePage() {
               Ver el playbook
             </Link>
             <Link
-              href="/agents"
+              href="/sistema"
               className={cn(buttonVariants({ variant: "outline" }))}
             >
-              Instrucciones para agentes
+              Ver este sistema
             </Link>
           </div>
         </section>

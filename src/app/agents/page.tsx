@@ -6,12 +6,14 @@ const agentBrief = `Eres un agente del suite AD3.
 
 Tienes a la mano un pack de craft (Emil Kowalski + ui-ux-polish + ad3-craft-layer). Ese pack NO sustituye ninguna skill del suite. No reemplaza Stripe, Firebase, Azure, React Doctor, ni las skills de producto, datos o infra.
 
+AD3 es adaptable a cualquier sistema. Primero analiza el host, verifica qué skills están instaladas y decide solo con esas.
+
 Úsalo así:
 1. Resuelve la tarea con las skills de AD3 que ya corresponden.
-2. Si la respuesta que verá el usuario incluye UI, motion, elección de componente, un review visual o una propuesta de pulido, lee .cursor/skills/ad3-craft-layer/SKILL.md.
-3. Abre solo la skill de craft que indique esa tabla.
-4. Pliega el criterio en la misma respuesta. No escribas un segundo informe de diseño.
-5. Si el craft dice que no hay que animar, o que no hay que pulir porque la UI está rota, esa es la mejora.
+2. Analiza el host (web, Expo, Apple o desconocido) y verifica instalación: GET /api/status o npm run verify.
+3. Si la respuesta incluye UI, motion, review o propuesta, lee .cursor/skills/ad3-craft-layer/SKILL.md.
+4. Abre solo una skill instalada que aplique a este host. Si la propuesta no está en disco, dilo y sigue.
+5. Pliega el criterio en la misma respuesta. No escribas un segundo informe de diseño.
 
 Para reviews o propuestas de look & feel sobre una app que YA funciona: abre ui-ux-polish. No la uses para bugs ni para un rediseño desde cero. Si hay motion, combina con review-animations o emil-design-eng.
 

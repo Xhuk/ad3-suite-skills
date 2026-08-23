@@ -11,6 +11,17 @@ AD3 keeps ownership of the task, the domain answer, and every suite skill it alr
 
 Do not drop, skip, or rewrite another skill because this one is present. If Stripe, Firebase, Azure, React Doctor, or any other suite skill is relevant, keep using it. Then, if the answer the user will see involves interface or motion, load the matching craft skill and raise the quality of *that part* of the same answer.
 
+## Adapt to any host
+
+AD3 is not a Next-only, Expo-only, or Apple-only product. Before opening a craft skill, **analyze, verify, decide**:
+
+1. **Analyze the host.** Detect web, Expo / React Native, Apple / Swift, or unknown. Unknown is still usable.
+2. **Verify installation.** A skill is available only if `SKILL.md` exists in a known directory (`.cursor/skills`, `.agents/skills`, `.claude/skills`, `.codex/skills`, or `skills`). Use `GET /api/status` or `npm run verify`.
+3. **Decide with what is present.** If a proposed skill is missing, say so. Do not invent it. Continue with installed skills that apply to this host.
+4. **Skip the wrong host.** `write-swift` on a Next app, or `animate` on a Swift package, is a skip — not a failure of AD3.
+
+Other developers can drop this pack into any repo. AD3 must not assume this catalog app is the host.
+
 ## Hard rules
 
 1. **Complement, never substitute.** A craft skill can change easing, duration, component choice, or copy about motion. It cannot become the only skill on the job.
@@ -18,6 +29,7 @@ Do not drop, skip, or rewrite another skill because this one is present. If Stri
 3. **Load the smallest relevant skill.** Read this file first. Then read one (sometimes two) craft skills. Do not dump the whole pack into context.
 4. **Refuse cheap motion.** If the craft skill says "do not animate," that is the improvement. Say so in the AD3 response.
 5. **Keep suite voice.** AD3 still answers. These skills supply judgment, tables, and vetoes — not a new persona that takes over the chat.
+6. **Never assume a skill is installed.** Verify the file. If it is missing, report it and continue.
 
 ## When to open a craft skill
 

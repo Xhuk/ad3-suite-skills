@@ -1,0 +1,29 @@
+{
+  "suite": "AD3",
+  "version": "0.1.0",
+  "role": "complementary-craft-layer",
+  "replaces": [],
+  "searchPaths": [
+    ".cursor/skills",
+    ".agents/skills",
+    ".claude/skills",
+    ".codex/skills",
+    "skills"
+  ],
+  "skills": [
+    { "slug": "ad3-craft-layer", "hosts": ["any"], "required": true },
+    { "slug": "emil-design-eng", "hosts": ["web", "expo"] },
+    { "slug": "animate", "hosts": ["web"] },
+    { "slug": "animate-expo", "hosts": ["expo"] },
+    { "slug": "review-animations", "hosts": ["web", "expo"] },
+    { "slug": "improve-animations", "hosts": ["web", "expo"] },
+    { "slug": "find-animation-opportunities", "hosts": ["web", "expo"] },
+    { "slug": "animation-vocabulary", "hosts": ["any"] },
+    { "slug": "apple-design", "hosts": ["web", "expo", "apple"] },
+    { "slug": "pick-ui-library", "hosts": ["web"] },
+    { "slug": "ask-sonner", "hosts": ["web"] },
+    { "slug": "prototype", "hosts": ["web"] },
+    { "slug": "write-swift", "hosts": ["apple"] },
+    { "slug": "ui-ux-polish", "hosts": ["web"] }
+  ]
+}

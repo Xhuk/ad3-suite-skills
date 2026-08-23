@@ -22,10 +22,28 @@ La app queda en [http://127.0.0.1:43187](http://127.0.0.1:43187).
 
 - `/` catálogo
 - `/playbook` qué skill abrir según la respuesta
+- `/sistema` AD3 analiza el host, verifica skills y decide
 - `/agents` brief para pegar en un agente
 - `GET /api/skills` catálogo JSON
 - `GET /api/skills/:slug` markdown completo
 - `GET /api/playbook` tabla de situaciones
+- `GET /api/status?propose=ui-ux-polish,animate` verificación
+
+```bash
+npm run verify
+node scripts/ad3-verify.mjs /ruta/de/otro/repo --propose ui-ux-polish,animate
+```
+
+## Publicar el suite a otros desarrolladores
+
+AD3 no exige un stack. En el repo destino:
+
+1. Copia `.cursor/skills/` (o el subconjunto que aplique).
+2. Copia `skills/manifest.json` y `scripts/ad3-verify.mjs`.
+3. Corre `node scripts/ad3-verify.mjs .` para ver qué está instalado y qué aplica a *ese* sistema.
+4. El agente lee `ad3-craft-layer` y solo abre skills cuyo `SKILL.md` exista.
+
+Si una skill propuesta no está instalada, AD3 lo reporta y continúa. No inventa el archivo.
 
 ## Cómo debe usarlas un agente de AD3
 
