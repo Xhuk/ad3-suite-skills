@@ -11,6 +11,7 @@ AD3 no pide un stack único. Estos son los requisitos según lo que quieras hace
   - Codex (`.codex/skills`)
   - Cualquier otro que busque `skills/<nombre>/SKILL.md`
 - Un repo de trabajo. Puede ser web, Expo, Swift, o vacío.
+- [ESCENARIOS.md](./ESCENARIOS.md) si el agente duda qué skill abrir.
 
 No se necesita:
 

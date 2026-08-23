@@ -43,14 +43,20 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-2">
             <Link
-              href="/playbook"
+              href="/escenarios"
               className={cn(buttonVariants({ variant: "default" }))}
+            >
+              Cuándo abrir cada skill
+            </Link>
+            <Link
+              href="/playbook"
+              className={cn(buttonVariants({ variant: "outline" }))}
             >
               Ver el playbook
             </Link>
             <Link
               href="/sistema"
-              className={cn(buttonVariants({ variant: "outline" }))}
+              className={cn(buttonVariants({ variant: "ghost" }))}
             >
               Ver este sistema
             </Link>

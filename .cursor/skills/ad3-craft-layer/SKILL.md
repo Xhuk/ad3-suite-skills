@@ -13,6 +13,20 @@ The AD3 suite itself is seven linked masters:
 
 Open this file only when a master (`ad3-build`, `ad3-review`, or `ad3-spec`) needs craft. Do not start a task here.
 
+## When to open / when not
+
+**Open when**
+
+- You are in build or review and do not know which Emil skill to open.
+- There is UI/motion and you need the craft index, not the master chain.
+
+**Do not open when**
+
+- Starting an AD3 task → `ad3-using`, never this file.
+- The host has no UI (script, pure API) and nobody asked for craft.
+
+Concrete examples for every craft skill: `ESCENARIOS.md`.
+
 AD3 keeps ownership of the task. This file is a **layer**, not a replacement.
 
 AD3 keeps ownership of the task, the domain answer, and every suite skill it already has (payments, data, infra, React review, product logic, whatever the job actually is). The files in this pack exist so AD3 can **reach for craft** while it writes its own response.

@@ -6,7 +6,9 @@ import { SiteHeader } from "@/components/site-header";
 import { SkillMarkdown } from "@/lib/markdown";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { SkillScenariosLists } from "@/components/skill-scenarios";
 import { kindLabel, kindTone, originLabel } from "@/lib/catalog";
+import { scenariosFor } from "@/lib/scenarios";
 import { listSkillSlugs, loadSkill } from "@/lib/skills";
 import { cn } from "@/lib/utils";
 
@@ -42,12 +44,19 @@ export default async function SkillPage({ params }: SkillPageProps) {
   const { meta, files } = skill;
   const main = files.find((file) => file.name === "SKILL.md");
   const extras = files.filter((file) => file.name !== "SKILL.md");
+  const examples = scenariosFor(meta.slug);
   const brief = [
     `Skill: ${meta.name}`,
     `Origen: ${originLabel(meta.origin)}`,
     `Cuándo: ${meta.when}`,
     `Qué mejora en la respuesta: ${meta.improves}`,
     `No sustituye: ${meta.doesNotReplace}`,
+    "",
+    "Ábrela cuando:",
+    ...examples.use.map((item) => `- ${item}`),
+    "",
+    "No la abras cuando:",
+    ...examples.skip.map((item) => `- ${item}`),
     "",
     "Úsala para mejorar la respuesta que AD3 ya iba a dar. No reemplaza otras skills del suite.",
   ].join("\n");
@@ -91,9 +100,12 @@ export default async function SkillPage({ params }: SkillPageProps) {
           </div>
           <div className="sm:col-span-2">
             <p className="text-xs tracking-wide text-muted-foreground uppercase">
-              Ábrela cuando
+              En una frase
             </p>
             <p className="mt-2 text-sm leading-6">{meta.when}</p>
+          </div>
+          <div className="sm:col-span-2">
+            <SkillScenariosLists data={examples} />
           </div>
           <div className="flex flex-wrap gap-2 sm:col-span-2">
             <CopyButton text={brief} label="Copiar nota para el agente" />

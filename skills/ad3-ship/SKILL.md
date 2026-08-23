@@ -9,6 +9,19 @@ Close the loop. Verify. Do not claim done on hope.
 
 **Prev:** `ad3-review` | `ad3-spec` | `ad3-recon` · **Next:** stop, or `ad3-using` for a new task
 
+## When to open / when not
+
+**Open when**
+
+- Review approved and you must close with evidence.
+- They only asked “are the seven masters installed?”
+- You must list which skills ran and which were skipped.
+
+**Do not open when**
+
+- A large change still has no review verdict.
+- You want to start another task — go back to `ad3-using`.
+
 ## Verify
 
 1. The host still matches recon.

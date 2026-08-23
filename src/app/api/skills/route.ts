@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { catalog, playbook } from "@/lib/catalog";
+import { scenarios } from "@/lib/scenarios";
 
 export function GET() {
   return NextResponse.json({
@@ -23,7 +24,10 @@ export function GET() {
         },
       ],
     },
-    skills: catalog,
+    skills: catalog.map((skill) => ({
+      ...skill,
+      scenarios: scenarios[skill.slug] ?? { use: [], skip: [] },
+    })),
     playbookCount: playbook.length,
   });
 }

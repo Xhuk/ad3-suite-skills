@@ -9,6 +9,19 @@ Analyze, then decide. Do not start spec or build until this file has a verdict.
 
 **Prev:** `ad3-using` · **Next:** `ad3-spec` | `ad3-plan` | `ad3-review` | `ad3-ship`
 
+## When to open / when not
+
+**Open when**
+
+- The user said “use ui-ux-polish and write-swift” and you must check the files exist.
+- It is unclear whether the repo is Next, Expo, or Swift.
+- Before any spec or code: which skills are `ready`?
+
+**Do not open when**
+
+- Host and skills were already verified in this chat.
+- You want to implement now — that is `ad3-build`, after recon.
+
 ## Analyze
 
 1. **Host.** Web (Next, Vite, React), Expo / React Native, Apple / Swift, or unknown. Unknown is still usable.

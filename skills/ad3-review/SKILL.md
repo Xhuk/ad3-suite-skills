@@ -9,6 +9,19 @@ Review the work AD3 (or another agent) just did — or a PR the user pointed at.
 
 **Prev:** `ad3-build` or `ad3-recon` · **Next:** `ad3-ship` | `ad3-build` (if the review rejects)
 
+## When to open / when not
+
+**Open when**
+
+- “Review this PR”, or the diff `ad3-build` just wrote.
+- The UI already works and they want a polish pass (`ui-ux-polish` if `ready`).
+- Motion needs a critique: ease-in, `scale(0)`, `transition: all`.
+
+**Do not open when**
+
+- The app is broken or has no base styles — do not open `ui-ux-polish`; send back to spec/build.
+- There is still no diff and no proposal → recon + spec.
+
 ## Keep doing
 
 Logic, tests, security, product. Those are host reviews. This master does not replace them.

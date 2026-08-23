@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { scenariosFor } from "@/lib/scenarios";
 import { loadSkill } from "@/lib/skills";
 
 type RouteContext = {
@@ -25,6 +26,7 @@ export async function GET(_request: Request, context: RouteContext) {
     role: "complementary-craft-layer",
     replaces: [],
     meta: skill.meta,
+    scenarios: scenariosFor(skill.meta.slug),
     files: skill.files,
   });
 }

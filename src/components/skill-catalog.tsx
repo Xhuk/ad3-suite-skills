@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { SkillScenariosBlock } from "@/components/skill-scenarios";
 import {
   catalog,
   kindLabel,
@@ -15,6 +16,7 @@ import {
   type CatalogSkill,
   type SkillKind,
 } from "@/lib/catalog";
+import { scenariosFor } from "@/lib/scenarios";
 import { cn } from "@/lib/utils";
 
 const allFilter = "all" as const;
@@ -22,6 +24,7 @@ const allFilter = "all" as const;
 type KindFilter = typeof allFilter | SkillKind;
 
 function matchesQuery(skill: CatalogSkill, query: string): boolean {
+  const extra = scenariosFor(skill.slug);
   const haystack = [
     skill.name,
     skill.summary,
@@ -29,6 +32,8 @@ function matchesQuery(skill: CatalogSkill, query: string): boolean {
     skill.when,
     skill.doesNotReplace,
     kindLabel[skill.kind],
+    ...extra.use,
+    ...extra.skip,
   ]
     .join(" ")
     .toLowerCase();
@@ -59,7 +64,7 @@ export function SkillCatalog() {
         <Input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Buscar por oficio, motion, Sonner, Swift…"
+          placeholder="Buscar por escenario: toast, PR, Expo, rediseño…"
           aria-label="Buscar skills"
           className="sm:max-w-sm"
         />
@@ -165,6 +170,7 @@ function SkillCard({ skill }: { skill: CatalogSkill }) {
             <span className="text-muted-foreground">Mejora la respuesta: </span>
             {skill.improves}
           </p>
+          <SkillScenariosBlock slug={skill.slug} compact />
           <p className="text-muted-foreground">
             No sustituye: {skill.doesNotReplace}
           </p>

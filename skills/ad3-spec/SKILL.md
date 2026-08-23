@@ -9,6 +9,20 @@ Turn recon into a written target. This is a **proposal or spec**, not the implem
 
 **Prev:** `ad3-recon` · **Next:** `ad3-plan` | `ad3-ship`
 
+## When to open / when not
+
+**Open when**
+
+- “Propose how the dashboard should look” and there is no code yet.
+- Scope must be in/out before planning a feature.
+- Look-and-feel proposal on an app that already works.
+
+**Do not open when**
+
+- The spec already exists and is agreed → `ad3-plan`.
+- They only asked for a PR review → `ad3-review`.
+- They asked to polish a broken UI with `ui-ux-polish` — reject polish; this spec (or build) owns the rebuild.
+
 ## Output
 
 A short spec that another AD3 master can execute:

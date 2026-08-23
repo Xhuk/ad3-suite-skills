@@ -9,6 +9,19 @@ Sequence the work. Do not write production code here.
 
 **Prev:** `ad3-spec` or `ad3-recon` · **Next:** `ad3-build` | `ad3-ship`
 
+## When to open / when not
+
+**Open when**
+
+- A spec exists and must be split into steps with done-when.
+- Several skills are `ready` and you must say which run in build vs review.
+- The user asked “give me the plan, do not implement yet”.
+
+**Do not open when**
+
+- There is no spec or written goal → `ad3-spec` first.
+- The plan is done and they asked for code → `ad3-build`.
+
 ## Rules
 
 1. Every step must be executable on the **detected host**.

@@ -9,6 +9,20 @@ Implement the plan. Stay on the host. Fold craft into the same change.
 
 **Prev:** `ad3-plan` · **Next:** `ad3-review`
 
+## When to open / when not
+
+**Open when**
+
+- The plan is ready: write the component or the endpoint.
+- A review rejected the change and the fixes must land.
+- A web modal needs motion: this master + `animate` if `ready`.
+
+**Do not open when**
+
+- There is still no plan → `ad3-plan`.
+- They only asked for a visual opinion → `ad3-review` or `ad3-spec`.
+- You are tempted to open `ui-ux-polish` here. Do not. Polish waits for review.
+
 ## Rules
 
 1. Follow the plan. Do not reopen spec unless the host made the plan impossible.

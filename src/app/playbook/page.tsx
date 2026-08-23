@@ -26,7 +26,15 @@ export default function PlaybookPage() {
           <p className="text-base leading-7 text-muted-foreground">
             Cada fila deja intacto el trabajo de dominio del suite y nombra
             los archivos que el agente puede abrir para pulir UI, motion o
-            elección de componente.
+            elección de componente. Si no estás seguro de{" "}
+            <em>cuál</em> skill abrir, ve a{" "}
+            <Link
+              href="/escenarios"
+              className="text-foreground underline decoration-foreground/25 underline-offset-4"
+            >
+              escenarios
+            </Link>
+            : ahí está el “abre / no abras” de cada una.
           </p>
         </section>
 

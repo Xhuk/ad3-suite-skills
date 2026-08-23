@@ -97,6 +97,25 @@ Rutas que AD3 busca: `.cursor/skills`, `.agents/skills`, `.claude/skills`, `.cod
 | `write-swift` | apple | Swift 6 |
 | `ui-ux-polish` | web | Review / propuesta de pulido |
 
+## Escenarios (para no confundir skills)
+
+Cada skill tiene ejemplos de **cuándo abrirla** y **cuándo no**. Léelos antes de cargar un segundo archivo.
+
+- Documento: [ESCENARIOS.md](./ESCENARIOS.md)
+- Catálogo: `/escenarios` (con la app local)
+- API: `GET /api/escenarios`
+
+Confusiones típicas:
+
+| Pensabas abrir | Abre en realidad |
+| --- | --- |
+| `ad3-craft-layer` al empezar | `ad3-using` |
+| `ui-ux-polish` en una UI rota | `ad3-spec` / `ad3-build` |
+| `animate` en Expo | `animate-expo` |
+| `review-animations` para toda la app | `improve-animations` |
+| `ask-sonner` sin haber elegido librería | `pick-ui-library` |
+| `write-swift` para un sheet web | `apple-design` |
+
 ## Cómo debe usarlo un agente
 
 1. Resuelve la tarea con las skills del **host** (producto, pagos, datos).
@@ -116,8 +135,9 @@ npm run dev
 ```
 
 - Catálogo: http://127.0.0.1:43187
+- Escenarios (abre / no abras): http://127.0.0.1:43187/escenarios
 - Sistema (análisis + verificación): http://127.0.0.1:43187/sistema
-- API: `GET /api/skills`, `GET /api/status?propose=ui-ux-polish,animate`
+- API: `GET /api/skills`, `GET /api/escenarios`, `GET /api/status?propose=ui-ux-polish,animate`
 
 ## Publicar en GitHub (repo público)
 

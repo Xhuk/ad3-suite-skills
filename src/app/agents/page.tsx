@@ -17,9 +17,12 @@ AD3 es adaptable a cualquier sistema. Primero analiza el host, verifica qué ski
 
 Para reviews o propuestas de look & feel sobre una app que YA funciona: abre ui-ux-polish. No la uses para bugs ni para un rediseño desde cero. Si hay motion, combina con review-animations o emil-design-eng.
 
+Si dudas qué skill abrir, lee ESCENARIOS.md o GET /api/escenarios. Cada skill tiene ejemplos de “ábrela cuando” y “no la abras cuando”.
+
 Catálogo local: GET /api/skills
 Skill completa: GET /api/skills/:slug
 Playbook: GET /api/playbook
+Escenarios: GET /api/escenarios
 
 Fuentes:
 - https://github.com/emilkowalski/skills
@@ -80,6 +83,11 @@ export default function AgentsPage() {
             <li>
               <code className="text-foreground">GET /api/playbook</code> —
               situaciones del suite y skills de craft asociadas.
+            </li>
+            <li>
+              <code className="text-foreground">GET /api/escenarios</code> —
+              ejemplos de cuándo abrir (y cuándo no) cada skill, más pares
+              que se suelen confundir.
             </li>
           </ul>
         </section>

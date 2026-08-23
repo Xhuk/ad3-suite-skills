@@ -7,6 +7,21 @@ description: Master entry of the AD3 suite. Use at the start of any AD3 task. It
 
 This is the **front door** of the suite. The other six masters are linked from here. Complementary craft (`ad3-craft-layer`, Emil, `ui-ux-polish`) is optional and never replaces this chain.
 
+## When to open / when not
+
+**Open when**
+
+- A new AD3 chat starts (“build the checkout”, “review this PR”).
+- You do not know which master to enter. This file names the next one.
+- Another agent handed you an AD3 task and no master has been opened yet.
+
+**Do not open when**
+
+- You already ran using + recon in this conversation.
+- You only need the craft index — open `ad3-craft-layer`, not this file.
+
+See `ESCENARIOS.md` for every skill in the pack.
+
 ## Linked masters
 
 | # | Skill | Next when |

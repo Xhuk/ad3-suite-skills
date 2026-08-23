@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { playbook } from "@/lib/catalog";
+import { confusionPairs } from "@/lib/scenarios";
 
 export function GET() {
   return NextResponse.json({
@@ -8,5 +9,6 @@ export function GET() {
     role: "complementary-craft-layer",
     replaces: [],
     playbook,
+    confusionPairs,
   });
 }

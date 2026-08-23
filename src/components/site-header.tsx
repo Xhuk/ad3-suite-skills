@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Catálogo" },
+  { href: "/escenarios", label: "Escenarios" },
   { href: "/playbook", label: "Playbook" },
   { href: "/sistema", label: "Sistema" },
   { href: "/agents", label: "Para agentes" },
@@ -18,7 +19,7 @@ export function SiteHeader({ active }: { active: (typeof links)[number]["href"] 
           <span className="font-heading text-lg tracking-tight">AD3</span>
           <span className="text-xs text-muted-foreground">Capa de oficio</span>
         </Link>
-        <nav className="flex items-center gap-1">
+        <nav className="-mx-1 flex items-center gap-1 overflow-x-auto">
           {links.map((link) => {
             const isActive = link.href === active;
             return (
