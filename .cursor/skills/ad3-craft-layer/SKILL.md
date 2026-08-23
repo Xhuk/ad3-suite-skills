@@ -5,7 +5,15 @@ description: Complementary craft layer for the AD3 suite. Does not replace any A
 
 # AD3 Craft Layer
 
-This skill is a **layer**, not a replacement.
+This skill is a **craft satellite**, not a master and not a replacement.
+
+The AD3 suite itself is seven linked masters:
+
+`ad3-using` → `ad3-recon` → `ad3-spec` → `ad3-plan` → `ad3-build` → `ad3-review` → `ad3-ship`
+
+Open this file only when a master (`ad3-build`, `ad3-review`, or `ad3-spec`) needs craft. Do not start a task here.
+
+AD3 keeps ownership of the task. This file is a **layer**, not a replacement.
 
 AD3 keeps ownership of the task, the domain answer, and every suite skill it already has (payments, data, infra, React review, product logic, whatever the job actually is). The files in this pack exist so AD3 can **reach for craft** while it writes its own response.
 
