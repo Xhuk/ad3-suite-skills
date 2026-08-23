@@ -21,3 +21,7 @@ jobs:
             echo "Expected a missing proposed skill to fail"
             exit 1
           fi
+      - name: Compile Typst editorial samples
+        run: |
+          bash scripts/install-typst.sh
+          TYPST_BIN="$PWD/bin/typst" npm run pdf

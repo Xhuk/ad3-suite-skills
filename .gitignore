@@ -42,3 +42,6 @@ next-env.d.ts
 
 # local agent scratch
 /agent-tools
+
+# Typst compiler downloaded by scripts/install-typst.sh
+/bin/

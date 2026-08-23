@@ -33,6 +33,7 @@ Regla corta:
 | `apple-design` | `write-swift` | El host es Swift de lógica. |
 | `prototype` | `ad3-build` | Ya eligieron dirección. |
 | `emil-design-eng` | `animate` | Pidieron una animación concreta. |
+| `ui-ux-polish` | `ad3-typst` | El entregable es un PDF, no el pulido de una UI. |
 
 ## Maestras (obligatorias)
 
@@ -297,5 +298,20 @@ No la abras cuando:
 
 - La UI está rota, sin design system, o piden un rediseño desde cero.
 - Es un bug o un endpoint: eso no es polish.
+- El entregable es un PDF de propuesta o contrato → `ad3-typst`.
+
+### `ad3-typst` — PDF editorial
+
+Ábrela cuando:
+
+- “Ármame la propuesta comercial / el contrato en PDF”.
+- El agente iba a importar ReportLab, FPDF o un preámbulo LaTeX.
+- Hay que desglosar MXN + IVA federal y dejar bloques de firma.
+
+No la abras cuando:
+
+- El trabajo es una UI web o motion → oficio de Emil / polish.
+- Pidieron asesoría legal, no el diseño del documento.
+- Arrancar la tarea AD3 → `ad3-using`, no esta skill.
 
 Las copias upstream de Emil y Flywheel en `vendor/` no se modifican. Los escenarios de esas skills viven aquí, en el catálogo y en la API.

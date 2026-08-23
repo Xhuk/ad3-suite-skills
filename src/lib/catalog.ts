@@ -11,6 +11,7 @@ export const skillKinds = [
   "library",
   "explore",
   "native",
+  "document",
 ] as const;
 
 export type SkillKind = (typeof skillKinds)[number];
@@ -325,6 +326,20 @@ export const catalog: CatalogSkill[] = [
       "Review de bugs, producto, motion de Emil ni el resto del suite. Es el protocolo de pulido, no el dueño de la tarea.",
     invocation: "auto",
   },
+  {
+    slug: "ad3-typst",
+    name: "ad3-typst",
+    kind: "document",
+    origin: "ad3",
+    summary:
+      "PDFs editoriales en Typst: propuesta comercial y contrato. Prohibido ReportLab, FPDF y LaTeX.",
+    improves:
+      "El documento que AD3 entrega: letter, Inter, tablas con IVA y firmas en grid, compilado por el CLI oficial.",
+    when: "Hay que generar una propuesta, un contrato u otro PDF de estándar editorial.",
+    doesNotReplace:
+      "Asesoría legal o fiscal, ni las maestras. Es oficio de documento, no la puerta del suite.",
+    invocation: "auto",
+  },
 ];
 
 export const playbook: PlaybookEntry[] = [
@@ -418,6 +433,13 @@ export const playbook: PlaybookEntry[] = [
     reachFor: ["ad3-craft-layer", "prototype"],
     why: "Variantes distintas de verdad, para que el suite elija con los ojos, no de memoria.",
   },
+  {
+    id: "editorial-pdf",
+    situation: "AD3 debe entregar una propuesta o un contrato en PDF",
+    keepDoing: "Alcance, precio y (si aplica) revisión legal del host",
+    reachFor: ["ad3-typst"],
+    why: "Typst da auto-layout editorial. ReportLab, FPDF y LaTeX son un veto, no un fallback.",
+  },
 ];
 
 export const kindLabel: Record<SkillKind, string> = {
@@ -433,6 +455,7 @@ export const kindLabel: Record<SkillKind, string> = {
   library: "Librerías",
   explore: "Explorar",
   native: "Nativo",
+  document: "Documento",
 };
 
 export function originLabel(origin: SkillOrigin): string {
@@ -480,6 +503,7 @@ export function kindTone(kind: SkillKind): "default" | "secondary" | "outline" {
     case "philosophy":
     case "design":
     case "polish":
+    case "document":
       return "secondary";
     case "build":
     case "review":

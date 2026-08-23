@@ -1,6 +1,6 @@
 {
   "suite": "AD3",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "role": "linked-master-suite",
   "replaces": [],
   "searchPaths": [
@@ -41,6 +41,7 @@
     { "slug": "ask-sonner", "hosts": ["web"] },
     { "slug": "prototype", "hosts": ["web"] },
     { "slug": "write-swift", "hosts": ["apple"] },
-    { "slug": "ui-ux-polish", "hosts": ["web"] }
+    { "slug": "ui-ux-polish", "hosts": ["web"] },
+    { "slug": "ad3-typst", "hosts": ["any"] }
   ]
 }

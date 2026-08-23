@@ -55,10 +55,10 @@ export default function HomePage() {
               Ver el playbook
             </Link>
             <Link
-              href="/sistema"
+              href="/documentos"
               className={cn(buttonVariants({ variant: "ghost" }))}
             >
-              Ver este sistema
+              Ver PDFs Typst
             </Link>
           </div>
         </section>

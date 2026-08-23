@@ -17,3 +17,12 @@ Este pack redistribuye skills de oficio para que AD3 las tenga a la mano. No son
 - Archivos: `skills/ui-ux-polish`
 
 Al redistribuir esos archivos, incluye el aviso de licencia **sin modificar**.
+
+## Inter (tipografía de las plantillas Typst)
+
+- Origen: https://github.com/rsms/inter
+- Licencia: SIL Open Font License 1.1
+- Copia local: `typst/fonts/Inter-OFL.txt`
+- Archivos: `typst/fonts/Inter-*.ttf`
+
+Typst (compilador) es de [typst/typst](https://github.com/typst/typst) (Apache-2.0). Este pack no lo redistribuye: se instala con `./scripts/install-typst.sh`.

@@ -55,6 +55,15 @@ npm run verify
 npm run lint
 ```
 
+## Para compilar los PDFs editoriales
+
+- El CLI oficial de Typst (no ReportLab, FPDF ni LaTeX): `./scripts/install-typst.sh`
+- Las fuentes en `typst/fonts/` (Inter, ya van en el repo)
+
+```bash
+npm run pdf
+```
+
 ## Según el host del proyecto destino
 
 AD3 **detecta** el sistema. No tienes que instalar todo el pack.

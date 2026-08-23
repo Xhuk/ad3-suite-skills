@@ -96,6 +96,11 @@ export const confusionPairs: ConfusionPair[] = [
     actual: "animate",
     why: "Pidieron UNA animación concreta, no la filosofía de oficio.",
   },
+  {
+    mistaken: "ui-ux-polish",
+    actual: "ad3-typst",
+    why: "El entregable es un PDF editorial, no el pulido de una UI que ya corre.",
+  },
 ];
 
 
@@ -316,6 +321,19 @@ export const scenarios: Record<string, SkillScenarios> = {
     skip: [
       "La UI está rota, sin design system, o piden un rediseño desde cero.",
       "Es un bug o un endpoint: eso no es polish.",
+      "El entregable es un PDF de propuesta o contrato → ad3-typst.",
+    ],
+  },
+  "ad3-typst": {
+    use: [
+      "“Ármame la propuesta comercial / el contrato en PDF”.",
+      "El agente iba a importar ReportLab, FPDF o un preámbulo LaTeX.",
+      "Hay que desglosar MXN + IVA federal y dejar bloques de firma.",
+    ],
+    skip: [
+      "El trabajo es una UI web o motion → oficio de Emil / polish.",
+      "Pidieron asesoría legal, no el diseño del documento.",
+      "Arrancar la tarea AD3 → ad3-using, no esta skill.",
     ],
   },
 };

@@ -8,6 +8,7 @@ const links = [
   { href: "/escenarios", label: "Escenarios" },
   { href: "/playbook", label: "Playbook" },
   { href: "/sistema", label: "Sistema" },
+  { href: "/documentos", label: "Documentos" },
   { href: "/agents", label: "Para agentes" },
 ] as const;
 

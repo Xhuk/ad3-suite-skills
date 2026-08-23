@@ -25,7 +25,9 @@
     "build": "next build",
     "start": "next start --hostname 127.0.0.1 --port 43187",
     "lint": "eslint",
-    "verify": "node scripts/ad3-verify.mjs"
+    "verify": "node scripts/ad3-verify.mjs",
+    "pdf": "node scripts/check-typst.mjs",
+    "typst:install": "bash scripts/install-typst.sh"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

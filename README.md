@@ -96,6 +96,7 @@ Rutas que AD3 busca: `.cursor/skills`, `.agents/skills`, `.claude/skills`, `.cod
 | `prototype` | web | Varias variantes de UI |
 | `write-swift` | apple | Swift 6 |
 | `ui-ux-polish` | web | Review / propuesta de pulido |
+| `ad3-typst` | cualquiera | PDF editorial (Typst). Nunca ReportLab/FPDF/LaTeX |
 
 ## Escenarios (para no confundir skills)
 
@@ -115,6 +116,23 @@ Confusiones típicas:
 | `review-animations` para toda la app | `improve-animations` |
 | `ask-sonner` sin haber elegido librería | `pick-ui-library` |
 | `write-swift` para un sheet web | `apple-design` |
+| `ui-ux-polish` para un PDF | `ad3-typst` |
+
+## Documentos PDF (Typst)
+
+No uses ReportLab, FPDF ni LaTeX. Las plantillas editoriales están en `typst/`.
+
+```bash
+./scripts/install-typst.sh
+npm run pdf
+```
+
+- Propuesta: `typst/propuesta.typ` → `public/documentos/propuesta-comercial.pdf`
+- Contrato: `typst/contrato.typ` → `public/documentos/contrato-servicios.pdf`
+- Skill del agente: `ad3-typst`
+- Preview local: http://127.0.0.1:43187/documentos
+
+Página letter, márgenes 2 cm × 2.5 cm, Inter, slate `#0F172A`, acento `#2563EB`. Si no hay país, mercado **México federal** (MXN, IVA 16 %, sin ciudad). Detalle en [typst/README.md](./typst/README.md). MCP opcional (Docker `typst-mcp`); el CLI oficial basta.
 
 ## Cómo debe usarlo un agente
 
@@ -136,6 +154,7 @@ npm run dev
 
 - Catálogo: http://127.0.0.1:43187
 - Escenarios (abre / no abras): http://127.0.0.1:43187/escenarios
+- Documentos Typst: http://127.0.0.1:43187/documentos
 - Sistema (análisis + verificación): http://127.0.0.1:43187/sistema
 - API: `GET /api/skills`, `GET /api/escenarios`, `GET /api/status?propose=ui-ux-polish,animate`
 
