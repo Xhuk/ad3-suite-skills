@@ -4,21 +4,18 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/", label: "Catálogo" },
-  { href: "/escenarios", label: "Escenarios" },
-  { href: "/playbook", label: "Playbook" },
-  { href: "/sistema", label: "Sistema" },
-  { href: "/documentos", label: "Documentos" },
-  { href: "/agents", label: "Para agentes" },
+  { href: "/", label: "Generar" },
+  { href: "/documentos", label: "Ejemplos" },
+  { href: "/catalogo", label: "Suite" },
 ] as const;
 
-export function SiteHeader({ active }: { active: (typeof links)[number]["href"] }) {
+export function SiteHeader({ active }: { active?: string }) {
   return (
     <header className="sticky top-0 z-20 border-b border-foreground/6 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-baseline gap-2">
           <span className="font-heading text-lg tracking-tight">AD3</span>
-          <span className="text-xs text-muted-foreground">Capa de oficio</span>
+          <span className="text-xs text-muted-foreground">PDFs</span>
         </Link>
         <nav className="-mx-1 flex items-center gap-1 overflow-x-auto">
           {links.map((link) => {

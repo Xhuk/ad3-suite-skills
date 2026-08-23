@@ -24,9 +24,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "AD3 · Capa de oficio",
+  title: "AD3 · Generar PDF",
   description:
-    "Skills de oficio a la mano del suite AD3 — Emil Kowalski y ui-ux-polish. No sustituyen a ninguna. Mejoran reviews, propuestas y la respuesta que AD3 ya iba a dar.",
+    "Genera propuestas, contratos y notas en PDF con diseño editorial. Typst, no ReportLab.",
 };
 
 export default function RootLayout({

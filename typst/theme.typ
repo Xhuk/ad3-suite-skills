@@ -83,14 +83,14 @@
   body
 }
 
-#let letterhead(kind: none, folio: none, issued: none, issuer: none, recipient: none) = {
+#let letterhead(kind: none, folio: none, issued: none, issuer: none, recipient: none, brand: "AD3") = {
   grid(
     columns: (1fr, auto),
     align: (left + bottom, right + bottom),
     {
-      text(size: 11pt, weight: "bold", fill: slate, tracking: 0.08em, "AD3")
+      text(size: 11pt, weight: "bold", fill: slate, tracking: 0.08em, brand)
       v(2pt)
-      text(size: 8pt, fill: muted, "Documentos de estándar editorial")
+      text(size: 8pt, fill: muted, "Documento editorial")
     },
     {
       text(size: 9pt, fill: muted, kind)

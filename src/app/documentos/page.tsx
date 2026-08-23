@@ -43,18 +43,14 @@ export default function DocumentosPage() {
             PDFs con auto-layout. La fuente es `.typ`, no un canvas rígido.
           </h1>
           <p className="text-base leading-7 text-muted-foreground">
-            Las plantillas viven en{" "}
-            <code className="font-mono text-[13px] text-foreground">typst/</code>{" "}
-            y se compilán con el CLI oficial. Letter, márgenes 2 cm × 2.5 cm,
-            Inter, slate y azul royal. Si no hay país, el mercado es México
-            federal. Abre{" "}
+            Ejemplos fijos. Para armar el tuyo, ve a{" "}
             <Link
-              href="/skills/ad3-typst"
+              href="/"
               className="text-foreground underline decoration-foreground/25 underline-offset-4"
             >
-              ad3-typst
-            </Link>{" "}
-            cuando un agente vaya a generar el documento.
+              Generar
+            </Link>
+            . Letter, Inter, MXN, IVA federal. Sin ReportLab.
           </p>
           <p className="font-mono text-[13px] text-foreground/80">
             ./scripts/install-typst.sh && npm run pdf

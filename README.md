@@ -1,6 +1,20 @@
-# AD3 Suite Skills
+# AD3 · PDFs editoriales
 
-Pack público de skills para agentes. **No sustituye** Stripe, datos, infra ni ninguna skill del host. AD3 las tiene a la mano para mejorar reviews, propuestas y respuestas de UI.
+Si solo quieres un PDF con buen diseño: no uses ReportLab, FPDF ni LaTeX.
+
+```bash
+./scripts/install-typst.sh
+npm install
+npm run dev
+```
+
+Abre http://127.0.0.1:43187 — eliges propuesta, contrato o nota, editas y descargas.
+
+API: `POST /api/pdf` con el JSON del formulario. `GET /api/pdf?kind=propuesta` devuelve el ejemplo.
+
+---
+
+Pack de skills para agentes (opcional). **No sustituye** Stripe, datos, infra ni ninguna skill del host.
 
 Instalación en cualquier repo:
 

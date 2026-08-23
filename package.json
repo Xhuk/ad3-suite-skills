@@ -27,6 +27,7 @@
     "lint": "eslint",
     "verify": "node scripts/ad3-verify.mjs",
     "pdf": "node scripts/check-typst.mjs",
+    "pdf:check": "npx --yes tsx scripts/check-pdf-generator.ts",
     "typst:install": "bash scripts/install-typst.sh"
   },
   "dependencies": {
