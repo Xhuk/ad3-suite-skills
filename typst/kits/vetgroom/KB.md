@@ -99,25 +99,26 @@ No usar como etiqueta primaria: “licencia”, “Año 2”, “Continuidad Ope
 
 **Ya no se vuelve a cobrar:** Pack SyBA · personalización · VetBoard · reportes · historial avanzado · configuración inicial.
 
-#### Shared (eligieron Shared en año 1)
+**Precio de producto:** **\$12,999 + IVA** / sucursal activa / año (siempre). Infra dedicada se explica en crecimiento, no como “año 2”.
 
-| Sucursales activas | Importe / año c/u |
-| --- | --- |
-| 1.ª y 2.ª | **\$15,999 + IVA** |
-| 3.ª, 4.ª y siguientes | **\$12,999 + IVA** |
+#### Narrativa comercial (lock)
 
-Infra empaquetada en el cobro (Shared + VPS interno). **Nunca** desglosar \$3,000 Shared ni \$6,000 VPS al cliente en ruta Shared.
+«Las dos primeras sucursales financian la infraestructura dedicada de la organización. Las sucursales tercera y cuarta aprovechan esa capacidad ya instalada.»
 
-**Math interno:** \$12,999 operación + \$3,000 Shared (+ VPS interno según escalemos) = \$15,999 visible.
+Al cliente: *infraestructura dedicada / capacidad ya instalada*. Nunca: servidores, contenedores, memoria.
 
-#### VPS (eligieron VPS en año 1)
+| Sucursal | Continuidad | Infra VPS | Total |
+| --- | --- | --- | --- |
+| 1 | \$12,999 | \$3,000 | **\$15,999** |
+| 2 | \$12,999 | \$3,000 | **\$15,999** |
+| 3 | \$12,999 | Incluida | **\$12,999** |
+| 4 | \$12,999 | Incluida | **\$12,999** |
 
-| Sucursales | Importe |
-| --- | --- |
-| 1.ª | **\$12,999 + IVA** / año |
-| 2.ª, 3.ª y 4.ª (nuevas) | **\$12,999 + IVA** / año c/u adicional |
+**Ejemplo de organización (totales anuales, + IVA):** 1 → \$15,999 · 2 → \$31,998 · 3 → \$44,997 · 4 → \$57,996.
 
-**Sin línea VPS** al incorporar sucursales 2–4. Capacidad contratada en construcción año 1.
+**Math interno:** \$3,000 + \$3,000 = \$6,000 VPS. Ingresos iguales que antes.
+
+**Si eligieron VPS en año 1:** capacidad dedicada ya incluida. Sucursales 2–4 = solo Continuidad \$12,999.
 
 #### Soporte (opcional)
 
@@ -128,47 +129,30 @@ Infra empaquetada en el cobro (Shared + VPS interno). **Nunca** desglosar \$3,00
 
 Horas diluidas entre sucursales; expiran cada año.
 
-### 3.3 Shared vs VPS (reglas duras)
+### 3.3 Shared vs VPS (año 1)
 
 | | Shared | VPS dedicada |
 | --- | --- | --- |
-| Rol | Entrada | Crecimiento |
-| Sucursales | **1** | Hasta **4** |
+| Rol | Entrada | Crecimiento (capacidad dedicada desde día 1) |
+| Sucursales | **1** en construcción | Hasta **4** |
 | Servicios | 2 (Vet + Groom) | Hasta **8** (4 × Vet+Groom) |
 | Año 1 en propuesta | Empaquetado en \$27,999 | Empaquetado en \$30,999 |
-| Continuidad | **\$15,999** (1.ª–2.ª) · **\$12,999** (3.ª+) | **\$12,999** / sucursal · sin VPS extra en 2–4 |
-| Sucursal 2 | **\$15,999** adicional | **\$12,999** adicional |
-| Sucursales 3 y 4 | **\$12,999** adicional c/u | **\$12,999** adicional c/u |
+| Expansión | Tabla Continuidad + Infra VPS (1 y 2 financian capacidad) | Sucursales 2–4: solo \$12,999 (capacidad ya incluida) |
 
-**Interno (nunca en el PDF del cliente):** En Shared, el \$15,999 de la 2.ª sucursal financia internamente el ajuste de infraestructura; el cliente solo ve Continuidad empaquetada. Si superan límites de infra acordados, se negocia aparte.
+**Interno:** no explicar contenedores. Si superan límites de infra acordados, se negocia aparte.
 
-### 3.4 Expansión — Shared (año 1 Shared)
+### 3.4 Expansión — tabla canónica
 
-| Sucursal | Importe adicional / año |
-| --- | --- |
-| 2.ª | **\$15,999 + IVA** (Continuidad empaquetada, igual que la 1.ª) |
-| 3.ª y 4.ª | **\$12,999 + IVA** c/u |
+Ver §3.2. Totales de organización: 1 → \$15,999 · 2 → \$31,998 · 3 → \$44,997 · 4 → \$57,996.
 
-**Totales anuales Continuidad (Shared):** 1 → \$15,999 · 2 → \$31,998 · 3 → \$44,997 · 4 → \$57,996 (+ IVA).
+### 3.5 Expansión — si año 1 fue VPS
 
-**Cliente:** límites de infraestructura acordados en la expansión; si se superan, se revisa conjuntamente.
-
-**Interno:** el \$15,999 de la 2.ª sucursal cubre internamente lo que haga falta en infra; no explicar contenedores ni migración al cliente.
-
-### 3.5 Expansión — VPS (año 1 VPS)
-
-No vuelve a pagar Pack / VetBoard / reportes / personalización / costos de incorporación.
-
-| Sucursal | Importe adicional / año |
-| --- | --- |
-| 2.ª, 3.ª y 4.ª | **\$12,999 + IVA** c/u |
-
-**Política:** VPS (\$6,000 anual) ya contratada en construcción año 1; sucursales 2–4 solo suman Continuidad.
+Sucursales 2, 3 y 4: **\$12,999 + IVA** c/u. Sin línea Infra VPS. Capacidad contratada en construcción.
 
 **Frase comercial:**  
-«Una vez implementada la solución, SyBA puede crecer sin volver a pagar personalización, implementación ni costos de incorporación. Cada nueva sucursal incorpora únicamente la Continuidad Operativa que corresponda.»
+«Las dos primeras sucursales financian la infraestructura dedicada de la organización. Las sucursales tercera y cuarta aprovechan esa capacidad ya instalada.»
 
-### 3.6 Tabla de expansión (escenario VPS)
+### 3.6 Tabla de expansión (escenario VPS año 1)
 
 | Sucursales | Continuidad Operativa anual |
 | --- | --- |
@@ -179,16 +163,16 @@ No vuelve a pagar Pack / VetBoard / reportes / personalización / costos de inco
 
 (+ IVA). Sin columna VPS: infra ya en construcción año 1.
 
-### 3.7 Tabla de expansión (escenario Shared)
+### 3.7 Tabla de organización (capacidad financiada por sucursales 1 y 2)
 
-| Sucursales | Continuidad Operativa anual |
+| Sucursales | Total anual |
 | --- | --- |
 | 1 | \$15,999 |
 | 2 | \$31,998 |
 | 3 | \$44,997 |
 | 4 | \$57,996 |
 
-(+ IVA). 1.ª–2.ª sucursal = \$15,999 c/u; 3.ª y 4.ª = \$12,999 adicionales.
+(+ IVA).
 
 ---
 
@@ -289,7 +273,7 @@ npm run pdf
 5. Explicar contenedores / límites de memoria al cliente.  
 6. Hardcodear teal VetGroom dentro de `skills/ad3-*.md` (el look va en el kit).  
 7. Regenerar PDF con modelo viejo (licencia suelta año 1, o \$24,999 sin Shared empaquetado).  
-8. Cobrar Alta operativa \$3,000 en sucursales 2–4 cuando el cliente ya opera en VPS.
+8. Desglosar servidores, contenedores o “Shared vs VPS extra” en la página de crecimiento; la historia es sucursales 1 y 2 financian capacidad dedicada.
 
 ---
 
@@ -298,7 +282,7 @@ npm run pdf
 - [ ] Totales año 1: Shared \$27,999 · VPS \$30,999 · diferencia \$3,000  
 - [ ] Pago 50/50 · vigencia 15 días naturales · + IVA  
 - [ ] Continuidad Operativa **VetGroom** \$12,999 (no “licencia”)  
-- [ ] VPS sucursales 2–4: solo Continuidad · sin Alta operativa  
+- [ ] Tabla crecimiento: 1–2 financian Infra VPS \$3,000 c/u · 3–4 Incluida · totales 15,999 / 31,998 / 44,997 / 57,996  
 - [ ] Shared = 1 · VPS = 4 · migración explícita  
 - [ ] Demo en página 1  
 - [ ] Sin jerga de contenedores  
@@ -317,4 +301,4 @@ npm run pdf
 | 2026-08-24 | Rename: Continuidad Operativa **VetGroom** |
 | 2026-08-24 | Spec A + steers · PDF 6 páginas · socio OK para firmar |
 | 2026-08-24 | Copy ejecutivo: tono inversión/crecimiento, no técnico-contrato |
-| 2026-08-24 | Continuidad por sucursal (no “año 2”); Shared 1–2 \$15,999 · 3+ \$12,999; VPS 2–4 \$12,999 sin línea infra |
+| 2026-08-24 | Narrativa: sucursales 1 y 2 financian infra dedicada (\$3,000 c/u); 3 y 4 aprovechan capacidad |

@@ -68,42 +68,30 @@ Shared \$3,000 + Pack \$24,999 = \$27,999 · VPS \$6,000 + Pack \$24,999 = \$30,
 **Payment (must appear on this page):**  
 50 % anticipo · 50 % liberación productiva · vigencia **15 días naturales**.
 
-### Page 3 — Year 2+ Operación y crecimiento
+### Page 3 — Continuidad Operativa VetGroom
 
-**Framing:** Once implemented, investment shifts to operational continuity only — not construction.
+**Framing:** Continuidad is \$12,999 + IVA per active branch (always). Not “year 2”.
 
 **Already paid / never again:** Pack SyBA, personalización, VetBoard, reportes, configuración inicial.
 
-**Renews:** — \$12,999 + IVA per active branch  
-  Includes: Vet · Groom · VetGroom updates · SyBA-built features · multiuser access  
-  Explicit: both modules for **one operating location**.
-
-- **Infra:** Shared \$3,000 + IVA · or · VPS \$6,000 + IVA
-
-- **Optional L1:** 20 h \$6,000 + IVA · 40 h \$12,000 + IVA (hours dilute across branches; expire yearly)
+**Optional L1:** 20 h \$6,000 + IVA · 40 h \$12,000 + IVA.
 
 ### Page 4 — Growth and expansion
 
-**Shared:** for one operation. Opening a second branch → **recommend migrate to VPS** (isolation / noisy neighbors — client language, no container jargon).
+**Headline lock:** Las dos primeras sucursales financian la infraestructura dedicada de la organización. Las sucursales tercera y cuarta aprovechan esa capacidad ya instalada.
 
-**VPS:** up to 4 branches; same personalization, VetBoard, reports.
+Client language: infraestructura dedicada / capacidad ya instalada. Never servers, containers, memory.
 
-**New branch (once on VPS):** Continuidad Operativa VetGroom \$12,999 + IVA / year only. No Alta operativa for branches 2, 3, or 4. No Pack SyBA again.
+| Sucursal | Continuidad | Infra VPS | Total |
+| --- | --- | --- | --- |
+| 1 | \$12,999 | \$3,000 | \$15,999 |
+| 2 | \$12,999 | \$3,000 | \$15,999 |
+| 3 | \$12,999 | Incluida | \$12,999 |
+| 4 | \$12,999 | Incluida | \$12,999 |
 
-**Commercial rationale:** Initial construction and dedicated VPS already finance expansion capacity. Growth should feel simple for the client.
+Organization example: 1 → \$15,999 · 2 → \$31,998 · 3 → \$44,997 · 4 → \$57,996.
 
-**Key sales line:** «Una vez implementada la solución, SyBA puede crecer de una a cuatro sucursales sin volver a pagar personalización, implementación ni costos de incorporación. Cada nueva sucursal únicamente incorpora su Continuidad Operativa VetGroom.»
-
-**Expansion table (label: Escenario VPS):**
-
-| Sucursales | Continuidad anual |
-| --- | --- |
-| 1 | \$12,999 |
-| 2 | \$25,998 |
-| 3 | \$38,997 |
-| 4 | \$51,996 |
-
-Plus VPS \$6,000 / year (same VPS through four branches).
+If year 1 was VPS: branches 2–4 add Continuidad only (\$12,999).
 
 ### Page 5 — Scope, support, out of scope (short)
 
@@ -122,8 +110,8 @@ Plus VPS \$6,000 / year (same VPS through four branches).
 5. Sign scope  
 6. Start implementation  
 
-**Close line:**  
-Nuestro objetivo no es vender una licencia. Nuestro objetivo es construir una plataforma que acompañe el crecimiento de SyBA durante los próximos años.
+**Close (Nuestro compromiso):**  
+Nuestro objetivo no es vender software. Nuestro objetivo es ayudar a SyBA a construir una operación más ordenada, visible y escalable, acompañando el crecimiento de la organización durante los próximos años.
 
 Signatures: VetGroom · SyBA.
 

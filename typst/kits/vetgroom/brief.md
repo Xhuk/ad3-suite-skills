@@ -17,17 +17,23 @@ Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (por sucursal 
 
 ## Continuidad Operativa VetGroom
 
-- No es “año 2”: aplica por sucursal activa o al abrir una sucursal nueva.
-- Incluye Vet + Groom + alcance Pack SyBA (doc o addendum) + actualizaciones.
-- **Shared (año 1 Shared):** 1.ª y 2.ª sucursal \$15,999 + IVA / año c/u · 3.ª+ \$12,999 + IVA. Infra empaquetada (no desglosar VPS \$6k al cliente).
-- **VPS (año 1 VPS):** sucursales 2, 3 y 4 = \$12,999 + IVA c/u. Sin línea VPS adicional.
+- \$12,999 + IVA por sucursal activa / año. Vet + Groom + Pack SyBA (doc o addendum) + actualizaciones.
 - Soporte opcional: 20 h \$6,000 / 40 h \$12,000 + IVA.
 
 ## Crecimiento
 
-- Shared: totales anuales 1→\$15,999 · 2→\$31,998 · 3→\$44,997 · 4→\$57,996.
-- VPS: totales anuales 1→\$12,999 · 2→\$25,998 · 3→\$38,997 · 4→\$51,996 (sin VPS extra).
-- Sin Pack, personalización ni implementación de nuevo.
+Las dos primeras sucursales financian la infraestructura dedicada de la organización. Las sucursales tercera y cuarta aprovechan esa capacidad ya instalada.
+
+| Sucursal | Continuidad | Infra VPS | Total |
+| --- | --- | --- | --- |
+| 1 | \$12,999 | \$3,000 | \$15,999 |
+| 2 | \$12,999 | \$3,000 | \$15,999 |
+| 3 | \$12,999 | Incluida | \$12,999 |
+| 4 | \$12,999 | Incluida | \$12,999 |
+
+Organización: 1 → \$15,999 · 2 → \$31,998 · 3 → \$44,997 · 4 → \$57,996 (+ IVA).
+
+Si año 1 fue VPS: sucursales 2–4 = solo \$12,999 (capacidad ya incluida).
 
 ## Demo
 
