@@ -134,6 +134,46 @@
   })
 }
 
+#let plan-cards(items) = {
+  let cols = calc.min(items.len(), 2)
+  block(breakable: false, {
+    grid(
+      columns: (1fr,) * cols,
+      column-gutter: 14pt,
+      ..items.map(item => {
+        let recommended = item.at("recommended", default: false)
+        block(
+          width: 100%,
+          fill: if recommended { teal-wash } else { wash },
+          stroke: (
+            top: 3pt + if recommended { teal } else { hair },
+            rest: 0.45pt + hair,
+          ),
+          radius: 6pt,
+          inset: 14pt,
+          breakable: false,
+          {
+            if recommended {
+              badge("Recomendada")
+              v(8pt)
+            }
+            text(size: 9pt, weight: "bold", fill: muted, tracking: 0.06em, upper(item.label))
+            v(4pt)
+            text(size: 11pt, weight: "bold", fill: slate, item.title)
+            v(8pt)
+            text(size: 18pt, weight: "bold", fill: teal-deep, item.price)
+            v(2pt)
+            text(size: 8.5pt, fill: muted, item.price-note)
+            v(10pt)
+            set par(justify: false, leading: 0.7em)
+            text(size: 9pt, fill: ink, item.body)
+          },
+        )
+      }),
+    )
+  })
+}
+
 #let letterhead(
   kind: none,
   folio: none,

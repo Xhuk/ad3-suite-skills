@@ -1,9 +1,7 @@
 # Design: Propuesta comercial VetGroom → SyBA (opción A + steers)
 
-**Status:** approved by product owner + partner framing · **awaiting user review of this file before PDF**  
-**Date:** 2026-08-24  
-**Deliverable:** 6-page Typst PDF (`typst/vetgroom-syba.typ`) using kit `typst/kits/vetgroom/`  
-**Pipeline:** `ad3-scribe` → `ad3-doc-design` → `ad3-typst` (implement only after this spec is accepted)
+**Status:** accepted 2026-08-24 (owner + partner). Implement PDF.  
+**Naming lock:** primary year-2+ product label is **Continuidad Operativa VetGroom** (not “Anual”, not “licencia”).
 
 ## Goal
 
@@ -16,7 +14,7 @@ Story the buyer must leave with:
 | Phase | Meaning | Money |
 | --- | --- | --- |
 | Year 1 | Construction | Pack + infra (Shared default or VPS recommended) |
-| Year 2+ | Continuity | Continuidad Operativa Anual + infra + optional L1 |
+| Year 2+ | Continuity | Continuidad Operativa VetGroom + infra + optional L1 |
 | New branch | Expansion | Alta operativa once + Continuidad; migrate Shared → VPS at branch 2 |
 | VPS | Growth infra | Up to 4 branches · 8 services (Vet+Groom each) |
 | Shared | Entry infra | One branch · two services only |
@@ -24,9 +22,8 @@ Story the buyer must leave with:
 ## Non-goals
 
 - Do not expose internal deploy details (containers, memory caps, how Shared is hosted). Client language only.
-- Do not call year-2 money “licencia” in headings or primary labels. Use **Continuidad Operativa Anual**.
+- Do not call year-2 money “licencia” in headings or primary labels. Use **Continuidad Operativa VetGroom**.
 - Do not discount branch 2/3/4 Continuidad.
-- Do not compile or redesign until this file is reviewed and accepted.
 
 ## Visual system (existing kit)
 
@@ -77,7 +74,7 @@ Shared \$3,000 + Pack \$24,999 = \$27,999 · VPS \$6,000 + Pack \$24,999 = \$30,
 
 **Renews:**
 
-- **Continuidad Operativa Anual** — \$12,999 + IVA per active branch  
+- **Continuidad Operativa VetGroom** — \$12,999 + IVA per active branch  
   Includes: Vet · Groom · VetGroom updates · SyBA-built features · multiuser access  
   Explicit: both modules for **one operating location**.
 
@@ -130,7 +127,7 @@ Signatures: VetGroom · SyBA.
 
 | Avoid | Prefer |
 | --- | --- |
-| Licencia (primary label) | Continuidad Operativa Anual |
+| Licencia (primary label) | Continuidad Operativa VetGroom |
 | Pack SyBA as year-2 charge | Pack only in year-1 construction |
 | Shared \$3k / VPS \$6k as year-1 headline | Bundled \$27,999 / \$30,999 |
 | Container / memory / internal hosting | Ambiente propio / dedicado / capacidad de crecimiento |
@@ -151,6 +148,6 @@ Signatures: VetGroom · SyBA.
 
 ## Acceptance checklist
 
-- [ ] User accepts this written spec (this file)  
-- [ ] Then: brief + Typst + PDF  
-- [ ] Spot-check: year-1 Shared \$27,999 · VPS \$30,999 · Continuidad \$12,999 · Alta \$3,000 · Shared→VPS at branch 2 · IVA on major lines · demo on page 1 · no “licencia” as primary year-2 label
+- [x] User accepts this written spec (this file)
+- [ ] Then: brief + Typst + PDF
+- [ ] Spot-check: year-1 Shared \$27,999 · VPS \$30,999 · Continuidad Operativa VetGroom \$12,999 · Alta \$3,000 · Shared→VPS at branch 2 · IVA on major lines · demo on page 1 · no “licencia” as primary year-2 label

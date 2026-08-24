@@ -97,8 +97,8 @@ export default function DocumentosPage() {
                 </p>
                 <h2 className="text-lg font-semibold">VetGroom para SyBA</h2>
                 <p className="text-sm text-muted-foreground">
-                  Año 1: programa con licencia incluida + VPS aparte. Luego
-                  licencias por sucursal, activación y L1 opcional.
+                  Año 1 construcción Shared \$27,999 o VPS \$30,999. Luego
+                  Continuidad Operativa VetGroom por sucursal.
                 </p>
               </div>
               <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold tracking-wide text-secondary-foreground uppercase">
