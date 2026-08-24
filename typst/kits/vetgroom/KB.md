@@ -183,7 +183,7 @@ Ejemplos de totales operativos (+ IVA aparte):
 | Guiones en títulos | Frases limpias |
 
 **Cierre canónico:**  
-«Nuestro objetivo no es vender una licencia. Nuestro objetivo es construir una plataforma que acompañe el crecimiento de SyBA durante los próximos años.»
+«Nuestro objetivo no es vender software. Nuestro objetivo es ayudar a SyBA a construir una operación más ordenada, visible y escalable, acompañando el crecimiento de la organización durante los próximos años.»
 
 ---
 
@@ -282,4 +282,4 @@ npm run pdf
 | 2026-08-24 | Año 1 Construcción · Año 2+ Continuidad |
 | 2026-08-24 | Rename: Continuidad Operativa **VetGroom** |
 | 2026-08-24 | Spec A + steers · PDF 6 páginas · socio OK para firmar |
-| 2026-08-24 | VPS sucursales 2–4: solo Continuidad · sin Alta operativa \$3,000 |
+| 2026-08-24 | Copy ejecutivo: tono inversión/crecimiento, no técnico-contrato |

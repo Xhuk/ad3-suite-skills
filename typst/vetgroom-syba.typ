@@ -26,29 +26,43 @@
   ),
 )
 
-#kicker[Control operativo hoy. Crecimiento ordenado mañana.]
+#kicker[Una plataforma diseñada para acompañar el crecimiento de SyBA]
 #lead[
-  Antes de presentar una propuesta económica, construimos un demo funcional
-  basado en los procesos compartidos por SyBA. No empezamos por el precio:
-  empezamos por grooming, recolecciones, VetBoard, historial, capacidad por
-  groomers y rutas.
+  Analizamos los procesos de SyBA, construimos un demo funcional y validamos una
+  solución alineada a su operación real — para operar mejor hoy y crecer sin
+  volver a empezar mañana.
 ]
+
+*¿Qué obtiene SyBA?* Más que una colección de módulos, VetGroom busca
+convertirse en el sistema operativo de la operación diaria de SyBA.
 
 #feature-cards((
   (
     num: "01",
-    title: "Control operativo",
-    body: [Clientes y mascotas, grooming, jaulas, recolecciones, entregas, historial y reportes en un solo lugar. Menos trabajo manual. Operación estandarizada.],
+    title: "Operación centralizada",
+    body: [
+      Centralice la información operativa de SyBA en una sola plataforma:
+      clientes, mascotas, grooming, jaulas, recolecciones, entregas, historial
+      y reportes.
+    ],
   ),
   (
     num: "02",
     title: "Planeación inteligente",
-    body: [Duración estimada con historial, capacidad según groomers y rutas eficientes. Decisiones con datos, no a ojo.],
+    body: [
+      Duración estimada con historial, capacidad según groomers y rutas
+      eficientes. Planeación basada en información histórica y capacidad real
+      de operación.
+    ],
   ),
   (
     num: "03",
     title: "VetBoard operativo",
-    body: [Mascotas en proceso, groomer, jaula, prioridad e instrucciones en tiempo real. Toda la jornada a la vista.],
+    body: [
+      Vista de piso en tiempo real: mascotas en proceso, groomer responsable,
+      jaulas, prioridades e instrucciones especiales. Operación más visible,
+      coordinada y predecible para todo el equipo.
+    ],
   ),
 ))
 
@@ -60,12 +74,21 @@
 #pagebreak()
 
 // ——— Página 2 · Año 1 Construcción ———
-= Año 1. Construcción de la solución
+= Año 1: Construcción de la solución
 
-El primer año *no* se compra una licencia. Se paga el trabajo de construir y
-adaptar VetGroom a la operación de SyBA: descubrimiento, análisis,
-personalización, configuración, capacitación, validación, VetBoard, reportes,
-historial avanzado, reglas operativas y puesta en marcha.
+Durante el primer año se realiza la adaptación de VetGroom a la operación de
+SyBA. La inversión cubre:
+
+- Descubrimiento y análisis.
+- Personalización.
+- Configuración.
+- Capacitación.
+- Validación operativa.
+- VetBoard.
+- Reportes.
+- Puesta en marcha.
+
+En esta etapa se construye la solución. *No se está cobrando una licencia anual.*
 
 #plan-cards((
   (
@@ -92,10 +115,9 @@ historial avanzado, reglas operativas y puesta en marcha.
 ))
 
 #v(10pt)
-#note(title: "La diferencia real son \$3,000 anuales")[
-  La propuesta base ya incluye infraestructura para operar. Si desean
-  infraestructura dedicada con capacidad de crecimiento hasta cuatro
-  sucursales, la diferencia es de \$3,000 anuales.
+#note(title: "La diferencia real entre ambas opciones es de \$3,000 al año")[
+  Esa diferencia permite pasar de una infraestructura pensada para una sola
+  operación a una infraestructura preparada para crecer hasta cuatro sucursales.
 ]
 
 == Forma de pago y vigencia
@@ -107,10 +129,10 @@ historial avanzado, reglas operativas y puesta en marcha.
 #pagebreak()
 
 // ——— Página 3 · Continuidad ———
-= Año 2 y siguientes. Continuidad Operativa VetGroom
+= Año 2 en adelante: Operación y crecimiento
 
-Ya está construido. Ya funciona. El argumento cambia: *operamos* la solución
-que SyBA ya tiene; no volvemos a cobrar la construcción.
+Una vez implementada la solución, la inversión cambia. Ya no se paga la
+construcción; únicamente la continuidad operativa de la plataforma.
 
 == Ya no se vuelve a cobrar
 
@@ -124,9 +146,9 @@ que SyBA ya tiene; no volvemos a cobrar la construcción.
 
 *Continuidad Operativa VetGroom* — \$12,999 + IVA por sucursal activa por año.
 
-Incluye Vet y Groom para *una misma ubicación operativa*, actualizaciones
-VetGroom, funcionalidades desarrolladas para SyBA, acceso multiusuario y
-uso continuo de la plataforma.
+Incluye acceso a los módulos Vet y Groom para *una misma ubicación operativa*,
+así como las funcionalidades desarrolladas para SyBA y las actualizaciones
+continuas de VetGroom, acceso multiusuario y uso continuo de la plataforma.
 
 #data-table(
   ([Concepto], [Base], [Importe]),
@@ -141,18 +163,24 @@ uso continuo de la plataforma.
 )
 
 Las horas L1 se diluyen entre las sucursales activas y expiran cada año.
-Estamos dispuestos a dialogar antes de cualquier malentendido.
 
 #pagebreak()
 
 // ——— Página 4 · Crecimiento ———
 = Crecimiento y expansión
 
+== Crecimiento sin volver a empezar
+
+La inversión del primer año se reutiliza en futuras sucursales. No se vuelve a
+pagar personalización, VetBoard, reportes, reglas operativas ni implementación
+inicial. Cada nueva sucursal incorpora únicamente su Continuidad Operativa
+VetGroom.
+
 == Shared
 
 Pensado para *una* operación. Al abrir una segunda sucursal se recomienda
-migrar a VPS dedicada: mismo aislamiento, sin competencia de recursos con
-otros ambientes, y capacidad real de crecimiento.
+migrar a VPS dedicada: misma personalización, mayor capacidad y una
+infraestructura preparada para el crecimiento.
 
 == VPS
 
@@ -160,21 +188,12 @@ Hasta cuatro sucursales. Misma infraestructura, misma personalización,
 mismo VetBoard y mismos reportes. Cada Continuidad Operativa VetGroom cubre
 Vet y Groom en esa ubicación (hasta ocho servicios en total).
 
-== Nueva sucursal (cliente en VPS)
+== Nueva sucursal
 
-No vuelve a pagar Pack SyBA, VetBoard, reportes, personalización ni costos de
-incorporación.
+Las sucursales adicionales pueden incorporarse sin costos de implementación ni
+personalización mientras operen bajo el mismo modelo definido para SyBA.
 
 - Continuidad Operativa VetGroom: \$12,999 + IVA por año por sucursal activa.
-- Sin Alta operativa para sucursales 2, 3 y 4: la inversión inicial y la VPS
-  dedicada ya financian la capacidad de expansión.
-
-#note(title: "Crecimiento simple")[
-  Una vez implementada la solución, SyBA puede crecer de una a cuatro
-  sucursales sin volver a pagar personalización, implementación ni costos de
-  incorporación. Cada nueva sucursal únicamente incorpora su Continuidad
-  Operativa VetGroom.
-]
 
 == Resumen de expansión (escenario VPS)
 
@@ -217,6 +236,10 @@ trabajo), o cotización por alcance cuando el requerimiento lo merezca.
 - Sin bolsa: atención bajo disponibilidad. Asuntos no críticos en alrededor
   de una semana; críticos tan pronto haya disponibilidad.
 
+Nuestro objetivo es mantener una relación transparente. Si se presenta una
+necesidad fuera del alcance contratado, se revisará conjuntamente antes de
+generar cualquier cargo adicional.
+
 #pagebreak()
 
 // ——— Página 6 · Cierre ———
@@ -229,10 +252,12 @@ trabajo), o cotización por alcance cuando el requerimiento lo merezca.
 + Firmar el alcance.
 + Iniciar la implementación.
 
+== Nuestro compromiso
+
 #lead[
-  Nuestro objetivo no es vender una licencia. Nuestro objetivo es construir
-  una plataforma que acompañe el crecimiento de SyBA durante los próximos
-  años.
+  Nuestro objetivo no es vender software. Nuestro objetivo es ayudar a SyBA a
+  construir una operación más ordenada, visible y escalable, acompañando el
+  crecimiento de la organización durante los próximos años.
 ]
 
 #link("https://demo.vetgroom.com.mx/demo/syba?demo_access_token=SYBA-2026-30D")[

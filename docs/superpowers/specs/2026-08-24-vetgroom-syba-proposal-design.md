@@ -39,12 +39,12 @@ Story the buyer must leave with:
 ### Page 1 — Hero + value + demo
 
 **Kicker:** VetGroom para SyBA  
-**Headline:** Control operativo hoy. Crecimiento ordenado mañana.
+**Headline:** Una plataforma diseñada para acompañar el crecimiento de SyBA
 
 **Lead (no prices):**  
-Before presenting an economic proposal, we built a functional demo from the processes SyBA shared.
+Executive tone — demo built from SyBA processes; validate before investment; operate better today, grow without starting over.
 
-**Value (not “software”):** Grooming · Recolecciones · VetBoard · Historial · Capacidad por groomers · Rutas — expressed as Control operativo / Planeación inteligente / VetBoard operativo (feature cards).
+**Value framing:** «Más que una colección de módulos… sistema operativo de la operación diaria.» Feature cards: Operación centralizada · Planeación inteligente · VetBoard operativo.
 
 **Demo:** visible from page 1  
 `https://demo.vetgroom.com.mx/demo/syba?demo_access_token=SYBA-2026-30D`
@@ -60,7 +60,7 @@ Explain: year 1 is **not** buying a license. It pays analysis, customization, co
 | Total year 1 | **\$27,999 + IVA** | **\$30,999 + IVA** |
 | Includes | Pack SyBA + Shared year 1 + implementación | Pack SyBA + VPS year 1 + capacity to 4 branches |
 
-**Callout in large type:** La diferencia real son \$3,000 anuales.
+**Callout in large type:** La diferencia real entre ambas opciones es de \$3,000 al año — de una operación a infra preparada para cuatro sucursales.
 
 **Internal math (do not spell out as three line items to the client on this page):**  
 Shared \$3,000 + Pack \$24,999 = \$27,999 · VPS \$6,000 + Pack \$24,999 = \$30,999.
@@ -68,13 +68,13 @@ Shared \$3,000 + Pack \$24,999 = \$27,999 · VPS \$6,000 + Pack \$24,999 = \$30,
 **Payment (must appear on this page):**  
 50 % anticipo · 50 % liberación productiva · vigencia **15 días naturales**.
 
-### Page 3 — Year 2+ Continuidad Operativa
+### Page 3 — Year 2+ Operación y crecimiento
+
+**Framing:** Once implemented, investment shifts to operational continuity only — not construction.
 
 **Already paid / never again:** Pack SyBA, personalización, VetBoard, reportes, configuración inicial.
 
-**Renews:**
-
-- **Continuidad Operativa VetGroom** — \$12,999 + IVA per active branch  
+**Renews:** — \$12,999 + IVA per active branch  
   Includes: Vet · Groom · VetGroom updates · SyBA-built features · multiuser access  
   Explicit: both modules for **one operating location**.
 
