@@ -327,7 +327,7 @@ export const scenarios: Record<string, SkillScenarios> = {
   "ad3-typst": {
     use: [
       "“Ármame la propuesta comercial / el contrato en PDF”.",
-      "El agente iba a importar ReportLab, FPDF o un preámbulo LaTeX.",
+      "El agente iba a importar ReportLab, FPDF, LaTeX o a pegar HTML + Chrome/Playwright.",
       "Hay que desglosar MXN + IVA federal y dejar bloques de firma.",
     ],
     skip: [

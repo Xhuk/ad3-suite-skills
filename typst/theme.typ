@@ -3,11 +3,13 @@
 
 #let slate = rgb("#0F172A")
 #let accent = rgb("#2563EB")
+#let indigo = rgb("#4F46E5")
 #let ink = rgb("#1E293B")
 #let muted = rgb("#64748B")
 #let wash = rgb("#F8FAFC")
 #let stripe = rgb("#F1F5F9")
 #let hair = rgb("#E2E8F0")
+#let indigo-wash = rgb("#EEF2FF")
 
 #let fonts = ("Inter", "Liberation Sans", "Arial")
 // Arial is a last-resort family on Windows. Typst warns if it is missing;
@@ -69,10 +71,14 @@
   set enum(indent: 0.9em)
 
   show heading.where(level: 1): it => {
-    block(above: 1.15em, below: 0.55em, {
-      text(size: 13.5pt, weight: "semibold", fill: slate, it.body)
-      v(4pt)
-      line(length: 2.4cm, stroke: 1.6pt + accent)
+    block(above: 1.2em, below: 0.55em, {
+      grid(
+        columns: (5pt, 1fr),
+        column-gutter: 8pt,
+        align: horizon,
+        rect(width: 4pt, height: 14pt, fill: indigo, radius: 1pt),
+        text(size: 12.5pt, weight: "bold", fill: slate, tracking: 0.04em, it.body),
+      )
     })
   }
 
@@ -83,24 +89,81 @@
   body
 }
 
-#let letterhead(kind: none, folio: none, issued: none, issuer: none, recipient: none, brand: "AD3") = {
+#let badge(label) = {
+  box(
+    fill: indigo-wash,
+    inset: (x: 9pt, y: 4pt),
+    radius: 999pt,
+    text(
+      size: 8pt,
+      weight: "bold",
+      fill: indigo,
+      tracking: 0.08em,
+      upper(label),
+    ),
+  )
+}
+
+#let feature-cards(items) = {
+  let cols = calc.min(items.len(), 3)
+  block(breakable: false, {
+    grid(
+      columns: (1fr,) * cols,
+      column-gutter: 11pt,
+      row-gutter: 11pt,
+      ..items.map(item => {
+        block(
+          width: 100%,
+          fill: wash,
+          stroke: (top: 2.5pt + indigo, rest: 0.45pt + hair),
+          radius: 5pt,
+          inset: 12pt,
+          breakable: false,
+          {
+            text(size: 13pt, weight: "bold", fill: indigo, item.num)
+            v(5pt)
+            text(size: 9.5pt, weight: "bold", fill: slate, item.title)
+            v(5pt)
+            set par(justify: false, leading: 0.62em)
+            text(size: 8.5pt, fill: muted, item.body)
+          },
+        )
+      }),
+    )
+  })
+}
+
+#let letterhead(
+  kind: none,
+  folio: none,
+  issued: none,
+  issuer: none,
+  recipient: none,
+  brand: "AD3",
+  tagline: "Documento editorial",
+) = {
   grid(
     columns: (1fr, auto),
-    align: (left + bottom, right + bottom),
+    align: (left + top, right + top),
     {
-      text(size: 11pt, weight: "bold", fill: slate, tracking: 0.08em, brand)
-      v(2pt)
-      text(size: 8pt, fill: muted, "Documento editorial")
+      text(size: 18pt, weight: "bold", fill: slate, tracking: -0.02em, brand)
+      v(3pt)
+      text(size: 8.5pt, fill: muted, tagline)
     },
     {
-      text(size: 9pt, fill: muted, kind)
-      linebreak()
+      if kind != none {
+        badge(kind)
+        v(6pt)
+      }
+      set text(size: 9pt)
       if folio != none {
-        text(size: 12pt, weight: "semibold", fill: slate, folio)
+        text(fill: muted)[Folio: ]
+        text(weight: "semibold", fill: slate, folio)
         linebreak()
       }
       if issued != none {
-        text(size: 9pt, fill: muted, issued)
+        text(fill: muted)[Fecha: ]
+        text(weight: "semibold", fill: slate, issued)
       }
     },
   )
@@ -140,13 +203,21 @@
   v(6pt)
 }
 
-#let note(body) = {
+#let note(title: none, body) = {
   block(
     width: 100%,
     fill: wash,
-    stroke: (left: 2.5pt + accent),
-    inset: (x: 12pt, y: 10pt),
-    text(size: 9.5pt, body),
+    stroke: (left: 3.5pt + accent, rest: 0.45pt + hair),
+    radius: 3pt,
+    inset: (x: 14pt, y: 11pt),
+    breakable: false,
+    {
+      if title != none {
+        text(size: 9.5pt, weight: "bold", fill: slate, title)
+        v(4pt)
+      }
+      text(size: 9.5pt, fill: ink, body)
+    },
   )
 }
 

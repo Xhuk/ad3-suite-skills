@@ -41,11 +41,23 @@
 AD3 no promete un rediseño de producto. Promete un proceso que el agente
 puede ejecutar sin alucinar librerías de PDF rotas:
 
-+ *Cadena linkeada.* Using → recon → spec → plan → build → review → ship.
-+ *Verificación.* Una skill solo se usa si `SKILL.md` está en disco.
-+ *Oficio editorial.* Propuestas y contratos salen de Typst, no de
-  ReportLab, FPDF ni LaTeX.
-+ *Host adaptable.* Web, Expo o Swift: el suite decide con lo instalado.
+#feature-cards((
+  (
+    num: "01",
+    title: "Cadena linkeada",
+    body: [Using → recon → spec → plan → build → review → ship. El oficio entra solo si está en disco.],
+  ),
+  (
+    num: "02",
+    title: "Oficio editorial",
+    body: [Propuestas y contratos salen de Typst: badge, tarjetas, tablas con IVA y firmas. Nunca ReportLab, FPDF, LaTeX ni HTML-to-PDF.],
+  ),
+  (
+    num: "03",
+    title: "Host adaptable",
+    body: [Web, Expo o Swift. El suite decide con lo instalado y no inventa una skill que no existe.],
+  ),
+))
 
 Los entregables de esta propuesta son operables en el primer ciclo: pack
 instalado, verificador en verde, y dos PDFs (propuesta + contrato) que

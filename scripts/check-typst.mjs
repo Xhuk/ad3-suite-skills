@@ -16,6 +16,7 @@ const outDir = path.join(root, "public", "documentos");
 const documents = [
   { source: "propuesta.typ", output: "propuesta-comercial.pdf" },
   { source: "contrato.typ", output: "contrato-servicios.pdf" },
+  { source: "vetgroom-syba.typ", output: "vetgroom-syba.pdf" },
 ];
 
 function findTypst() {
@@ -53,7 +54,7 @@ function assertPdf(file) {
 }
 
 function main() {
-  const required = ["theme.typ", "propuesta.typ", "contrato.typ"];
+  const required = ["theme.typ", "propuesta.typ", "contrato.typ", "vetgroom-syba.typ"];
   for (const name of required) {
     const file = path.join(typstDir, name);
     if (!fs.existsSync(file)) {

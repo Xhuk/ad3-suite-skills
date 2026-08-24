@@ -332,12 +332,12 @@ export const catalog: CatalogSkill[] = [
     kind: "document",
     origin: "ad3",
     summary:
-      "PDFs editoriales en Typst: propuesta comercial y contrato. Prohibido ReportLab, FPDF y LaTeX.",
+      "PDFs editoriales en Typst: badge, tarjetas de valor, tablas con IVA y firmas. Prohibido ReportLab, FPDF, LaTeX y HTML-to-PDF.",
     improves:
-      "El documento que AD3 entrega: letter, Inter, tablas con IVA y firmas en grid, compilado por el CLI oficial.",
-    when: "Hay que generar una propuesta, un contrato u otro PDF de estándar editorial.",
+      "El documento que AD3 entrega: letter, Inter, componentes de brochure (letterhead, feature-cards, note), compilado por el CLI oficial.",
+    when: "Hay que generar una propuesta, un contrato u otro PDF de estándar editorial. También si el agente iba a pegar HTML + Chrome.",
     doesNotReplace:
-      "Asesoría legal o fiscal, ni las maestras. Es oficio de documento, no la puerta del suite.",
+      "Asesoría legal o fiscal, ni las maestras. Es oficio de documento, no un motor HTML/CSS.",
     invocation: "auto",
   },
 ];
@@ -438,7 +438,7 @@ export const playbook: PlaybookEntry[] = [
     situation: "AD3 debe entregar una propuesta o un contrato en PDF",
     keepDoing: "Alcance, precio y (si aplica) revisión legal del host",
     reachFor: ["ad3-typst"],
-    why: "Typst da auto-layout editorial. ReportLab, FPDF y LaTeX son un veto, no un fallback.",
+    why: "Typst da auto-layout editorial. ReportLab, FPDF, LaTeX y Chrome/Playwright son un veto, no un fallback.",
   },
 ];
 

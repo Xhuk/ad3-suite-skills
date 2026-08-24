@@ -22,10 +22,11 @@ A mano:
 
 | Archivo | Qué es |
 | --- | --- |
-| `theme.typ` | Página letter, márgenes 2 cm × 2.5 cm, Inter, tablas, firmas |
-| `propuesta.typ` | Propuesta con valor, alcance, inversión + IVA 16 %, calendario, firmas |
+| `theme.typ` | Letter, Inter, tokens, `#letterhead` `#badge` `#feature-cards` `#note` tablas firmas |
+| `propuesta.typ` | Propuesta con tarjetas de valor, alcance, inversión + IVA 16 %, firmas |
 | `contrato.typ` | Prestación de servicios, cláusulas, jurisdicción federal |
-| `fonts/` | Inter (SIL OFL). Fallback: Liberation Sans, Arial |
+| `vetgroom-syba.typ` | Propuesta VetGroom → SyBA (mismo tema, montos reales separados) |
+| `fonts/` | Inter (SIL OFL). Fallback: Liberation Sans, Arial. No Google Fonts. |
 
 ## Mercado por defecto
 

@@ -12,13 +12,14 @@
   folio: "VG-PROP-SYBA-2026-001",
   issued: "24 de agosto de 2026",
   brand: "VetGroom",
+  tagline: "Plataforma operativa para grooming y sucursales · cobertura federal",
   issuer: (
     name: "VetGroom",
-    detail: [Plataforma operativa para grooming y sucursales · Estados Unidos Mexicanos],
+    detail: [Pack SyBA · Estados Unidos Mexicanos, ámbito federal],
   ),
   recipient: (
     name: "SyBA",
-    detail: [Atención: dirección operativa · Pack SyBA],
+    detail: [Atención: dirección operativa],
   ),
 )
 
@@ -44,15 +45,23 @@
 SyBA obtiene una sola plataforma para la jornada, no un conjunto de
 herramientas sueltas. Tres capas trabajan juntas:
 
-+ *Control operativo.* Clientes y mascotas, grooming, jaulas, recolecciones
-  y entregas, historial de servicios y reportes en un solo lugar. Menos
-  trabajo manual, menos información dispersa, operación diaria estandarizada.
-+ *Planeación inteligente.* Duración estimada por mascota, capacidad según
-  disponibilidad de groomers y organización de rutas, con datos históricos
-  en lugar de estimaciones a mano.
-+ *VetBoard operativo.* El equipo ve en tiempo real mascotas en proceso,
-  groomer responsable, jaula asignada, prioridad e instrucciones especiales.
-  Una sola visión de la jornada.
+#feature-cards((
+  (
+    num: "01",
+    title: "Control operativo",
+    body: [Clientes, mascotas, grooming, jaulas, recolecciones, cobros e historial en un solo panel. Menos trabajo manual, operación diaria estandarizada.],
+  ),
+  (
+    num: "02",
+    title: "Planeación inteligente",
+    body: [Duración estimada por mascota, capacidad según groomers y organización de rutas con datos históricos, no con estimaciones a mano.],
+  ),
+  (
+    num: "03",
+    title: "VetBoard operativo",
+    body: [Mascotas en proceso, groomer, jaula, prioridad e instrucciones especiales en tiempo real. Una sola visión de la jornada.],
+  ),
+))
 
 = Alcance de la implementación
 
@@ -97,8 +106,12 @@ implementación. Se realiza *una sola vez*.
   ),
 )
 
-Forma de pago: 50 % al inicio y 50 % al liberar el ambiente productivo.
-Vigencia de esta oferta: 15 días hábiles a partir de la fecha de emisión.
+#note(title: "Condiciones comerciales y garantía")[
+  Esquema de pago: 50 % al anticipo y 50 % contra entrega y liberación en
+  productivo. Oferta válida por 15 días hábiles. Ámbito federal de los
+  Estados Unidos Mexicanos. La VPS anual no forma parte de esta inversión
+  inicial: se cotiza en la tabla siguiente.
+]
 
 = Infraestructura recomendada
 
