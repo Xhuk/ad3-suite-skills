@@ -47,17 +47,17 @@ export default function DocumentosPage() {
                   className="size-[72px] rounded-[22px] shadow-[0_8px_24px_rgba(8,177,180,0.35)]"
                 />
                 <p className="text-xs tracking-[0.18em] text-primary uppercase">
-                  Hegemonía visual
+                  Kit VetGroom
                 </p>
                 <h1 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-                  El PDF sale del mismo teal que el Panel de Recepción.
+                  El escriba saca el brief. El diseño arma la landing. Typst la deja de plantilla.
                 </h1>
                 <p className="text-sm leading-6 text-muted-foreground sm:text-base">
-                  No es un estudio oscuro ni índigo de plantilla. El color
-                  canónico es el del logo y del menú activo:{" "}
+                  Hoy el producto es VetGroom, teal{" "}
                   <span className="font-mono text-foreground">#08B1B4</span>.
-                  Fondo claro, Inter, pastillas y tarjetas con radio suave —
-                  desktop y mobile.
+                  Mañana es otro kit en{" "}
+                  <span className="font-mono">typst/kits/</span>
+                  . Misma cadena: ad3-scribe, ad3-doc-design, ad3-typst.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">

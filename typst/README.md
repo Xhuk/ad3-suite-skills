@@ -32,6 +32,10 @@ A mano:
 
 Estados Unidos Mexicanos, **ámbito federal**. Sin ciudad. Montos en MXN. IVA federal 16 %. Los RFC y las partes de ejemplo son placeholders. Las plantillas no son asesoría legal.
 
-## Skill del agente
+## Kits por proyecto
 
-`skills/ad3-typst/SKILL.md`
+Cada cliente vive en `typst/kits/<proyecto>/` (`brief.md` + `brand.typ`). VetGroom es un kit, no la skill. Cadena: `ad3-scribe` → `ad3-doc-design` → `ad3-typst`.
+
+## Skills
+
+`skills/ad3-scribe/SKILL.md` · `skills/ad3-doc-design/SKILL.md` · `skills/ad3-typst/SKILL.md`

@@ -115,7 +115,9 @@ Rutas que AD3 busca: `.cursor/skills`, `.agents/skills`, `.claude/skills`, `.cod
 | `prototype` | web | Varias variantes de UI |
 | `write-swift` | apple | Swift 6 |
 | `ui-ux-polish` | web | Review / propuesta de pulido |
-| `ad3-typst` | cualquiera | PDF editorial (Typst). Nunca ReportLab/FPDF/LaTeX/HTML-to-PDF |
+| `ad3-scribe` | cualquiera | Escriba comercial. Brief para el cliente. Títulos sin guiones |
+| `ad3-doc-design` | cualquiera | Diseña el documento como landing. Kit por proyecto |
+| `ad3-typst` | cualquiera | Congela el kit en plantilla Typst. Nunca ReportLab/FPDF/LaTeX/HTML-to-PDF |
 
 ## Escenarios (para no confundir skills)
 
@@ -135,7 +137,7 @@ Confusiones típicas:
 | `review-animations` para toda la app | `improve-animations` |
 | `ask-sonner` sin haber elegido librería | `pick-ui-library` |
 | `write-swift` para un sheet web | `apple-design` |
-| `ui-ux-polish` para un PDF | `ad3-typst` |
+| `ui-ux-polish` para un PDF | `ad3-scribe` → `ad3-doc-design` → `ad3-typst` |
 
 ## Documentos PDF (Typst)
 
@@ -148,7 +150,8 @@ npm run pdf
 
 - Propuesta: `typst/propuesta.typ` → `public/documentos/propuesta-comercial.pdf`
 - Contrato: `typst/contrato.typ` → `public/documentos/contrato-servicios.pdf`
-- Skill del agente: `ad3-typst`
+- Skills: `ad3-scribe` → `ad3-doc-design` → `ad3-typst`
+- Kit de ejemplo: `typst/kits/vetgroom/`
 - Preview local: http://127.0.0.1:43187/documentos
 
 Página letter, márgenes 2 cm × 2.5 cm, Inter, slate `#0F172A`, teal VetGroom `#08B1B4`. Componentes: badge, letterhead, feature-cards, note. Si no hay país, mercado **México federal** (MXN, IVA 16 %, sin ciudad). Detalle en [typst/README.md](./typst/README.md). MCP opcional (Docker `typst-mcp`); el CLI oficial basta. No uses Chrome ni Playwright para “compilar” el PDF.

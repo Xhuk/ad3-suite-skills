@@ -1,116 +1,74 @@
 ---
 name: ad3-typst
-description: Use when writing a commercial proposal, contract, quote, or brochure-style PDF; when an agent reaches for ReportLab, FPDF, LaTeX, HTML-to-PDF, CSS Paged Media, Chrome --print-to-pdf, Puppeteer, or Playwright; or when a 400-line HTML template looks like the document engine. Not for web UI, motion, or legal advice.
+description: Use when a commercial kit (brief + brand) is ready to become a Typst PDF template for that project; when an agent reaches for ReportLab, FPDF, LaTeX, HTML-to-PDF, Chrome print, or Playwright. Not for writing the offer or inventing the look.
 ---
 
-# AD3 · Typst (editorial documents)
+# AD3 · Typst (project template)
 
-Craft satellite, not a master. Open from `ad3-build` (or `ad3-spec` if the PDF is the deliverable).
+Craft satellite. Open after `ad3-doc-design` (or after `ad3-scribe` if the kit already exists).
 
-Do **not** start an AD3 task here. Do **not** replace legal, tax, or domain skills.
+This skill does **not** own the offer and does **not** own the look. It freezes the designed landing as the Typst template for **this** project so every later document shares it.
 
 ## When to open / when not
 
 **Open when**
 
-- The user wants a commercial proposal, contract, quote, or similar PDF.
-- An agent was about to reach for ReportLab, FPDF, WeasyPrint, jsPDF, LaTeX, Chrome `--print-to-pdf`, Puppeteer, or Playwright.
-- The “engine” looks like a pasted HTML5 + CSS Paged Media file with Google Fonts.
-- You need letter-size layout with feature cards, MXN + IVA tables, and signature blocks.
+- `typst/kits/<project>/brief.md` and `brand.typ` exist.
+- You must emit `.typ` and compile with the official CLI.
+- An agent was about to use ReportLab, FPDF, LaTeX, WeasyPrint, jsPDF, Chrome `--print-to-pdf`, or Playwright.
 
 **Do not open when**
 
-- The job is a web UI, motion, or a Swift package → the other craft skills.
-- They only asked for the legal *advice* behind a contract → host counsel, not this file.
-- You would start the task here → `ad3-using` first.
+- There is no client copy yet → `ad3-scribe`.
+- There is no brand kit yet → `ad3-doc-design`.
+- The job is a web UI → Emil / polish.
+- Legal advice → host counsel.
 
-## Why this is not an HTML skill
+## Pipeline
 
-The brochure look (badge, two-column letterhead, 3-column value cards, dark table headers, guarantee callout) lives in `typst/theme.typ`. Agents import those functions. They do not paste a client HTML document into a skill.
-
-HTML-to-PDF fails as a skill because:
-
-| Smell | What actually happens |
-| --- | --- |
-| A 400-line `propuesta.html` inside SKILL.md | The agent copies VetGroom copy, indigo, and a fake total instead of filling *this* client. |
-| Google Fonts (`fonts.googleapis.com`) | Headless Chrome often prints fallback metrics; Inter is already vendored under SIL OFL in `typst/fonts/`. |
-| `@page { margin: 0 }` + `.page { min-height: 100vh }` | Pagination is guessed. Typst owns page breaks and “Página N de M”. |
-| Playwright / Puppeteer as “instant, no deps” | That *is* a browser. The official Typst CLI in `./bin/typst` is the compiler. |
-| Mixing annual VPS into “inversión inicial” | Recurring fees and one-time fees stay in separate tables. |
-
-Keep Inter. Do not switch to Plus Jakarta Sans unless the OFL files sit next to Inter and the theme is updated.
-
-## Tokens
-
-Do not invent a second palette. Import `theme.typ`.
-
-| Token | Value | Use |
-| --- | --- | --- |
-| Page | `us-letter`, margins `x: 2cm`, `y: 2.5cm` | Never zero-margin CSS pages |
-| Face | Inter → Liberation Sans → Arial | Vendored; no network fonts |
-| Slate `#0F172A` | Headers, brand, table head | 60 |
-| Wash `#F4F6F9` / hair `#E2E8F0` | App background, cards, rules | 30 |
-| Teal `#08B1B4` | Logo VetGroom, badge, H1 bar, card numbers | 10 |
-| Teal profundo `#0E7C7E` | Page rule, callout edge, totals | Conversion accent |
-| Ink `#1E293B` / muted `#64748B` | Body / meta | |
-
-This palette is the VetGroom frontend (light, not dark). Do not switch to indigo, gold, or a dark studio. Optional `mark:` on `#letterhead` takes the square logo.
-
-## Components
-
-Start from `typst/propuesta.typ` or `typst/contrato.typ`. `#import "theme.typ": *`. Fill names, folio, amounts. Do not fork page geometry.
-
-```typst
-#letterhead(
-  kind: "Propuesta comercial",
-  folio: "VG-PROP-2026-001",
-  issued: "24 de agosto de 2026",
-  brand: "Cliente",
-  tagline: "Una línea de oficio, no un slogan vacío",
-  issuer: (name: "...", detail: [...]),
-  recipient: (name: "...", detail: [...]),
-)
-
-#feature-cards((
-  (num: "01", title: "Control", body: [Qué gana el receptor. Una frase.]),
-  (num: "02", title: "Capacidad", body: [Qué gana. Sin relleno.]),
-  (num: "03", title: "Visibilidad", body: [Qué gana.]),
-))
-
-#note(title: "Condiciones y garantía")[
-  Pago, vigencia, IVA. No mezclar un cargo anual aquí.
-]
-
-#money-table(headers, rows, totals)   // one-time only
-#data-table(headers, rows, alignments: (left, left, right))
-#signatures(left, right, caption: "Aceptación")
+```
+ad3-scribe          facts + client copy     → kits/<project>/brief.md
+ad3-doc-design      landing + tokens        → kits/<project>/brand.typ
+ad3-typst           template + compile      → .typ + PDF
 ```
 
-Rules for those functions:
+A new project = a new kit folder. Do not edit this skill to hardcode a client.
 
-1. **Letterhead** is identity left, badge + folio + date right, then issuer / recipient. `#badge` is not a second status widget.
-2. **Feature cards** are three columns (wraps after three). Top teal rule + number. They are value, not a price list.
-3. **Tables** always go through `#data-table` / `#money-table`. Numeric columns right-aligned. Escape `$` as `\$` so Typst does not enter math mode.
-4. **Callout** is `#note`, not a `<div class="callout">`. Optional `title`. Keep it for terms, guarantee, or jurisdiction — not for repeating the kicker.
-5. **Signatures** are `#signatures` → two-column grid. `page-break-inside: avoid` is `breakable: false` on the theme blocks; do not hand-roll CSS.
-6. **Footer / page numbers** come from `editorial`. Never hardcode “Página 1 de 1”.
+## Engine
 
-## Money (do not collapse lines)
+`#import "theme.typ": *` (or `../../theme.typ` from a kit). Letter, margins `x: 2cm` `y: 2.5cm`, Inter vendored in `typst/fonts/`. Apply the kit’s primary / wash / mark on `#letterhead`, `#badge`, `#feature-cards`, `#note`.
 
-- Default market: **Estados Unidos Mexicanos, ámbito federal**. No city, municipio, or local court unless the user names one. Currency MXN. IVA 16 % unless they say otherwise.
-- One-time implementation and recurring fees (VPS, license, support) are **separate tables**. Do not sum an annual line into “inversión total inicial”.
-- RFC and party names in samples are placeholders. This pack is editorial, not counsel — say so when the text looks legal.
+```typst
+#letterhead(kind: "Propuesta comercial", folio: "...", issued: "...",
+  brand: kit.name, tagline: "...", mark: image(kit.mark, height: 34pt),
+  issuer: (...), recipient: (...))
+#kicker[...]
+#lead[...]
+#feature-cards(((num: "01", title: "...", body: [...]), ...))
+#note(title: "...")[...]
+#money-table(...)   // one-time only
+#data-table(...)    // recurring
+#signatures(...)
+```
+
+Rules:
+
+1. Headings come from the brief. No `-` `–` `—` `·` in titles. Folios may keep hyphens.
+2. Escape `$` as `\$`.
+3. One-time and recurring money stay in separate tables.
+4. Footer / “Página N de M” come from `editorial`. Never hardcode “Página 1 de 1”.
+5. Default market if none in the brief: federal Mexico, MXN, IVA 16 %, no city.
 
 ## Compile
 
 ```bash
 ./scripts/install-typst.sh
 npm run pdf
-./bin/typst compile --font-path typst/fonts typst/propuesta.typ out.pdf
+./bin/typst compile --font-path typst/fonts typst/vetgroom-syba.typ out.pdf
 ```
 
-Optional Docker MCP does not replace the CLI. Missing MCP is not a failure of AD3.
+Missing Docker MCP is not a failure.
 
 ## After this skill
 
-Return to `ad3-review` (or `ad3-ship` if the user only wanted the PDF). Attach the compiled file. Do not claim the text is legal advice.
+Return to `ad3-review` or `ad3-ship`. Attach the PDF. The kit remains the template for the next document in this project. Do not claim legal advice.

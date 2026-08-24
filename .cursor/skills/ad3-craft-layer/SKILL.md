@@ -72,7 +72,9 @@ Pick from this table. If nothing matches, do not force a skill. Continue with AD
 | Wire or debug Sonner toasts | `ask-sonner` | Setup, styling, and the usual breakage |
 | Explore several UI directions before committing | `prototype` | Distinct variants behind a switcher |
 | Write or review Swift | `write-swift` | Modern Swift 6, not outdated patterns |
-| Write a commercial proposal, contract, or editorial PDF | `ad3-typst` | Typst source + official CLI. Never ReportLab, FPDF, LaTeX, or HTML-to-PDF |
+| Write client-facing commercial copy from an analysis | `ad3-scribe` | Brief for the buyer. No hyphens in titles. No design. |
+| Design that document like a landing / product UI | `ad3-doc-design` | Project kit (`brand.typ`). Tomorrow is another client. |
+| Freeze the kit as a Typst PDF template | `ad3-typst` | Official CLI. Never ReportLab, FPDF, LaTeX, or HTML-to-PDF |
 
 `pick-ui-library`, `prototype`, and `review-animations` are explicit-invocation skills in the upstream pack. AD3 may still open them when the table says so — that is the suite using a tool, not the skill auto-triggering.
 

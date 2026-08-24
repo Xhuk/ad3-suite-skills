@@ -327,17 +327,45 @@ export const catalog: CatalogSkill[] = [
     invocation: "auto",
   },
   {
+    slug: "ad3-scribe",
+    name: "ad3-scribe",
+    kind: "document",
+    origin: "ad3",
+    summary:
+      "Escriba comercial: saca hechos del análisis y escribe para el cliente final. Títulos sin guiones. No diseña ni compila.",
+    improves:
+      "El texto que el comprador lee: oferta, alcance, dinero de una vez vs recurrente, sin RFC inventado.",
+    when: "Hay un análisis, un demo o un PDF viejo y hay que redactar la propuesta o el contrato.",
+    doesNotReplace:
+      "Asesoría legal. Tampoco el diseño ni Typst. Deja un brief en typst/kits/<proyecto>/.",
+    invocation: "auto",
+  },
+  {
+    slug: "ad3-doc-design",
+    name: "ad3-doc-design",
+    kind: "design",
+    origin: "ad3",
+    summary:
+      "Diseña el documento como una landing: hero, valor, precio, cierre. El look sale del producto de este proyecto, no del cliente de ayer.",
+    improves:
+      "La página que luego se vuelve plantilla: tokens, marca y bloques. VetGroom es un kit, no la skill.",
+    when: "Ya existe el brief y hay que diseñar antes de Typst. Un proyecto nuevo necesita su propio look.",
+    doesNotReplace:
+      "Emil ni polish de UI de producto. No escribe la oferta ni compila el PDF.",
+    invocation: "auto",
+  },
+  {
     slug: "ad3-typst",
     name: "ad3-typst",
     kind: "document",
     origin: "ad3",
     summary:
-      "PDFs editoriales en Typst: badge, tarjetas de valor, tablas con IVA y firmas. Prohibido ReportLab, FPDF, LaTeX y HTML-to-PDF.",
+      "Congela el kit (brief + brand) como plantilla Typst de ese proyecto. Prohibido ReportLab, FPDF, LaTeX y HTML-to-PDF.",
     improves:
-      "El documento que AD3 entrega: letter, Inter, componentes de brochure (letterhead, feature-cards, note), compilado por el CLI oficial.",
-    when: "Hay que generar una propuesta, un contrato u otro PDF de estándar editorial. También si el agente iba a pegar HTML + Chrome.",
+      "Todos los PDFs del proyecto salen del mismo diseño. El CLI oficial compila.",
+    when: "El kit ya está. Hay que emitir .typ y PDF. O el agente iba a pegar HTML + Chrome.",
     doesNotReplace:
-      "Asesoría legal o fiscal, ni las maestras. Es oficio de documento, no un motor HTML/CSS.",
+      "Al escriba ni al diseño. Tampoco asesoría legal.",
     invocation: "auto",
   },
 ];
@@ -437,8 +465,8 @@ export const playbook: PlaybookEntry[] = [
     id: "editorial-pdf",
     situation: "AD3 debe entregar una propuesta o un contrato en PDF",
     keepDoing: "Alcance, precio y (si aplica) revisión legal del host",
-    reachFor: ["ad3-typst"],
-    why: "Typst da auto-layout editorial. ReportLab, FPDF, LaTeX y Chrome/Playwright son un veto, no un fallback.",
+    reachFor: ["ad3-scribe", "ad3-doc-design", "ad3-typst"],
+    why: "Primero el brief para el cliente, luego el look del producto, luego Typst como plantilla del proyecto.",
   },
 ];
 

@@ -32,7 +32,7 @@ Implement the plan. Stay on the host. Fold craft into the same change.
    - general UI taste → `emil-design-eng`
    - toast / drawer / menu → `pick-ui-library` or `ask-sonner`
    - Swift → `write-swift`
-   - proposal or contract PDF → `ad3-typst` (never ReportLab, FPDF, LaTeX, or HTML-to-PDF)
+   - proposal or contract PDF → `ad3-scribe` then `ad3-doc-design` then `ad3-typst`
 4. If that craft skill is missing, build without it and say so.
 5. Cover empty, loading, and error states when the surface is user-facing.
 

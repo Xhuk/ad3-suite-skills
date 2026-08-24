@@ -321,19 +321,43 @@ export const scenarios: Record<string, SkillScenarios> = {
     skip: [
       "La UI está rota, sin design system, o piden un rediseño desde cero.",
       "Es un bug o un endpoint: eso no es polish.",
-      "El entregable es un PDF de propuesta o contrato → ad3-typst.",
+      "El entregable es un PDF de propuesta o contrato → ad3-scribe, luego ad3-doc-design, luego ad3-typst.",
+    ],
+  },
+  "ad3-scribe": {
+    use: [
+      "Hay un análisis o un demo y hay que escribir la propuesta para quien paga.",
+      "Los títulos parecen slugs o llevan guiones.",
+      "Hay que separar dinero de una vez y dinero recurrente antes de diseñar.",
+    ],
+    skip: [
+      "Solo quieren el color o el layout → ad3-doc-design.",
+      "El brief ya está y solo falta compilar → ad3-typst.",
+      "Pidieron un dictamen legal.",
+    ],
+  },
+  "ad3-doc-design": {
+    use: [
+      "El brief existe y el documento debe verse como la landing o el producto.",
+      "Es un proyecto nuevo: el look no puede ser el del cliente de ayer.",
+      "Hay logo o theme-color reales para armar el kit.",
+    ],
+    skip: [
+      "Todavía no hay oferta ni montos → ad3-scribe.",
+      "El kit ya está y solo se compila → ad3-typst.",
+      "Es una pantalla de la app, no un documento.",
     ],
   },
   "ad3-typst": {
     use: [
-      "“Ármame la propuesta comercial / el contrato en PDF”.",
+      "El kit (brief + brand) está listo para volverse plantilla Typst.",
       "El agente iba a importar ReportLab, FPDF, LaTeX o a pegar HTML + Chrome/Playwright.",
-      "Hay que desglosar MXN + IVA federal y dejar bloques de firma.",
+      "Hay que dejar un template de proyecto para que el siguiente PDF salga igual.",
     ],
     skip: [
+      "No hay copy → ad3-scribe. No hay look → ad3-doc-design.",
       "El trabajo es una UI web o motion → oficio de Emil / polish.",
-      "Pidieron asesoría legal, no el diseño del documento.",
-      "Arrancar la tarea AD3 → ad3-using, no esta skill.",
+      "Pidieron asesoría legal, no el PDF.",
     ],
   },
 };

@@ -298,21 +298,18 @@ No la abras cuando:
 
 - La UI está rota, sin design system, o piden un rediseño desde cero.
 - Es un bug o un endpoint: eso no es polish.
-- El entregable es un PDF de propuesta o contrato → `ad3-typst`.
+- El entregable es un PDF de propuesta o contrato → `ad3-scribe` → `ad3-doc-design` → `ad3-typst`.
 
-### `ad3-typst` — PDF editorial
+### `ad3-scribe` — escriba comercial
 
-Ábrela cuando:
+Ábrela cuando hay que sacar hechos del análisis y escribir para quien paga. Títulos sin guiones. Deja `typst/kits/<proyecto>/brief.md`.
 
-- “Ármame la propuesta comercial / el contrato en PDF”.
-- El agente iba a importar ReportLab, FPDF, LaTeX, o a pegar un HTML + Chrome `--print-to-pdf` / Playwright.
-- Hay que desglosar MXN + IVA federal y dejar bloques de firma.
+### `ad3-doc-design` — landing del documento
 
-No la abras cuando:
+Ábrela cuando el brief existe y hay que diseñar la página (hero, valor, precio) con el look del producto de *este* proyecto. Deja `brand.typ`. VetGroom es un kit, no la skill.
 
-- El trabajo es una UI web o motion → oficio de Emil / polish.
-- Pidieron asesoría legal, no el diseño del documento.
-- Arrancar la tarea AD3 → `ad3-using`, no esta skill.
-- Quieres “mejorar” la skill metiendo 400 líneas de HTML de un cliente: el look vive en `typst/theme.typ`.
+### `ad3-typst` — plantilla Typst del proyecto
+
+Ábrela cuando el kit está listo. Congela el diseño como template. Nunca ReportLab, FPDF, LaTeX ni Chrome/Playwright.
 
 Las copias upstream de Emil y Flywheel en `vendor/` no se modifican. Los escenarios de esas skills viven aquí, en el catálogo y en la API.

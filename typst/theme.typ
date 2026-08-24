@@ -78,13 +78,13 @@
         column-gutter: 8pt,
         align: horizon,
         rect(width: 4pt, height: 14pt, fill: teal, radius: 1pt),
-        text(size: 12.5pt, weight: "bold", fill: slate, tracking: 0.04em, it.body),
+        text(size: 12.5pt, weight: "bold", fill: slate, tracking: 0.04em, hyphenate: false, it.body),
       )
     })
   }
 
   show heading.where(level: 2): it => block(above: 0.95em, below: 0.4em, {
-    text(size: 11pt, weight: "semibold", fill: slate, it.body)
+    text(size: 11pt, weight: "semibold", fill: slate, hyphenate: false, it.body)
   })
 
   body
@@ -210,7 +210,7 @@
 
 #let kicker(title) = {
   v(18pt)
-  text(size: 22pt, weight: "semibold", fill: slate, title)
+  text(size: 22pt, weight: "semibold", fill: slate, hyphenate: false, title)
   v(8pt)
 }
 

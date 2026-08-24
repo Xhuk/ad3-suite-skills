@@ -6,7 +6,7 @@ The AD3 suite is seven linked masters:
 
 Craft skills (Emil, `ui-ux-polish`, `ad3-craft-layer`) are satellites. They do not replace the chain or any host skill.
 
-If two skills seem to fit, read [ESCENARIOS.md](./ESCENARIOS.md) or `GET /api/escenarios` before opening either. Craft never starts a task (`ad3-using` does). `ui-ux-polish` never owns a broken UI. Editorial PDFs are Typst only (`ad3-typst`); never ReportLab, FPDF, LaTeX, or HTML-to-PDF.
+If two skills seem to fit, read [ESCENARIOS.md](./ESCENARIOS.md) or `GET /api/escenarios` before opening either. Craft never starts a task (`ad3-using` does). `ui-ux-polish` never owns a broken UI. Commercial PDFs go `ad3-scribe` → `ad3-doc-design` → `ad3-typst`. Never ReportLab, FPDF, LaTeX, or HTML-to-PDF.
 
 ## Before you answer
 
