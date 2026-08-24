@@ -96,6 +96,10 @@ export default function DocumentosPage() {
                   VG-PROP-SYBA-2026-001
                 </p>
                 <h2 className="text-lg font-semibold">VetGroom para SyBA</h2>
+                <p className="text-sm text-muted-foreground">
+                  Año 1: programa con licencia incluida + VPS aparte. Luego
+                  licencias por sucursal, activación y L1 opcional.
+                </p>
               </div>
               <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold tracking-wide text-secondary-foreground uppercase">
                 Diseño final
