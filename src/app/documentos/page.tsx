@@ -13,6 +13,14 @@ export const metadata = {
 
 const samples = [
   {
+    title: "VetGroom para SyBA",
+    folio: "VG-PROP-SYBA-2026-001",
+    href: "/documentos/vetgroom-syba.pdf",
+    source: "typst/vetgroom-syba.typ",
+    blurb:
+      "Implementación Pack SyBA: \$24,999 + IVA, VPS, licencia anual y crecimiento por sucursal.",
+  },
+  {
     title: "Propuesta comercial",
     folio: "AD3-PROP-2026-0041",
     href: "/documentos/propuesta-comercial.pdf",
