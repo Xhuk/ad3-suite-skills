@@ -61,7 +61,7 @@ Historia que el cliente debe entender de un vistazo:
 | --- | --- | --- |
 | **Año 1** | **Construcción** | Pack + infraestructura (empaquetada) |
 | **Año 2+** | **Continuidad Operativa VetGroom** | Por sucursal activa + infra + L1 opcional |
-| **Sucursal nueva** | Expansión | Alta operativa (única) + Continuidad |
+| **Sucursal nueva (VPS)** | Expansión | Solo Continuidad (sin alta operativa en sucursales 2–4) |
 | **Shared** | Entrada | 1 operación · 2 servicios |
 | **VPS** | Crecimiento | Hasta 4 sucursales · 8 servicios |
 
@@ -123,20 +123,22 @@ No usar como etiqueta primaria: “licencia”, “Continuidad Operativa Anual�
 | Servicios | 2 (Vet + Groom) | Hasta **8** (4 × Vet+Groom) |
 | Año 1 en propuesta | Empaquetado en \$27,999 | Empaquetado en \$30,999 |
 | Año 2+ | Línea separada \$3,000 | Línea separada \$6,000 |
-| Sucursal 2 | **Migrar a VPS** (recomendado / necesario para aislamiento y performance) | Suma Continuidad + alta |
+| Sucursal 2 | **Migrar a VPS** (recomendado / necesario para aislamiento y performance) | Solo Continuidad (sin alta operativa) |
 
 **Interno (nunca en el PDF del cliente):** Shared es un contenedor propio limitado en memoria/espacio, separado de la app principal; el costo de mantenerlo es nuestro. Al cliente: “ambiente propio para operar”, no “contenedor”.
 
-### 3.4 Nueva sucursal
+### 3.4 Nueva sucursal (cliente en VPS)
 
-No vuelve a pagar Pack / VetBoard / reportes / personalización.
+No vuelve a pagar Pack / VetBoard / reportes / personalización / costos de incorporación.
 
 | Concepto | Importe |
 | --- | --- |
-| Alta operativa | **\$3,000 + IVA** (pago único) |
 | Continuidad Operativa VetGroom | **\$12,999 + IVA** / año |
 
-**Sin descuento** en sucursal 2, 3 o 4 (política actual del socio).
+**Política (socio, 2026-08-24):** Una vez en VPS, sucursales 2, 3 y 4 incorporan únicamente Continuidad. Sin Alta operativa \$3,000. La inversión inicial de construcción y la infra dedicada ya financian la capacidad de expansión.
+
+**Frase comercial:**  
+«Una vez implementada la solución, SyBA puede crecer de una a cuatro sucursales sin volver a pagar personalización, implementación ni costos de incorporación. Cada nueva sucursal únicamente incorpora su Continuidad Operativa VetGroom.»
 
 ### 3.5 Tabla de expansión (escenario VPS)
 
@@ -149,7 +151,7 @@ No vuelve a pagar Pack / VetBoard / reportes / personalización.
 
 (+ IVA). Misma VPS hasta 4. Argumento: *la inversión inicial de construcción se reutiliza*.
 
-Ejemplos de totales operativos (sin alta, + IVA aparte):
+Ejemplos de totales operativos (+ IVA aparte):
 
 - 1 sucursal + VPS ≈ \$18,999  
 - 2 sucursales + VPS ≈ \$31,998  
@@ -252,7 +254,8 @@ npm run pdf
 4. Descontar Continuidad en sucursal 2/3 “porque el código ya existe”.  
 5. Explicar contenedores / límites de memoria al cliente.  
 6. Hardcodear teal VetGroom dentro de `skills/ad3-*.md` (el look va en el kit).  
-7. Regenerar PDF con modelo viejo (licencia suelta año 1, o \$24,999 sin Shared empaquetado).
+7. Regenerar PDF con modelo viejo (licencia suelta año 1, o \$24,999 sin Shared empaquetado).  
+8. Cobrar Alta operativa \$3,000 en sucursales 2–4 cuando el cliente ya opera en VPS.
 
 ---
 
@@ -261,7 +264,7 @@ npm run pdf
 - [ ] Totales año 1: Shared \$27,999 · VPS \$30,999 · diferencia \$3,000  
 - [ ] Pago 50/50 · vigencia 15 días naturales · + IVA  
 - [ ] Continuidad Operativa **VetGroom** \$12,999 (no “licencia”)  
-- [ ] Alta operativa \$3,000 · sin descuento  
+- [ ] VPS sucursales 2–4: solo Continuidad · sin Alta operativa  
 - [ ] Shared = 1 · VPS = 4 · migración explícita  
 - [ ] Demo en página 1  
 - [ ] Sin jerga de contenedores  
@@ -279,3 +282,4 @@ npm run pdf
 | 2026-08-24 | Año 1 Construcción · Año 2+ Continuidad |
 | 2026-08-24 | Rename: Continuidad Operativa **VetGroom** |
 | 2026-08-24 | Spec A + steers · PDF 6 páginas · socio OK para firmar |
+| 2026-08-24 | VPS sucursales 2–4: solo Continuidad · sin Alta operativa \$3,000 |

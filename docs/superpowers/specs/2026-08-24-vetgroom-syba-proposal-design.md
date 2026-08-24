@@ -15,7 +15,7 @@ Story the buyer must leave with:
 | --- | --- | --- |
 | Year 1 | Construction | Pack + infra (Shared default or VPS recommended) |
 | Year 2+ | Continuity | Continuidad Operativa VetGroom + infra + optional L1 |
-| New branch | Expansion | Alta operativa once + Continuidad; migrate Shared → VPS at branch 2 |
+| New branch (on VPS) | Expansion | Continuidad only; no Alta operativa for branches 2–4; migrate Shared → VPS at branch 2 |
 | VPS | Growth infra | Up to 4 branches · 8 services (Vet+Groom each) |
 | Shared | Entry infra | One branch · two services only |
 
@@ -88,7 +88,11 @@ Shared \$3,000 + Pack \$24,999 = \$27,999 · VPS \$6,000 + Pack \$24,999 = \$30,
 
 **VPS:** up to 4 branches; same personalization, VetBoard, reports.
 
-**New branch:** Alta operativa \$3,000 + IVA (once) + Continuidad \$12,999 + IVA / year. No Pack SyBA again. No Continuidad discount on branch 2+.
+**New branch (once on VPS):** Continuidad Operativa VetGroom \$12,999 + IVA / year only. No Alta operativa for branches 2, 3, or 4. No Pack SyBA again.
+
+**Commercial rationale:** Initial construction and dedicated VPS already finance expansion capacity. Growth should feel simple for the client.
+
+**Key sales line:** «Una vez implementada la solución, SyBA puede crecer de una a cuatro sucursales sin volver a pagar personalización, implementación ni costos de incorporación. Cada nueva sucursal únicamente incorpora su Continuidad Operativa VetGroom.»
 
 **Expansion table (label: Escenario VPS):**
 
@@ -149,5 +153,5 @@ Signatures: VetGroom · SyBA.
 ## Acceptance checklist
 
 - [x] User accepts this written spec (this file)
-- [ ] Then: brief + Typst + PDF
-- [ ] Spot-check: year-1 Shared \$27,999 · VPS \$30,999 · Continuidad Operativa VetGroom \$12,999 · Alta \$3,000 · Shared→VPS at branch 2 · IVA on major lines · demo on page 1 · no “licencia” as primary year-2 label
+- [x] Then: brief + Typst + PDF
+- [x] Spot-check: year-1 Shared \$27,999 · VPS \$30,999 · Continuidad Operativa VetGroom \$12,999 · VPS branches 2–4: Continuidad only (no Alta operativa) · Shared→VPS at branch 2 · IVA on major lines · demo on page 1 · no “licencia” as primary year-2 label

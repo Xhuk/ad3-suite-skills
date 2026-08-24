@@ -27,4 +27,4 @@ Ship the 6-page Typst PDF from the approved design, with partner rename **Contin
 
 - Shared \$27,999 · VPS \$30,999 · diferencia \$3,000
 - Continuidad Operativa VetGroom \$12,999 (not “licencia”)
-- Alta \$3,000 · Shared→VPS at branch 2 · IVA on majors · demo page 1
+- VPS branches 2–4: Continuidad only (no Alta operativa) · Shared→VPS at branch 2 · IVA on majors · demo page 1

@@ -160,13 +160,21 @@ Hasta cuatro sucursales. Misma infraestructura, misma personalización,
 mismo VetBoard y mismos reportes. Cada Continuidad Operativa VetGroom cubre
 Vet y Groom en esa ubicación (hasta ocho servicios en total).
 
-== Nueva sucursal
+== Nueva sucursal (cliente en VPS)
 
-No vuelve a pagar Pack SyBA, VetBoard, reportes ni personalización.
+No vuelve a pagar Pack SyBA, VetBoard, reportes, personalización ni costos de
+incorporación.
 
-- Alta operativa: \$3,000 + IVA (pago único).
-- Continuidad Operativa VetGroom: \$12,999 + IVA por año.
-- Sin descuento en la sucursal 2, 3 o 4.
+- Continuidad Operativa VetGroom: \$12,999 + IVA por año por sucursal activa.
+- Sin Alta operativa para sucursales 2, 3 y 4: la inversión inicial y la VPS
+  dedicada ya financian la capacidad de expansión.
+
+#note(title: "Crecimiento simple")[
+  Una vez implementada la solución, SyBA puede crecer de una a cuatro
+  sucursales sin volver a pagar personalización, implementación ni costos de
+  incorporación. Cada nueva sucursal únicamente incorpora su Continuidad
+  Operativa VetGroom.
+]
 
 == Resumen de expansión (escenario VPS)
 
@@ -181,8 +189,8 @@ No vuelve a pagar Pack SyBA, VetBoard, reportes ni personalización.
   alignments: (left, right, right),
 )
 
-Montos + IVA. La inversión inicial de construcción se reutiliza: lo que se
-suma es Continuidad por ubicación y, si aplica, la alta operativa.
+Montos + IVA. La inversión inicial de construcción se reutiliza: cada nueva
+sucursal incorpora únicamente su Continuidad Operativa VetGroom.
 
 #pagebreak()
 
