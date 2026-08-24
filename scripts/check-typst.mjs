@@ -75,6 +75,14 @@ function main() {
     );
     assertPdf(output);
     console.log(`ok ${path.relative(root, output)}`);
+
+    const png = output.replace(/\.pdf$/, "-p1.png");
+    execFileSync(
+      typst,
+      ["compile", "--font-path", fontsDir, "--format", "png", "--pages", "1", source, png],
+      { stdio: "inherit" }
+    );
+    console.log(`ok ${path.relative(root, png)}`);
   }
 }
 

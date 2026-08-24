@@ -384,14 +384,14 @@ export function PdfStudio() {
 
       <section className="space-y-3">
         {status === "error" ? (
-          <div className="flex h-[28rem] flex-col items-center justify-center gap-2 rounded-2xl bg-card/80 px-6 text-center">
+          <div className="flex h-[28rem] flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card px-6 text-center">
             <p className="font-heading text-2xl">No se pudo generar</p>
             <p className="max-w-sm text-sm leading-6 text-muted-foreground">
               {error}
             </p>
           </div>
         ) : status === "loading" ? (
-          <div className="flex h-[28rem] items-center justify-center rounded-2xl bg-card/80 text-sm text-muted-foreground">
+          <div className="flex h-[28rem] items-center justify-center rounded-2xl border border-border bg-card text-sm text-muted-foreground">
             Compilando la propuesta con Typst…
           </div>
         ) : (
@@ -400,7 +400,7 @@ export function PdfStudio() {
               key={page}
               src={page}
               alt={`Página ${index + 1} de ${kindLabel[doc.kind]}`}
-              className="w-full rounded-2xl bg-white shadow-[0_1px_0_rgba(255,255,255,0.04),0_18px_40px_rgba(0,0,0,0.22)]"
+              className="w-full rounded-2xl border border-border bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)]"
               onError={(event) => {
                 event.currentTarget.style.display = "none";
               }}

@@ -22,7 +22,7 @@ A mano:
 
 | Archivo | Qué es |
 | --- | --- |
-| `theme.typ` | Letter, Inter, tokens, `#letterhead` `#badge` `#feature-cards` `#note` tablas firmas |
+| `theme.typ` | Letter, Inter, teal VetGroom `#08B1B4`, `#letterhead` `#badge` `#feature-cards` `#note` tablas firmas |
 | `propuesta.typ` | Propuesta con tarjetas de valor, alcance, inversión + IVA 16 %, firmas |
 | `contrato.typ` | Prestación de servicios, cláusulas, jurisdicción federal |
 | `vetgroom-syba.typ` | Propuesta VetGroom → SyBA (mismo tema, montos reales separados) |

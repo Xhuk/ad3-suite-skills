@@ -13,6 +13,7 @@
   issued: "24 de agosto de 2026",
   brand: "VetGroom",
   tagline: "Plataforma operativa para grooming y sucursales · cobertura federal",
+  mark: image("assets/vetgroom-logo.png", height: 34pt, width: 34pt),
   issuer: (
     name: "VetGroom",
     detail: [Pack SyBA · Estados Unidos Mexicanos, ámbito federal],

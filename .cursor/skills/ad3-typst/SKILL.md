@@ -49,10 +49,12 @@ Do not invent a second palette. Import `theme.typ`.
 | Page | `us-letter`, margins `x: 2cm`, `y: 2.5cm` | Never zero-margin CSS pages |
 | Face | Inter → Liberation Sans → Arial | Vendored; no network fonts |
 | Slate `#0F172A` | Headers, brand, table head | 60 |
-| Wash `#F8FAFC` / hair `#E2E8F0` | Cards, callouts, rules | 30 |
-| Indigo `#4F46E5` | Badge, H1 bar, card top rule, numbers | 10 |
-| Cobalt `#2563EB` | Page rule, callout edge, totals rule | Conversion accent |
+| Wash `#F4F6F9` / hair `#E2E8F0` | App background, cards, rules | 30 |
+| Teal `#08B1B4` | Logo VetGroom, badge, H1 bar, card numbers | 10 |
+| Teal profundo `#0E7C7E` | Page rule, callout edge, totals | Conversion accent |
 | Ink `#1E293B` / muted `#64748B` | Body / meta | |
+
+This palette is the VetGroom frontend (light, not dark). Do not switch to indigo, gold, or a dark studio. Optional `mark:` on `#letterhead` takes the square logo.
 
 ## Components
 
@@ -87,7 +89,7 @@ Start from `typst/propuesta.typ` or `typst/contrato.typ`. `#import "theme.typ": 
 Rules for those functions:
 
 1. **Letterhead** is identity left, badge + folio + date right, then issuer / recipient. `#badge` is not a second status widget.
-2. **Feature cards** are three columns (wraps after three). Top indigo rule + number. They are value, not a price list.
+2. **Feature cards** are three columns (wraps after three). Top teal rule + number. They are value, not a price list.
 3. **Tables** always go through `#data-table` / `#money-table`. Numeric columns right-aligned. Escape `$` as `\$` so Typst does not enter math mode.
 4. **Callout** is `#note`, not a `<div class="callout">`. Optional `title`. Keep it for terms, guarantee, or jurisdiction — not for repeating the kicker.
 5. **Signatures** are `#signatures` → two-column grid. `page-break-inside: avoid` is `breakable: false` on the theme blocks; do not hand-roll CSS.

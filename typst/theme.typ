@@ -2,14 +2,15 @@
 // Never pair this pack with ReportLab, FPDF, or LaTeX.
 
 #let slate = rgb("#0F172A")
-#let accent = rgb("#2563EB")
-#let indigo = rgb("#4F46E5")
+#let teal = rgb("#08B1B4")
+#let teal-deep = rgb("#0E7C7E")
+#let teal-wash = rgb("#E6F8F8")
+#let accent = teal-deep
 #let ink = rgb("#1E293B")
 #let muted = rgb("#64748B")
-#let wash = rgb("#F8FAFC")
+#let wash = rgb("#F4F6F9")
 #let stripe = rgb("#F1F5F9")
 #let hair = rgb("#E2E8F0")
-#let indigo-wash = rgb("#EEF2FF")
 
 #let fonts = ("Inter", "Liberation Sans", "Arial")
 // Arial is a last-resort family on Windows. Typst warns if it is missing;
@@ -76,7 +77,7 @@
         columns: (5pt, 1fr),
         column-gutter: 8pt,
         align: horizon,
-        rect(width: 4pt, height: 14pt, fill: indigo, radius: 1pt),
+        rect(width: 4pt, height: 14pt, fill: teal, radius: 1pt),
         text(size: 12.5pt, weight: "bold", fill: slate, tracking: 0.04em, it.body),
       )
     })
@@ -91,13 +92,13 @@
 
 #let badge(label) = {
   box(
-    fill: indigo-wash,
+    fill: teal,
     inset: (x: 9pt, y: 4pt),
     radius: 999pt,
     text(
       size: 8pt,
       weight: "bold",
-      fill: indigo,
+      fill: white,
       tracking: 0.08em,
       upper(label),
     ),
@@ -115,12 +116,12 @@
         block(
           width: 100%,
           fill: wash,
-          stroke: (top: 2.5pt + indigo, rest: 0.45pt + hair),
+          stroke: (top: 2.5pt + teal, rest: 0.45pt + hair),
           radius: 5pt,
           inset: 12pt,
           breakable: false,
           {
-            text(size: 13pt, weight: "bold", fill: indigo, item.num)
+            text(size: 13pt, weight: "bold", fill: teal, item.num)
             v(5pt)
             text(size: 9.5pt, weight: "bold", fill: slate, item.title)
             v(5pt)
@@ -141,14 +142,29 @@
   recipient: none,
   brand: "AD3",
   tagline: "Documento editorial",
+  mark: none,
 ) = {
   grid(
     columns: (1fr, auto),
     align: (left + top, right + top),
     {
-      text(size: 18pt, weight: "bold", fill: slate, tracking: -0.02em, brand)
-      v(3pt)
-      text(size: 8.5pt, fill: muted, tagline)
+      if mark != none {
+        grid(
+          columns: (auto, 1fr),
+          column-gutter: 10pt,
+          align: horizon,
+          mark,
+          {
+            text(size: 18pt, weight: "bold", fill: slate, tracking: -0.02em, brand)
+            v(3pt)
+            text(size: 8.5pt, fill: muted, tagline)
+          },
+        )
+      } else {
+        text(size: 18pt, weight: "bold", fill: slate, tracking: -0.02em, brand)
+        v(3pt)
+        text(size: 8.5pt, fill: muted, tagline)
+      }
     },
     {
       if kind != none {

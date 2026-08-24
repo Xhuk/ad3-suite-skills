@@ -151,7 +151,7 @@ npm run pdf
 - Skill del agente: `ad3-typst`
 - Preview local: http://127.0.0.1:43187/documentos
 
-Página letter, márgenes 2 cm × 2.5 cm, Inter, slate `#0F172A`, índigo `#4F46E5`, acento `#2563EB`. Componentes: badge, letterhead, feature-cards, note. Si no hay país, mercado **México federal** (MXN, IVA 16 %, sin ciudad). Detalle en [typst/README.md](./typst/README.md). MCP opcional (Docker `typst-mcp`); el CLI oficial basta. No uses Chrome ni Playwright para “compilar” el PDF.
+Página letter, márgenes 2 cm × 2.5 cm, Inter, slate `#0F172A`, teal VetGroom `#08B1B4`. Componentes: badge, letterhead, feature-cards, note. Si no hay país, mercado **México federal** (MXN, IVA 16 %, sin ciudad). Detalle en [typst/README.md](./typst/README.md). MCP opcional (Docker `typst-mcp`); el CLI oficial basta. No uses Chrome ni Playwright para “compilar” el PDF.
 
 ## Cómo debe usarlo un agente
 
