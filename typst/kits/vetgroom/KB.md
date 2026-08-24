@@ -93,13 +93,20 @@ descubrimiento · análisis · personalización · validación · VetBoard · re
 Nombre de producto (lock): **Continuidad Operativa VetGroom**  
 No usar como etiqueta primaria: “licencia”, “Continuidad Operativa Anual”.
 
+**Shared (1 sucursal):** **\$15,999 + IVA** / año — empaquetado (\$12,999 operación + \$3,000 infra Shared). No desglosar al cliente como dos renglones sueltos.
+
+**VPS (hasta 4 sucursales):** solo si eligieron VPS en año 1.
+
 | Concepto | Importe |
 | --- | --- |
 | Continuidad Operativa VetGroom | **\$12,999 + IVA** / sucursal activa / año |
-| Shared | **\$3,000 + IVA** / año (una operación) |
-| VPS | **\$6,000 + IVA** / año (hasta 4 sucursales) |
-| L1 esencial | **\$6,000 + IVA** · Soporte 20 h / año · opcional |
-| L1 plus | **\$12,000 + IVA** · Soporte 40 h / año · opcional |
+| Infraestructura VPS | **\$6,000 + IVA** / año (misma VPS hasta 4; **no** Shared) |
+| Soporte 20 h | **\$6,000 + IVA** / año · opcional |
+| Soporte 40 h | **\$12,000 + IVA** / año · opcional |
+
+**Math interno Shared:** \$12,999 + \$3,000 = \$15,999. El \$3,000 de Shared va *dentro* de Continuidad, no como línea paralela opcional.
+
+**Math interno VPS año 2+ (1 sucursal):** \$12,999 + \$6,000 = \$18,999.
 
 **Incluye Continuidad (por ubicación):**
 
@@ -122,7 +129,7 @@ No usar como etiqueta primaria: “licencia”, “Continuidad Operativa Anual�
 | Sucursales | **1** | Hasta **4** |
 | Servicios | 2 (Vet + Groom) | Hasta **8** (4 × Vet+Groom) |
 | Año 1 en propuesta | Empaquetado en \$27,999 | Empaquetado en \$30,999 |
-| Año 2+ | Línea separada \$3,000 | Línea separada \$6,000 |
+| Año 2+ | **\$15,999** empaquetado (Continuidad + Shared) | **\$12,999** / sucursal + **\$6,000** VPS anual |
 | Sucursal 2 | **Migrar a VPS** (recomendado / necesario para aislamiento y performance) | Solo Continuidad (sin alta operativa) |
 
 **Interno (nunca en el PDF del cliente):** Shared es un contenedor propio limitado en memoria/espacio, separado de la app principal; el costo de mantenerlo es nuestro. Al cliente: “ambiente propio para operar”, no “contenedor”.

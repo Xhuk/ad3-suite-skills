@@ -17,9 +17,9 @@ Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (año 2+)
 
 ## Año 2+ Continuidad Operativa VetGroom
 
-- Inversión anual = Continuidad por sucursal activa + infra (Shared o VPS) + soporte opcional.
-- Continuidad: \$12,999 + IVA / sucursal / año. Shared: \$3,000 + IVA. VPS: \$6,000 + IVA.
-- Soporte opcional: 20 h \$6,000 / 40 h \$12,000 + IVA. Horas diluidas; expiran cada año.
+- **Shared (1 sucursal):** \$15,999 + IVA / año empaquetado (\$12,999 + \$3,000 infra).
+- **VPS (si eligieron en año 1):** \$12,999 + IVA / sucursal + \$6,000 + IVA VPS anual (sin Shared).
+- Soporte opcional: 20 h \$6,000 / 40 h \$12,000 + IVA.
 - Construcción inicial, personalización, VetBoard, reportes y configuración ya no vuelven a cobrarse.
 
 ## Crecimiento
