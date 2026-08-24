@@ -6,7 +6,7 @@ Cliente: SyBA
 Emisor: VetGroom
 Tipo: propuesta
 Folio: VG-PROP-SYBA-2026-001
-Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (año 2+)
+Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (por sucursal activa)
 
 ## Año 1 Construcción
 
@@ -15,18 +15,19 @@ Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (año 2+)
 - Opción Recomendada VPS: \$30,999 + IVA (Pack + VPS). Diferencia real \$3,000 anuales.
 - Pago: 50 % anticipo / 50 % productivo. Vigencia 15 días naturales.
 
-## Año 2+ Continuidad Operativa VetGroom
+## Continuidad Operativa VetGroom
 
-- **Shared (1 sucursal):** \$15,999 + IVA / año empaquetado (\$12,999 + \$3,000 infra).
-- **VPS (si eligieron en año 1):** \$12,999 + IVA / sucursal + \$6,000 + IVA VPS anual (sin Shared).
+- No es “año 2”: aplica por sucursal activa o al abrir una sucursal nueva.
+- Incluye Vet + Groom + alcance Pack SyBA (doc o addendum) + actualizaciones.
+- **Shared (año 1 Shared):** 1.ª y 2.ª sucursal \$15,999 + IVA / año c/u · 3.ª+ \$12,999 + IVA. Infra empaquetada (no desglosar VPS \$6k al cliente).
+- **VPS (año 1 VPS):** sucursales 2, 3 y 4 = \$12,999 + IVA c/u. Sin línea VPS adicional.
 - Soporte opcional: 20 h \$6,000 / 40 h \$12,000 + IVA.
-- Construcción inicial, personalización, VetBoard, reportes y configuración ya no vuelven a cobrarse.
 
 ## Crecimiento
 
-- **Shared (año 1 Shared):** 1.ª sucursal \$15,999/año · 2.ª +\$15,999 · 3.ª y 4.ª +\$12,999 c/u.
-- **VPS (año 1 VPS):** sucursales 2, 3 y 4 = +\$12,999 c/u (+ \$6,000 VPS anual fijo).
-- Sin Pack, personalización ni implementación de nuevo. Límites de infra acordados; si se superan, se revisa conjuntamente.
+- Shared: totales anuales 1→\$15,999 · 2→\$31,998 · 3→\$44,997 · 4→\$57,996.
+- VPS: totales anuales 1→\$12,999 · 2→\$25,998 · 3→\$38,997 · 4→\$51,996 (sin VPS extra).
+- Sin Pack, personalización ni implementación de nuevo.
 
 ## Demo
 

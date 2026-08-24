@@ -129,45 +129,47 @@ En esta etapa se construye la solución. *No se está cobrando una licencia anua
 #pagebreak()
 
 // ——— Página 3 · Continuidad ———
-= Año 2 en adelante: Operación y crecimiento
+= Continuidad Operativa VetGroom
 
-Una vez implementada la solución, la inversión anual depende del modelo elegido
-en la construcción del año 1.
+Una vez implementada la solución, cada sucursal activa opera bajo *Continuidad
+Operativa VetGroom*: acceso a los módulos Vet y Groom, lo definido en el Pack
+SyBA (este documento o addendum negociado) y actualizaciones continuas de
+VetGroom.
 
 La construcción inicial, personalización, VetBoard, reportes y configuración ya no
-vuelven a cobrarse.
+vuelven a cobrarse. Lo que se incorpora al abrir o activar una sucursal es
+Continuidad Operativa, según el modelo elegido en la construcción del año 1.
 
-== Continuidad con Shared (1 sucursal)
+== Si eligieron Shared
 
-*Continuidad Operativa VetGroom* — \$15,999 + IVA anuales.
+- *1.ª y 2.ª sucursal activa:* \$15,999 + IVA / año cada una.
+- *3.ª, 4.ª y siguientes:* \$12,999 + IVA / año cada una (especialmente si se
+  abren varias en un mismo año).
 
-Incluye la operación de la plataforma por sucursal activa (\$12,999) y la
-infraestructura Shared (\$3,000), empaquetados en un solo concepto para una
-operación de una sucursal.
+Incluye operación de plataforma e infraestructura empaquetadas. No se desglosa
+Shared ni VPS por separado al cliente.
 
-== Continuidad con VPS (hasta 4 sucursales)
+== Si eligieron VPS en la construcción
 
-Aplica si eligieron VPS en la construcción del año 1. La inversión anual se
-compone de:
+*Sucursales 2, 3 y 4:* \$12,999 + IVA / año cada una.
 
-- *Continuidad Operativa VetGroom* — \$12,999 + IVA por sucursal activa / año.
-- *Infraestructura VPS* — \$6,000 + IVA anuales (misma VPS hasta cuatro
-  sucursales; no aplica Shared).
+Sin cargo de infraestructura adicional, implementación ni personalización de
+nuevo. La capacidad VPS se contrató en el año 1.
 
 #data-table(
   ([Concepto], [Importe]),
   (
-    ([Continuidad Operativa VetGroom · Shared (1 sucursal)], [\$15,999 + IVA / año]),
-    ([Continuidad Operativa VetGroom · por sucursal (VPS)], [\$12,999 + IVA / año]),
-    ([Infraestructura VPS · anual], [\$6,000 + IVA / año]),
+    ([Continuidad Operativa VetGroom · Shared (1.ª y 2.ª sucursal)], [\$15,999 + IVA / año]),
+    ([Continuidad Operativa VetGroom · Shared (3.ª sucursal en adelante)], [\$12,999 + IVA / año]),
+    ([Continuidad Operativa VetGroom · VPS (sucursales 2 a 4)], [\$12,999 + IVA / año]),
     ([Soporte 20 h · opcional], [\$6,000 + IVA / año]),
     ([Soporte 40 h · opcional], [\$12,000 + IVA / año]),
   ),
   alignments: (left, right),
 )
 
-Montos anuales. VPS solo si eligieron esa opción en el año 1. Las horas de
-soporte se diluyen entre las sucursales activas y expiran cada año.
+Montos anuales · soporte opcional. Las horas de soporte se diluyen entre las
+sucursales activas y expiran cada año.
 
 #pagebreak()
 
@@ -182,22 +184,17 @@ el modelo y la sucursal que se incorpore.
 
 == Expansión con Shared (año 1 Shared)
 
-- *Sucursal activa (1.ª):* \$15,999 + IVA / año.
-- *Nueva sucursal (2.ª):* \$15,999 + IVA / año adicional.
-- *Sucursales 3.ª y 4.ª:* \$12,999 + IVA / año adicional cada una.
+- *1.ª y 2.ª sucursal:* \$15,999 + IVA / año cada una.
+- *3.ª, 4.ª y siguientes:* \$12,999 + IVA / año cada una.
 
-A partir de la tercera sucursal, la inversión cubre la continuidad operativa;
-los límites de infraestructura ya fueron acordados en la expansión. Si la
-operación superara esos límites, se revisaría conjuntamente antes de cualquier
-ajuste.
+Incluye operación e infraestructura empaquetadas. Si la operación superara los
+límites acordados, se revisaría conjuntamente.
 
 == Expansión con VPS (año 1 VPS)
 
-Hasta cuatro sucursales. Misma infraestructura VPS (\$6,000 + IVA anuales),
-misma personalización, mismo VetBoard y mismos reportes.
-
-- *Sucursales 2, 3 y 4:* \$12,999 + IVA / año adicional cada una (sin
-  implementación ni personalización de nuevo).
+- *Sucursales 2, 3 y 4:* \$12,999 + IVA / año adicional cada una.
+- Sin infraestructura adicional ni implementación de nuevo. Soporte por horas
+  opcional según tabla anterior.
 
 == Resumen de expansión (Shared)
 
@@ -212,21 +209,23 @@ misma personalización, mismo VetBoard y mismos reportes.
   alignments: (left, right),
 )
 
+Montos + IVA. 1.ª y 2.ª sucursal a \$15,999; 3.ª en adelante a \$12,999.
+
 == Resumen de expansión (VPS)
 
 #data-table(
-  ([Sucursales], [Continuidad Operativa anual], [VPS anual]),
+  ([Sucursales], [Continuidad Operativa anual]),
   (
-    ([1], [\$12,999], [\$6,000]),
-    ([2], [\$25,998], [\$6,000]),
-    ([3], [\$38,997], [\$6,000]),
-    ([4], [\$51,996], [\$6,000]),
+    ([1], [\$12,999]),
+    ([2], [\$25,998]),
+    ([3], [\$38,997]),
+    ([4], [\$51,996]),
   ),
-  alignments: (left, right, right),
+  alignments: (left, right),
 )
 
-Montos + IVA. La inversión inicial de construcción se reutiliza: cada nueva
-sucursal incorpora únicamente la Continuidad Operativa que corresponda.
+Montos + IVA. Infraestructura VPS contratada en el año 1; no se cobra de nuevo
+al incorporar sucursales 2 a 4.
 
 #pagebreak()
 
