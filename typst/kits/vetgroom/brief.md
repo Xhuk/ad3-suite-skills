@@ -24,9 +24,9 @@ Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (año 2+)
 
 ## Crecimiento
 
-- Shared = 1 operación. Sucursal 2 → migrar a VPS.
-- VPS hasta 4 sucursales. Sucursales 2, 3 y 4 = solo Continuidad \$12,999 + IVA. Sin Pack de nuevo.
-- Frase comercial: «Una vez implementada la solución, SyBA puede crecer de una a cuatro sucursales sin volver a pagar personalización, implementación ni costos de incorporación. Cada nueva sucursal únicamente incorpora su Continuidad Operativa VetGroom.»
+- **Shared (año 1 Shared):** 1.ª sucursal \$15,999/año · 2.ª +\$15,999 · 3.ª y 4.ª +\$12,999 c/u.
+- **VPS (año 1 VPS):** sucursales 2, 3 y 4 = +\$12,999 c/u (+ \$6,000 VPS anual fijo).
+- Sin Pack, personalización ni implementación de nuevo. Límites de infra acordados; si se superan, se revisa conjuntamente.
 
 ## Demo
 
