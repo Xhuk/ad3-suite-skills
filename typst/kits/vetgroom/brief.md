@@ -17,14 +17,15 @@ Modelo: Construcción (año 1) → Continuidad Operativa VetGroom (año 2+)
 
 ## Año 2+ Continuidad Operativa VetGroom
 
-- \$12,999 + IVA por sucursal activa / año. Vet + Groom en una misma ubicación.
-- Infra: Shared \$3,000 + IVA o VPS \$6,000 + IVA.
-- L1 opcional: 20 h \$6,000 / 40 h \$12,000 + IVA. Horas diluidas; expiran cada año.
+- Inversión anual = Continuidad por sucursal activa + infra (Shared o VPS) + soporte opcional.
+- Continuidad: \$12,999 + IVA / sucursal / año. Shared: \$3,000 + IVA. VPS: \$6,000 + IVA.
+- Soporte opcional: 20 h \$6,000 / 40 h \$12,000 + IVA. Horas diluidas; expiran cada año.
+- Construcción inicial, personalización, VetBoard, reportes y configuración ya no vuelven a cobrarse.
 
 ## Crecimiento
 
 - Shared = 1 operación. Sucursal 2 → migrar a VPS.
-- VPS hasta 4 sucursales. Una vez en VPS: sucursales 2, 3 y 4 = solo Continuidad \$12,999 + IVA (sin Alta operativa \$3,000). Sin Pack de nuevo.
+- VPS hasta 4 sucursales. Sucursales 2, 3 y 4 = solo Continuidad \$12,999 + IVA. Sin Pack de nuevo.
 - Frase comercial: «Una vez implementada la solución, SyBA puede crecer de una a cuatro sucursales sin volver a pagar personalización, implementación ni costos de incorporación. Cada nueva sucursal únicamente incorpora su Continuidad Operativa VetGroom.»
 
 ## Demo

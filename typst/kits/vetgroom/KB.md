@@ -98,8 +98,8 @@ No usar como etiqueta primaria: “licencia”, “Continuidad Operativa Anual�
 | Continuidad Operativa VetGroom | **\$12,999 + IVA** / sucursal activa / año |
 | Shared | **\$3,000 + IVA** / año (una operación) |
 | VPS | **\$6,000 + IVA** / año (hasta 4 sucursales) |
-| L1 esencial | **\$6,000 + IVA** · 20 h / año · opcional |
-| L1 plus | **\$12,000 + IVA** · 40 h / año · opcional |
+| L1 esencial | **\$6,000 + IVA** · Soporte 20 h / año · opcional |
+| L1 plus | **\$12,000 + IVA** · Soporte 40 h / año · opcional |
 
 **Incluye Continuidad (por ubicación):**
 

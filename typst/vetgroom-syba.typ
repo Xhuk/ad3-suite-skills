@@ -131,38 +131,28 @@ En esta etapa se construye la solución. *No se está cobrando una licencia anua
 // ——— Página 3 · Continuidad ———
 = Año 2 en adelante: Operación y crecimiento
 
-Una vez implementada la solución, la inversión cambia. Ya no se paga la
-construcción; únicamente la continuidad operativa de la plataforma.
+Una vez implementada la solución, la inversión anual se compone de dos elementos:
 
-== Ya no se vuelve a cobrar
+- Continuidad Operativa VetGroom por sucursal activa.
+- Infraestructura según el modelo elegido (Shared o VPS).
 
-- Pack SyBA.
-- Personalización del alcance aprobado.
-- VetBoard.
-- Reportes e historial avanzado.
-- Configuración inicial.
-
-== Lo que sí se renueva
-
-*Continuidad Operativa VetGroom* — \$12,999 + IVA por sucursal activa por año.
-
-Incluye acceso a los módulos Vet y Groom para *una misma ubicación operativa*,
-así como las funcionalidades desarrolladas para SyBA y las actualizaciones
-continuas de VetGroom, acceso multiusuario y uso continuo de la plataforma.
+La construcción inicial, personalización, VetBoard, reportes y configuración ya no
+vuelven a cobrarse.
 
 #data-table(
-  ([Concepto], [Base], [Importe]),
+  ([Concepto], [Importe]),
   (
-    ([Continuidad Operativa VetGroom], [Por sucursal activa / año], [\$12,999 + IVA]),
-    ([Infraestructura Shared], [Anual · una operación], [\$3,000 + IVA]),
-    ([Infraestructura VPS], [Anual · hasta 4 sucursales], [\$6,000 + IVA]),
-    ([Acompañamiento L1 esencial], [20 horas / año · opcional], [\$6,000 + IVA]),
-    ([Acompañamiento L1 plus], [40 horas / año · opcional], [\$12,000 + IVA]),
+    ([Continuidad Operativa VetGroom], [\$12,999 + IVA]),
+    ([Shared], [\$3,000 + IVA]),
+    ([VPS], [\$6,000 + IVA]),
+    ([Soporte 20 h], [\$6,000 + IVA]),
+    ([Soporte 40 h], [\$12,000 + IVA]),
   ),
-  alignments: (left, left, right),
+  alignments: (left, right),
 )
 
-Las horas L1 se diluyen entre las sucursales activas y expiran cada año.
+Montos anuales · soporte opcional. Las horas de soporte se diluyen entre las
+sucursales activas y expiran cada año.
 
 #pagebreak()
 
@@ -190,10 +180,11 @@ Vet y Groom en esa ubicación (hasta ocho servicios en total).
 
 == Nueva sucursal
 
-Las sucursales adicionales pueden incorporarse sin costos de implementación ni
-personalización mientras operen bajo el mismo modelo definido para SyBA.
+Las sucursales 2, 3 y 4 no vuelven a pagar implementación, personalización,
+VetBoard ni costos de incorporación.
 
-- Continuidad Operativa VetGroom: \$12,999 + IVA por año por sucursal activa.
+Cada nueva sucursal incorpora únicamente su Continuidad Operativa VetGroom
+(\$12,999 + IVA por año).
 
 == Resumen de expansión (escenario VPS)
 
