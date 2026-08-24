@@ -8,6 +8,8 @@ Craft skills (Emil, `ui-ux-polish`, `ad3-craft-layer`) are satellites. They do n
 
 If two skills seem to fit, read [ESCENARIOS.md](./ESCENARIOS.md) or `GET /api/escenarios` before opening either. Craft never starts a task (`ad3-using` does). `ui-ux-polish` never owns a broken UI. Commercial PDFs go `ad3-scribe` → `ad3-doc-design` → `ad3-typst`. Never ReportLab, FPDF, LaTeX, or HTML-to-PDF.
 
+**VetGroom commercial KB (always at hand):** [typst/kits/vetgroom/KB.md](./typst/kits/vetgroom/KB.md)
+
 ## Before you answer
 
 1. Open `ad3-using`, then `ad3-recon`.

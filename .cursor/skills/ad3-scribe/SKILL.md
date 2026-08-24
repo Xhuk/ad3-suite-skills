@@ -29,6 +29,8 @@ Read the source. Extract facts. Rewrite for the client. Leave a brief the design
 
 Write `typst/kits/<project>/brief.md`. `<project>` is a slug (`vetgroom`, `norte-digital`). Tomorrow it is another client. Never put this client’s numbers into the skill file.
 
+If the kit already has `KB.md`, read it first and keep the brief consistent with that knowledge base.
+
 ## Extract (do not invent)
 
 From the analysis, demo, or prior PDF, fill only what is in the source:

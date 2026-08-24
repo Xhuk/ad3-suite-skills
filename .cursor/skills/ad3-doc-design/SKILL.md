@@ -84,10 +84,13 @@ A kit folder, not a novel:
 
 ```
 typst/kits/<project>/
+  KB.md         ← optional but preferred: durable commercial knowledge
   brief.md      ← scribe
   brand.typ     ← this skill
   mark.png      ← optional
 ```
+
+For VetGroom, agents must read `typst/kits/vetgroom/KB.md` before changing prices or naming.
 
 Then say: compile `typst/<project>-….typ` (or `kits/<project>/propuesta.typ`) as **this project’s template**. Later quotes and contracts in the same project `#import` the same `brand.typ`.
 

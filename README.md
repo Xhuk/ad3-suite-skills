@@ -151,7 +151,7 @@ npm run pdf
 - Propuesta: `typst/propuesta.typ` → `public/documentos/propuesta-comercial.pdf`
 - Contrato: `typst/contrato.typ` → `public/documentos/contrato-servicios.pdf`
 - Skills: `ad3-scribe` → `ad3-doc-design` → `ad3-typst`
-- Kit de ejemplo: `typst/kits/vetgroom/`
+- Kit de ejemplo: `typst/kits/vetgroom/` · **KB:** [typst/kits/vetgroom/KB.md](./typst/kits/vetgroom/KB.md)
 - Preview local: http://127.0.0.1:43187/documentos
 
 Página letter, márgenes 2 cm × 2.5 cm, Inter, slate `#0F172A`, teal VetGroom `#08B1B4`. Componentes: badge, letterhead, feature-cards, note. Si no hay país, mercado **México federal** (MXN, IVA 16 %, sin ciudad). Detalle en [typst/README.md](./typst/README.md). MCP opcional (Docker `typst-mcp`); el CLI oficial basta. No uses Chrome ni Playwright para “compilar” el PDF.

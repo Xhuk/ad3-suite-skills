@@ -34,7 +34,9 @@ Estados Unidos Mexicanos, **ámbito federal**. Sin ciudad. Montos en MXN. IVA fe
 
 ## Kits por proyecto
 
-Cada cliente vive en `typst/kits/<proyecto>/` (`brief.md` + `brand.typ`). VetGroom es un kit, no la skill. Cadena: `ad3-scribe` → `ad3-doc-design` → `ad3-typst`.
+Cada cliente vive en `typst/kits/<proyecto>/` (`brief.md` + `brand.typ` + opcional `KB.md`). VetGroom es un kit, no la skill. Cadena: `ad3-scribe` → `ad3-doc-design` → `ad3-typst`.
+
+**VetGroom KB (modelo comercial canónico):** [kits/vetgroom/KB.md](./kits/vetgroom/KB.md)
 
 ## Skills
 

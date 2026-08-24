@@ -1,5 +1,7 @@
 # VetGroom · brief comercial (aceptado 2026-08-24)
 
+> **KB completo:** [KB.md](./KB.md) — léelo antes de cambiar precios, naming o el PDF.
+
 Cliente: SyBA
 Emisor: VetGroom
 Tipo: propuesta
